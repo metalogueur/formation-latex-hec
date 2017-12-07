@@ -14,6 +14,8 @@
 \usepackage{mathpazo}
 \usepackage[overload]{textcase}
 \usepackage{nameref}
+\usepackage{fontawesome}
+\usepackage{hyperref}
 
 \graphicspath{{img/}}
 
@@ -105,7 +107,7 @@
 				\huge\textbf{\inserttitle}
 			\end{beamercolorbox}
 		}
-		\put(0,35){%
+		\put(0,33){%
 			\begin{beamercolorbox}[wd=0.65\textwidth,sep=1ex]{pagetitre}
 				\insertsubtitle
 			\end{beamercolorbox}
@@ -184,15 +186,25 @@
 }
 
 \makeatletter
-\newcommand*{\nomsectioncourante}{\@currentlabelname}
+	\newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
+
+% -------------------- %
+% Options des packages %
+% -------------------- %
+
+%% Paramétrage de babel pour les guillemets
+\frenchbsetup{og=«, fg=»}
+
+\hypersetup{colorlinks={true},allcolors={bleuFoncePrimaire}}
+
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
-\title{Thème Beamer \\ pour HEC Montréal}
-\subtitle{Gabarit A}
+\title{Rédaction avec \\ \textbackslash \texttt{title}\{\textrm{\LaTeX}\}}
+\subtitle{Premier pas}
 \author{Benoit Hamel}
-\date[2017-11-01]{\today}
+\date[2017-12-07]{\today}
 \subject{} % Sujet inséré dans les métadonnées du pdf
 \keywords{} % Mots-clés insérés dans les métadonnées du pdf
 \piedDePage{Benoit Hamel}
@@ -202,123 +214,8 @@
 % Page de titre
 \pageTitre
 
-\section*{Table des matières}
+%Pages liminaires
+\include{01-liminaires}
 
-\begin{frame}
-	\frametitle{Table des matières}
-	\framesubtitle{Parce qu'il faut toujours faire une table des matières...}
-	\tableofcontents
-\end{frame}
-
-\section{Palettes de couleurs}
-\subsection{Couleurs primaires}
-
-\begin{frame}
-	\frametitle{Couleurs primaires}
-	\framesubtitle{Les couleurs officielles}
-	\begin{itemize}
-		\item \couleur{bleuFoncePrimaire}
-		\item \couleur{cyanPrimaire}
-		\item \couleur{noirPrimaire}
-		\item \couleur{grisPrimaire}
-	\end{itemize}
-\end{frame}
-
-\subsection{Couleurs secondaires}
-
-\begin{frame}
-	\frametitle{Couleurs secondaires}
-	\framesubtitle{Pour mettre en valeur les couleurs officielles}
-	\begin{itemize}
-		\item \degrade{bleuFonceSecondaire}
-		\item \degrade{bleuPaleSecondaire}
-		\item \degrade{lilasSecondaire}
-		\item \degrade{aquaSecondaire}
-		\item \degrade{turquoiseSecondaire}
-	\end{itemize}
-\end{frame}
-
-\subsection{Couleurs tertiaires}
-
-\begin{frame}
-	\frametitle{Couleurs tertiaires}
-	\framesubtitle{Pour souligner ou mettre en valeur un propos éditorial}
-	\begin{itemize}
-		\item \degrade{rougeTertiaire}
-		\item \degrade{orangeTertiaire}
-		\item \degrade{jauneTertiaire}
-		\item \degrade{vertTertiaire}
-		\item \degrade{mauveTertiaire}
-		\item \degrade{roseTertiaire}
-	\end{itemize}
-\end{frame}
-
-\section{Structure des diapositives}
-
-\subsection{Diapositives en une colonne}
-
-\begin{frame}
-	Diapositive vide
-\end{frame}
-
-\begin{frame}
-	\frametitle{Titre et...}
-	... contenu
-\end{frame}
-
-\begin{frame}
-	\frametitle{Image avec...}
-	\vspace{-2.2mm}
-	\begin{block}{...soustitre}
-		[Ici une image...]
-	\end{block}
-\end{frame}
-
-\subsection{Diapositives en deux colonnes}
-
-\begin{frame}
-	\frametitle{Deux contenus}
-	\begin{columns}
-		\column{.5\textwidth}
-			Contenu de la colonne 1
-			
-			Deuxième ligne de la colonne 1
-			
-		\column{.5\textwidth}
-			Contenu de la colonne 2
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{Comparaison}
-\begin{columns}
-	\column{.5\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Comparaison 1}
-			Texte de la comparaison 1
-		\end{block}
-	\column{.5\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Comparaison 2}
-			Texte de la comparaison 2
-		\end{block}
-\end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{Contenu avec légende}
-\begin{columns}
-	\column{.36\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Légende}
-			Texte de la légende
-		\end{block}
-	\column{.64\textwidth}
-		\vspace{-7mm}
-		\begin{block}{}
-			Contenu
-		\end{block}	
-\end{columns}
-\end{frame}
 
 \end{document}
