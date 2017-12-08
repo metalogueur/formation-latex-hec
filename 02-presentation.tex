@@ -1,0 +1,146 @@
+\section{Présentation de {\TeX} et \LaTeX}
+
+% ------------ %
+% Ce que c'est %
+% ------------ %
+
+\begin{frame}
+
+	\frametitle{Ce que c'est}
+	
+	\begin{columns}
+		\column{.5\textwidth}
+		
+			\begin{itemize}
+				
+				\item \TeX est un système de mise en	page (\emph{typesetting}) ou de
+				préparation de documents.
+				
+				\item {\LaTeX} est un ensemble de macro-commandes pour faciliter l’utilisation de \TeX.
+				
+				\item Langage de balisage (\emph{Markup Language}) pour indiquer la	mise en forme
+					du texte (pensez HTML).
+					
+				\item Accent mis sur la production de documents de grande qualité à la typographie
+					soignée (surtout pour les mathématiques).
+			\end{itemize}
+		
+		\column{.5\textwidth}
+		
+			(TODO : mettre ici la photo de Donald Knuth)
+	\end{columns}
+
+\end{frame}
+
+% ------------------------------------------------------ %
+% TODO : Ajouter la diapo Exemple de typographie soignée %
+% ------------------------------------------------------ %
+
+% ------------------- %
+% Ce que ce n'est pas %
+% ------------------- %
+
+\begin{frame}
+
+	\frametitle{Ce que ce n'est pas}
+	
+	\begin{itemize}
+		
+		\item Un traitement de texte
+		\begin{itemize}
+			\item priorité accordée à la qualité de la mise en page
+		\end{itemize}
+	
+		\item WYSIWYG
+		\begin{itemize}
+			\item plutôt \emph{What You See Is What You Mean}
+		\end{itemize}
+	
+		\item Incompatible
+		\begin{itemize}
+			\item format identique sur tous les systèmes d’exploitation
+		\end{itemize}
+	
+		\item Instable
+		\begin{itemize}
+			\item noyau arrivé à maturité
+			\item \TeX est aujourd’hui considéré essentiellement exempt de bogue
+		\end{itemize}
+	
+		\item Imprévisible
+		\begin{itemize}
+			\item {\LaTeX} fait ce qu’on lui demande, ni plus, ni moins
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% ----------------------------------------- %
+% Processus de création d'un document LaTeX %
+% ----------------------------------------- %
+
+\begin{frame}[c]
+	\frametitle{Processus de création d'un document {\LaTeX}}
+	\Huge
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faFileTextO \\ \bigskip
+		\footnotesize
+		rédaction du texte et balisage avec un \emph{éditeur de texte}
+	\end{minipage}
+	\hfill\faArrowRight\hfill
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faCogs \\  \bigskip
+		\footnotesize
+		compilation avec un \emph{moteur} {\TeX} depuis la ligne de commande
+	\end{minipage}
+	\hfill\faArrowRight\hfill
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faFilePdfO \\  \bigskip
+		\footnotesize
+		visualisation avec visionneuse externe
+	\end{minipage}
+	
+\end{frame}
+
+% ---------- %
+% Exercice 1 %
+% ---------- %
+
+\begin{frame}[c]
+	
+	\frametitle{Exercice 1}
+	
+	\begin{enumerate}
+		\item Démarrez votre éditeur de code intégré.
+		\item Ouvrez et compilez le fichier \texttt{exercice\_minimal.tex}.
+	\end{enumerate}
+
+\end{frame}
+
+% ------------------------------------------ %
+% Qques choses simples à réaliser avec LaTeX %
+% ------------------------------------------ %
+
+\begin{frame}
+
+	\frametitle{Quelques choses simples à réaliser avec {\LaTeX}}
+	\framesubtitle{(et pas nécessairement avec un logiciel de traitement de texte)}
+	
+	\begin{itemize}
+		\item Page de titre
+		\item Table des matières
+		\item Numérotation des pages
+		\item Figures et tableaux : disposition sur la page, numérotation, renvois
+		\item Équations mathématiques : disposition, numérotation et renvois
+		\item Citations et composition de la bibliographie
+		\item Coupure de mots
+		\item Document recto verso
+	\end{itemize}
+
+\end{frame}
+
+% ------------------------------------- %
+% TODO : Diapositive Moteurs et formats %
+% ------------------------------------- %
