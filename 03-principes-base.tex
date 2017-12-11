@@ -1,0 +1,275 @@
+\section{Principes de base}
+
+% --------- %
+% Rédaction %
+% --------- %
+
+\begin{frame}
+
+	\frametitle{Rédaction}
+	
+	\begin{itemize}
+		\item On se concentre sur le contenu et la \textbf{structure} du document, pas
+		sur son \textbf{apparence}.
+		
+		\texttt{\textbackslash textbf\{titre\} {\faArrowRight} \textbackslash section\{titre\}}
+		
+		\texttt{\textbackslash textit\{texte\} {\faArrowRight} \textbackslash emph\{texte\}}
+		
+		\item Apparence prise en charge par {\LaTeX} et généralement préférable	de ne pas la modifier.
+		\item Mots séparés par une ou plusieurs \textbf{espaces}.
+		\item Paragraphes séparés par une ou plusieurs \textbf{lignes blanches}.
+		\item Utilisation de \textbf{commandes} pour indiquer la structure du texte
+	\end{itemize}
+
+\end{frame}
+
+% ----------------------- %
+% Structure d'un document %
+% ----------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Structure d'un document}
+	
+	Un fichier source {\LaTeX} est toujours composé de deux parties :
+	
+	\begin{codesource}
+	\documentclass[11pt,french]{article}		
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	
+	\begin{document}	
+		Lorem ipsum dolor sit amet, consectetur
+		adipiscing elit. Donec quam nulla, bibendum
+		vitae ipsum vel, fermentum pellentesque orci.		
+	\end{document}
+	\end{codesource}
+	
+\end{frame}
+
+% ---------- %
+% Exercice 2 %
+% ---------- %
+
+\begin{frame}[c]
+
+	\frametitle{Exercice 2}
+	
+	Utiliser le fichier \texttt{exercice\_minimal.tex}.
+	
+	\begin{enumerate}
+		\item Compiler le document avec la classe \textbf{article}, puis avec la classe
+		\textbf{book}. Observer le résultat.
+		
+		\item Ajouter du texte en français (avec accents) et observer le résultat.
+	\end{enumerate}
+\end{frame}
+
+% ---------- %
+% Exercice 3 %
+% ---------- %
+
+\begin{frame}[c]
+
+	\frametitle{Exercice 3}
+	
+	Question de voir ce que {\LaTeX} peut faire, compiler le document élaboré
+	\texttt{exercice\_demo.tex} de la manière suivante :
+	
+	\begin{enumerate}
+		\item une fois avec LaTeX ;
+		\item une fois avec BibTeX ;
+		\item deux à trois fois avec LaTeX.
+	\end{enumerate}
+
+\end{frame}
+
+% ------------------ %
+% Classe de document %
+% ------------------ %
+
+\begin{frame}[fragile]
+
+	\frametitle{Classe de document}
+	
+	\begin{itemize}
+		\item La première commande du préambule est normalement la déclaration de la classe de la forme
+	\begin{codesource}
+	\documentclass[options]{classe}
+	\end{codesource}
+				
+		\pause
+		
+		\item Principales classe : \\
+			article, book, letter, report \\
+			memoir \\
+			hecthese
+		
+		\pause
+		
+		\item Principales options : \\
+			10pt, 11pt, 12pt \\
+			oneside, twoside \\
+			openright, openany \\
+			article (classe memoir)
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Paquetages %
+% ---------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Paquetages}
+	
+	\begin{itemize}
+		\item Permettent de modifier des commandes ou d’ajouter des	fonctionnalités au système
+		\item Chargés dans le préambule avec
+		
+	\begin{codesource}
+	\usepackage{paquetage}
+	\usepackage[options]{paquetage}
+	\usepackage{paquetage1,paquetage2,...}
+	\end{codesource}
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 4 %
+% ---------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Exercice 4}
+	
+	Utiliser le fichier \texttt{exercice\_classe+paquetages.tex}.
+	
+	\begin{enumerate}
+		\item Compiler le fichier tel que fourni.
+		\item Changer la police du document pour 11 points, puis 12 points.
+		Observer l’effet sur les marges et sur la coupure automatique
+		des mots.
+		\item Activer le paquetage \textbf{icomma} en supprimant le symbole \% au
+		début de la ligne dans le préambule. Observer l’effet sur la
+		formule mathématique.
+		\item Charger le paquetage \textbf{numprint} avec l’option \texttt{autolanguage}
+		(\emph{après} le paquetage \textbf{babel}). Dans le code source de la formule
+		mathématique, changer \texttt{10 000} pour \texttt{\textbackslash nombre\{10000\}}
+		et observer le résultat.
+	\end{enumerate}
+
+\end{frame}
+
+% --------- %
+% Commandes %
+% --------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Commandes}
+	
+	\begin{itemize}
+		\item Débutent toujours par \textbackslash
+		\item Formes générales : 
+			
+	\begin{codesource}
+	\nomcommande[arg_optionnel]{arg_obligatoire}
+	\nomcommande*[arg_optionnel]{arg_obligatoire}
+	\end{codesource}
+					
+		\item Arguments obligatoires entre \{  et \}.
+		\item Arguments optionnels entre [ et ].
+		\item Commande sans argument : le nom se termine par tout caractère	qui n’est pas une lettre (y compris l’espace).
+		\item Portée d’une commande limitée à la zone entre \{  et \}.
+	\end{itemize}
+
+\end{frame}
+
+% -------------- %
+% Environnements %
+% -------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Environnements}
+	
+	\begin{itemize}
+		\item Délimités par
+		
+	\begin{codesource}
+	\begin{environnement}
+		...
+	\end{environnement}
+	\end{codesource}
+	
+		\item Contenu de l’environnement traité différemment du reste du texte
+		\item Changements s’appliquent uniquement à l’intérieur de l’environnement
+	\end{itemize}
+
+\end{frame}
+
+% ------------ %
+% Commentaires %
+% ------------ %
+
+\begin{frame}[fragile]
+	
+	\frametitle{Commentaires}
+	
+	\begin{itemize}
+		\item Le symbole \% sert à identifier les commentaires dans le code	source
+		\item Tout ce qui suit \% sur la ligne est ignoré
+		
+		\begin{codesource}
+	texte % ignoré par LaTeX	
+		\end{codesource}
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 5 %
+% ---------- %
+
+\begin{frame}
+
+	\frametitle{Exercice 5}
+	
+	Modifier le fichier \texttt{exercice\_commandes.tex} afin de produire le
+	texte ci-dessous.
+	
+	{\rmfamily Les commandes {\LaTeX} débutent par le caractère \textbackslash et se terminent par le
+		premier caractère autre qu’une lettre, y compris l’espace. Cela a pour conséquence
+		qu’un espace immédiatement après une commande sans argument	sera \emph{avalé} par la commande.
+		La portée d’une commande est \textbf{limitée} à la zone entre accolades.
+		
+		\begin{enumerate}
+			\item L’environnement \texttt{enumerate} permet de créer une liste numérotée.
+			\item Les environnements de listes sont parmi les plus utilisés en LATEX.
+		\end{enumerate}
+	}
+\end{frame}
+
+% ------------------- %
+% Caractères spéciaux %
+% ------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Caractères spéciaux}
+	
+	\begin{itemize}
+		\item Caractères réservés par \TeX  : \\
+		\lstinline|# $ & ~ _ ^ % { }|
+		
+		\item Pour les utiliser, précéder par \textbackslash  :\\
+		\begin{tabular}{lcr}
+			\lstinline|\#|  \#	&	\lstinline|\$|  \$	&	\lstinline|\%|  \% \\
+			\lstinline|\_|  --	&	\lstinline|\{|  \{	&	\lstinline|\}|  \}
+		\end{tabular}
+	\end{itemize}
+
+\end{frame}

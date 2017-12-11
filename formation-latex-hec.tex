@@ -16,6 +16,7 @@
 \usepackage{nameref}
 \usepackage{fontawesome}
 \usepackage{metalogo}
+\usepackage{listings}
 \usepackage{hyperref}
 
 \graphicspath{{img/}}
@@ -155,6 +156,7 @@
 
 % \logo{\includegraphics[height=0.5cm]{Logo_HEC_Montreal_PMS_Coated.eps}}
 % \titlegraphic{\includegraphics[height=0.5cm]{Logo_HEC_Montreal_PMS_Coated.eps}}
+
 % --------- %
 % Commandes %
 % --------- %
@@ -191,6 +193,21 @@
 	\newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
 
+% -------------- %
+% Environnements %
+% -------------- %
+\lstnewenvironment{codesource}{%
+	\lstset{%
+		language=[LaTeX]TeX,
+		backgroundcolor=\color{bleuPaleSecondaire!10},
+		tabsize=2,
+		frame=leftline,
+		numbers=left,
+		numberstyle=\tiny,
+		literate={é}{{\'e}}1
+	}
+}{}
+
 % -------------------- %
 % Options des packages %
 % -------------------- %
@@ -198,7 +215,12 @@
 %% Paramétrage de babel pour les guillemets
 \frenchbsetup{og=«, fg=»}
 
-\hypersetup{colorlinks={true},allcolors={bleuFoncePrimaire}}
+\hypersetup{
+	colorlinks={true},
+	% allcolors={bleuFoncePrimaire}
+	urlcolor={bleuFoncePrimaire},
+	linkcolor={white}
+}
 
 % ----------------------- %
 % Métadonnées du document %
@@ -221,5 +243,8 @@
 
 % Section Présentation
 \include{02-presentation}
+
+% Section Principes de base
+\include{03-principes-base}
 
 \end{document}
