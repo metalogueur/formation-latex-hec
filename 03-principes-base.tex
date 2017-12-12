@@ -270,6 +270,101 @@
 			\lstinline|\#|  \#	&	\lstinline|\$|  \$	&	\lstinline|\%|  \% \\
 			\lstinline|\_|  --	&	\lstinline|\{|  \{	&	\lstinline|\}|  \}
 		\end{tabular}
+	
+		\item On écrira donc
+		
+		\begin{columns}
+			\column{.4\textwidth}
+			
+			\lstinline|L'augmentation de 2~\$ repr{\'e}sente|
+			\lstinline|une hausse de 5~\%.|
+			
+			\column{.4\textwidth}
+			
+			L’augmentation de 2~\$ représente une hausse de 5~\%.
+		\end{columns}
 	\end{itemize}
 
+\end{frame}
+
+% --------------------------- %
+% Caractères spéciaux (suite) %
+% --------------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Caractères spéciaux (suite)}
+	
+	\begin{itemize}
+		\item Espace insécable : \textasciitilde
+		
+		\begin{codesource}
+	M.~Tremblay me doit 200~\$.
+		\end{codesource}
+	
+		\item Guillemets :
+		
+		\begin{columns}
+			\column{.4\textwidth}
+			
+			\lstinline|"guillemets anglais"|
+			
+			\lstinline[literate={«}{{\og}}1{»}{{\fg}}1{ç}{{\c c}}1]|«guillemets français»|
+			
+			\column{.4\textwidth}
+			
+			"guillemets anglais"
+			
+			«guillemets français»
+		\end{columns}
+	
+		\item Trait d'union, tiret demi-cadratin, tiret cadratin
+		
+		\begin{columns}
+			\column{.263 \textwidth}
+				\lstinline|-|  -
+			\column{.263 \textwidth}
+				\lstinline|--|  --
+			\column{.263 \textwidth}
+				\lstinline|---|  ---
+		\end{columns}
+	\end{itemize}
+\end{frame}
+
+% -------------------------------------------- %
+% LaTeX en français -- préambule pour pdfLaTeX %
+% -------------------------------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{\LaTeX en français -- préambule pour pdf\LaTeX}
+	
+	Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
+	
+	\begin{codesource}
+	\documentclass[french]{memoir}
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{icomma}
+	\end{codesource}
+
+	\pause
+	
+	\begin{itemize}
+		\item \textbf{babel} : traduction des mots-clés prédéfinis, typographie française, coupure de mots, document multilingue
+		
+		\pause
+		
+		\item \textbf{inputenc} et \textbf{fontenc} : lettres accentuées dans le code source
+		
+		\pause
+		
+		\item \textbf{icomma} : virgule comme séparateur décimal
+		
+		\pause
+		
+		\item \textbf{numprint} : espace comme séparateur des milliers
+	\end{itemize}
 \end{frame}
