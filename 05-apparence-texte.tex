@@ -1,0 +1,102 @@
+\section{Apparence du texte}
+
+% --------------------- %
+% Polices de caractères %
+% --------------------- %
+
+\begin{frame}[c]
+
+	\frametitle{Polices de caractères}
+	
+	\begin{itemize}
+		\item Par défaut, tous les documents {\LaTeX} utilisent la même police,
+			\textrm{Computer Modern}
+		\item Privilégier les polices de grande qualité et très complètes (lettres accentuées, grand 	choix de symboles)
+		\item Peu de polices sont adaptées pour les mathématiques
+			\begin{itemize}
+				\item Palatino, Times, Lucida (\$) sont des choix sûrs
+			\end{itemize}
+		\item Dans la classe hecthese, les paquetages mathptmx et mathpazo sont chargés par défaut
+			afin d'offrir des polices de caractères Times et Palatino.
+	\end{itemize}
+\end{frame}
+
+% ---------------------------------- %
+% Changement d'attribut de la police %
+% ---------------------------------- %
+
+\begin{frame}[c]
+
+	\frametitle{Changement d'attribut de la police}
+	
+	\begin{center}
+		\begin{tabular}{lcc}
+			\hline\hline		
+			\textbf{famille}			&										&	\\
+			\hline
+			\textrm{romain}				&	\texttt{\textbackslash rmfamily}	&	\texttt{\textbackslash textrm\{}\emph{texte}\texttt{\}} \\
+			\texttt{largeur fixe}		&	\texttt{\textbackslash ttfamily}	&	\texttt{\textbackslash texttt\{}\emph{texte}\texttt{\}} \\
+			\textsf{sans empattements}	&	\texttt{\textbackslash sffamily}	&	\texttt{\textbackslash textsf\{}\emph{texte}\texttt{\}} \\
+			\hline
+			\textbf{forme}				&										&	\\
+			\hline
+			\textup{droit}				&	\texttt{\textbackslash upshape}		&	\texttt{\textbackslash textup\{}\emph{texte}\texttt{\}} \\
+			\textit{italique}			&	\texttt{\textbackslash itshape}		&	\texttt{\textbackslash textit\{}\emph{texte}\texttt{\}} \\
+			\textsl{penché}				&	\texttt{\textbackslash slshape}		&	\texttt{\textbackslash textsl\{}\emph{texte}\texttt{\}} \\
+			\textsc{petites capitales}	&	\texttt{\textbackslash scshape}		&	\texttt{\textbackslash textsc\{}\emph{texte}\texttt{\}} \\
+			\hline
+			\textbf{série}				&										&	\\
+			\hline
+			\textmd{moyen}				&	\texttt{\textbackslash mdseries}	&	\texttt{\textbackslash textmd\{}\emph{texte}\texttt{\}} \\
+			\textbf{gras}				&	\texttt{\textbackslash bfseries}	&	\texttt{\textbackslash textbf\{}\emph{texte}\texttt{\}} \\
+			\hline\hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+% ------------------- %
+% Taille de la police %
+% ------------------- %
+
+\begin{frame}
+
+	\frametitle{Taille de la police}
+		
+	\begin{center}
+		\begin{tabular}{ll}
+			\hline\hline
+			\textbf{commandes standards}	&									\\
+			\hline
+			\textbackslash tiny				&	{\tiny vraiment petit} 			\\
+			\textbackslash scriptsize		&	{\scriptsize encore plus petit}	\\
+			\textbackslash footnotesize		&	{\footnotesize plus petit}		\\
+			\textbackslash small			&	{\small petit}					\\
+			\textbackslash normalsize		&	{\normalsize normal}			\\
+			\textbackslash large			&	{\large grand}					\\
+			\textbackslash Large			&	{\Large plus grand}				\\
+			\textbackslash LARGE			&	{\LARGE encore plus grand}		\\
+			\textbackslash huge				&	{\huge énorme} 					\\
+			\textbackslash Huge				&	{\Huge encore plus énorme}		\\
+			\hline\hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+% -------- %
+% Italique %
+% -------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Italique}
+	
+	\begin{itemize}
+		\item Une des propriétés \emph{les plus utilisées} dans le texte
+		\item Commande sémantique : \\
+		\lstinline|\emph{texte}|
+		
+		\pause
+		
+		\item Par défaut : texte en italique dans texte droit et vice versa
+	\end{itemize}
+\end{frame}

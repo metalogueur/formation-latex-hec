@@ -1,0 +1,289 @@
+\section{Organisation d'un document}
+
+% ---------------------- %
+% Titre et page de titre %
+% ---------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Titre et page de titre}
+	
+	\begin{itemize}
+		
+		\item Mise en forme automatique
+		
+		\begin{codesource}
+	%% préambule
+	\title{Titre du document}
+	\author{Prénom Nom}
+	\date{31 octobre 2014} % automatique si omis
+	%% corps du document
+	\maketitle
+		\end{codesource}
+	
+		\item Mise en forme libre
+		
+		\begin{columns}
+			\column{.4\textwidth}			
+			\textbf{Classes standards}
+			
+			\begin{codesource}
+	\begin{titlepage}
+		...
+	\end{titlepage}
+			\end{codesource}
+		
+			\column{.4\textwidth}		
+			\textbf{Classes memoir et hecthese}
+			
+			\begin{codesource}
+	\begin{titlingpage}
+		...
+	\end{titlingpage}
+			\end{codesource}
+			\end{columns}
+		
+	\end{itemize}
+\end{frame}
+
+% ------ %
+% Résumé %
+% ------ %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Résumé}
+	
+	\begin{itemize}
+		\item Classes \textbf{article}, \textbf{report} ou \textbf{memoir} : résumé créé avec l’environnement
+		
+		\begin{codesource}
+	\begin{abstract}
+		...
+	\end{abstract}
+		\end{codesource}
+	
+		\item Classe \textbf{hecthese} : résumés français et anglais traités comme des chapitres normaux (non numérotés)
+	\end{itemize}
+\end{frame}
+
+% -------- %
+% Sections %
+% -------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Sections}
+	
+	\begin{itemize}
+		\item Découpage du document en sections avec les commandes
+		
+		\begin{codesource}
+	\part{titre}
+	\chapter{titre}
+	\section{titre}
+	\subsection{titre}
+		\end{codesource}
+	
+		\begin{codesource}
+	\subsubsection{titre}		% à éviter dans un livre
+		\end{codesource}
+	
+		\begin{codesource}
+	\paragraph{titre}				% jamais (?) utilisé
+	\subparagraph{titre}		% idem
+		\end{codesource}
+	
+		\item Numérotation automatique
+		\item Commande suivie d’une * = section non numérotée
+		\item Titre «court» en argument optionnel
+	\end{itemize}
+\end{frame}
+
+% ------- %
+% Annexes %
+% ------- %
+
+\begin{frame}[c,fragile]
+	
+	\frametitle{Annexes}
+	
+	\begin{itemize}
+		\item Les annexes sont des sections ou des chapitres avec une numérotation alphanumérique (A, A.1, ...)
+		\item Sections suivantes identifiées comme des annexes par la
+		commande \\
+		\lstinline|\appendix|
+		\item Dans le titre, «Chapitre» changé pour «Annexe» le cas échéant
+	\end{itemize}
+\end{frame}
+
+% ---------------------------- %
+% Structure logique d'un livre %
+% ---------------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Structure logique d'un livre}
+	\framesubtitle{(classes book, memoir, hecthese)}
+	
+	\lstinline|\frontmatter|	
+	
+	\begin{itemize}
+		\item préface, table des matières, etc.
+		\item numérotation des pages en chiffres romains (i, ii, ...)
+		\item chapitres non numérotés
+	\end{itemize}
+	
+	\lstinline|\mainmatter|	
+	
+	\begin{itemize}
+		\item le contenu à proprement parler
+		\item numérotation des pages à partir de 1 en chiffres arabes
+		\item chapitres numérotés
+	\end{itemize}
+
+\end{frame}
+
+% ------------------------------------ %
+% Structure logique d'un livre (suite) %
+% ------------------------------------ %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Structure logique d'un livre (suite)}
+	\framesubtitle{(classes book, memoir, hecthese)}
+	
+	\lstinline|\backmatter|
+	
+	\begin{itemize}
+		\item tout le reste (bibliographie, index, etc.)
+		\item numérotation des pages se poursuit
+		\item chapitres non numérotés
+	\end{itemize}
+\end{frame}
+
+% ------------------ %
+% Table des matières %
+% ------------------ %
+
+\begin{frame}[fragile]
+
+	\frametitle{Table des matières}
+	
+	\begin{itemize}
+		\item Table des matières produite automatiquement avec \\
+		\lstinline|\tableofcontents|
+		\item Requiert plusieurs compilations
+		\item Sections non numérotées pas incluses
+		\item Avec \textbf{hyperref}, produit également la table des matières du fichier PDF
+		
+		\pause
+		
+		\item Classe memoir fournit également \\
+		\lstinline|\tableofcontents*| \\
+		qui n’insère pas la table des matières dans la table des matières
+		
+		\pause
+		
+		\item Aussi disponibles : \\
+		\lstinline|\listoffigures| \\
+		\lstinline|\listoftables| \\
+		(et leurs versions * dans \textbf{memoir})
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 6 %
+% ---------- %
+
+\begin{frame}[fragile]
+	
+	\frametitle{Exercice 6}	
+	Utiliser le fichier \texttt{exercice\_parties.tex}.	
+	
+	\begin{enumerate}
+		\item Étudier la structure du document dans le code source.
+		\item Ajouter un titre et un auteur au document.
+		\item Créer la table des matières du document en le compilant 2 à 3	fois.
+		\item Insérer deux ou trois titres de sections de différents niveaux dans le document.
+		\item Vous remarquerez que la numérotation cesse à partir des sous-sections. C’est une particularité de la classe memoir. Recompiler le document après avoir ajouté au préambule la
+		commande \\
+		\lstinline|\maxsecnumdepth{subsection}|
+		\item Ajouter une annexe au document.
+	\end{enumerate}
+
+\end{frame}
+
+% ---------------------------------- %
+% Étiquettes et renvois automatiques %
+% ---------------------------------- %
+
+\begin{frame}[c,fragile]
+	
+	\frametitle{Étiquettes et renvois automatiques}
+	\framesubtitle{Parce que l'ordinateur le fera mieux que vous}
+	
+	\begin{itemize}
+		\item Ne \textbf{jamais} renvoyer manuellement à un numéro de section,
+		d’équation, de tableau, etc.
+		\item « Nommer » un élément avec \lstinline|\label|
+		\item Faire référence par son nom avec \lstinline|\ref|
+		\item Requiert 2 à 3 compilations
+	\end{itemize}
+\end{frame}
+
+% ------------------------------------------ %
+% Étiquettes et renvois automatiques (suite) %
+% ------------------------------------------ %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Étiquettes et renvois automatiques (suite)}
+	\framesubtitle{Parce que l'ordinateur le fera mieux que vous}
+	
+	\begin{codesource}
+	\section{Définitions}
+	\label{sec:definitions}
+	Lorem ipsum dolor sit amet, consectetur
+	adipiscing elit. Duis in auctor dui. Vestibulum
+	ut, placerat ac, adipiscing vitae, felis.
+	\section{Historique}
+	Tel que vu à la section \ref{sec:definitions},
+	on a...
+	\end{codesource}
+\end{frame}
+
+% ----------------------- %
+% Renvois automatiques ++ %
+% ----------------------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Renvois automatiques ++}
+	
+	\begin{itemize}
+		\item Paquetage \textbf{hyperref} insère des hyperliens vers des renvois dans les fichiers
+		.pdf
+		\item Commande \lstinline|\autoref{}| permet de
+		
+			\begin{enumerate}
+				\item nommer automatiquement le type de renvoi (section, équation, tableau, etc.)
+				\item transformer en hyperlien le texte \textbf{et} le numéro
+			\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 7 %
+% ---------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Exercice 7}	
+	Utiliser le fichier \texttt{exercice\_renvois.tex}.
+	
+	\begin{enumerate}
+		\item Insérer dans le texte un renvoi au numéro d’une section.
+		\item Activer le paquetage \textbf{hyperref} avec l’option \texttt{colorlinks} et comparer l’effet d’utiliser \lstinline|\ref| ou \lstinline|\autoref| pour le renvoi.
+	\end{enumerate}
+\end{frame}
