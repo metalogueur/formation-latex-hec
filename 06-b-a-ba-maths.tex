@@ -1,0 +1,47 @@
+\section{B-A-BA des mathématiques}
+
+% ----------------- %
+% Principes de base %
+% ----------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Principes de base}
+	
+	\begin{itemize}
+		\item Décrire des équations mathématiques requiert un « langage » spécial
+		\begin{itemize}
+			\item il faut informer {\LaTeX} que l’on passe à ce langage
+			\item par le biais de modes mathématiques
+		\end{itemize}
+	
+		\item Important d’utiliser un mode mathématique
+		\begin{itemize}
+			\item règles de typographie spéciales (constantes vs variables, disposition des équations, 	numérotation, etc.)
+			\item espaces entre les symboles et autour des opérateurs gérées automatiquement
+		\end{itemize}
+	
+		\item Vous voulez utiliser le paquetage \textbf{amsmath} \\
+			\lstinline|\usepackage{amsmath}|
+			\begin{itemize}
+				\item lire la documentation de ce paquetage pour connaître toutes ses fonctionnalités
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% ------------------- %
+% Modes mathématiques %
+% ------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Modes mathématiques}
+	
+	\begin{enumerate}
+		\item « En ligne » directement dans le texte comme
+		$(𝑎 + 𝑏)2 = 𝑎2 + 2𝑎𝑏 + 𝑏2$ en plaçant l’équation entre \$  \$ \\
+		\lstinline[literate={«}{{\og}}1{»}{{\fg{}}}1]|«En ligne» directement dans le texte|
+		\lstinline|comme $(a + b)^2 = a^2 + 2ab + b^2$|
+		
+	\end{enumerate}
+\end{frame}
