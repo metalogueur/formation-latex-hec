@@ -98,5 +98,133 @@
 		\pause
 		
 		\item Par défaut : texte en italique dans texte droit et vice versa
+		\begin{columns}
+			\column{.4\textwidth}
+				\lstinline[literate={é}{{\'e}}1]|C'était un peu \emph{rough}|
+				\lstinline|par moments| 
+			\column{.4\textwidth}
+				C'était un peu \emph{rough} par moments
+		\end{columns}
+		
+		\begin{columns}
+			\column{.4\textwidth}
+				\lstinline[literate={«}{{\og}}1]|Il m'a dit: «\emph{Enough|
+				\lstinline[literate={»}{{\fg}}1]|\emph{poutine} for the week!}»| 
+			\column{.4\textwidth}
+				Il m’a dit : « \emph{Enough {\em poutine} for the week !} »
+		\end{columns}
+	
+		\pause
+		
+		\item Pas de commande pour souligner en {\LaTeX}\dots  et ce n’est pas une
+		omission !
 	\end{itemize}
+\end{frame}
+
+% ------ %
+% Listes %
+% ------ %
+
+\begin{frame}[fragile]
+
+	\frametitle{Listes}
+	
+	\begin{itemize}
+		\item Deux principales sortes de listes :
+		\begin{enumerate}
+			\item \textbf{à puce} avec environnement \texttt{itemize}
+			\item \textbf{numérotée} avec environnement \texttt{enumerate}
+		\end{enumerate}
+		\item Possible de les imbriquer les unes dans les autres
+		\item Marqueurs adaptés automatiquement jusqu'à 4 niveaux
+	\end{itemize}
+
+	\pause
+	
+	\begin{codesource}
+	\begin{itemize}
+		\item Deux principales sortes de listes:
+		\begin{enumerate}
+			\item à puce avec environnement \verb=itemize=
+			\item numérotée avec environnement \verb=enumerate=
+		\end{enumerate}
+		\item Possible de les imbriquer les unes
+			dans les autres
+		\item Marqueurs adaptés automatiquement jusqu'à 4 niveaux
+	\end{itemize}
+	\end{codesource}
+
+\end{frame}
+
+% -------------------- %
+% Notes de bas de page %
+% -------------------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Notes de bas de page}
+	
+	\begin{itemize}
+		\item Note de bas de page insérée avec la commande \\
+			\lstinline|\footnote{texte de la note}|
+			
+		\item Commande doit suivre immédiatement le texte à annoter
+		
+		\item Méthode recommandée : 
+		\begin{codesource}
+	... fera remarquer que Pierre Lasou\footnote{%
+	Spécialiste en ressources documentaires} %
+	fut d'une grande aide dans la préparation de ...
+		\end{codesource}
+				
+		\item Numérotation et disposition automatiques
+	\end{itemize}
+\end{frame}
+
+% ----------- %
+% Code source %
+% ----------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Code source}
+	
+	\begin{itemize}
+		\item Environnement \texttt{verbatim}
+		\begin{codesource}
+	\begin{verbatim}
+	Texte disposé exactement tel qu'il est tapé
+	dans une police à largeur fixe
+	\end{verbatim}
+		\end{codesource}
+	
+		\item Commande \texttt{\textbackslash verb} dont la syntaxe est \\
+			\lstinline|\verbcsourcec| \\
+			où \textit{c} est un caractère quelconque ne se trouvant pas dans \textit{source}
+			
+		\item Pour usage plus intensif, voir le paquetage \textbf{listings}
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 8 %
+% ---------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Exercice 8}
+	
+	\begin{enumerate}
+		\item Ouvrir le fichier et en étudier le code source, puis le compiler.			
+		\item Supprimer l’option \textit{article} au chargement de la classe et
+			compiler de nouveau le document. Observer l’effet de cette option.			
+		\item Effectuer les modifications suivantes au document.		
+			\begin{enumerate}
+				\item Dernier paragraphe de la première section, placer toute la phrase
+					débutant par «De simple dérivé» à l’intérieur d’une commande
+					\lstinline|\emph|.
+				\item Changer la puce des listes en spécifiant le symbole \lstinline|$>$| pour
+					\texttt{ItemLabeli} dans la commande \lstinline|\frenchbsetup| du préambule.
+			\end{enumerate}
+	\end{enumerate}
 \end{frame}
