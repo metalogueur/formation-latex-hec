@@ -38,10 +38,85 @@
 	\frametitle{Modes mathématiques}
 	
 	\begin{enumerate}
-		\item « En ligne » directement dans le texte comme
-		$(𝑎 + 𝑏)2 = 𝑎2 + 2𝑎𝑏 + 𝑏2$ en plaçant l’équation entre \$  \$ \\
-		\lstinline[literate={«}{{\og}}1{»}{{\fg{}}}1]|«En ligne» directement dans le texte|
+		\item « En ligne » directement dans le texte comme %
+		$(a + b)2 = a2 + 2ab + b^2$ en plaçant l’équation entre \$  \$ \\
+		\lstinline[literate={«}{{\og}}1{»}{{\fg{}}}1]|«En ligne»  directement dans le texte|
 		\lstinline|comme $(a + b)^2 = a^2 + 2ab + b^2$|
 		
+		\item « Hors paragraphe » séparé du texte principal comme
+		\begin{equation*}
+			\int_0^\infty f(x)\, dx =
+			\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
+		\end{equation*}
+			en utilisant divers types d’environnements
+			\begin{codesource}
+	\begin{equation*}
+		\int_0^\infty f(x)\, dx =
+		\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
+	\end{equation*}	
+			\end{codesource}
 	\end{enumerate}
+\end{frame}
+
+% ----------------------- %
+% Quelques règles de base %
+% ----------------------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Quelques règles de base}
+	
+	\begin{itemize}
+		\item En mode mathématique, \TeX  respecte automatiquement la convention d’écrire les constantes en romain et les variables en italique
+		\begin{columns}
+			\column{.4\textwidth}
+				\lstinline|$z = 2a + 3y$|
+			\column{.4\textwidth}
+				$z = 2a + 3y$
+		\end{columns}
+	
+		\item Espacement entre les éléments géré automatiquement, peu importe le code source
+		\begin{columns}
+			\column{.4\textwidth}
+				\lstinline|$z=2 a+3 y$|
+			\column{.4\textwidth}
+				$z=2 a+3 y$
+		\end{columns}
+	
+		\item Utiliser la commande \lstinline|\text{}| de \texttt{amsmath} pour composer du
+			texte à l’intérieur du mode mathématique
+		\begin{columns}
+			\column{.4\textwidth}
+				\lstinline|$x = 0 \text{ si } y < 2$|
+			\column{.4\textwidth}
+				$x = 0 \text{ si } y < 2$
+		\end{columns}
+	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Avant-goût %
+% ---------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Avant-goût}
+	
+	Pouvez-vous interpréter ce code?
+	
+	\begin{codesource}
+	\begin{equation*}
+		\Gamma(\alpha) =
+		\sum_{j = 0}^\infty \int_j^{j + 1}
+		x^{\alpha - 1} e^{-x}\, dx
+	\end{equation*}
+	\end{codesource}
+
+	Fort probablement!
+	
+	\begin{equation*}
+		\Gamma(\alpha) =
+		\sum_{j = 0}^\infty \int_j^{j + 1}
+		x^{\alpha - 1} e^{-x}\, dx
+	\end{equation*}
 \end{frame}
