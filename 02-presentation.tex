@@ -5,16 +5,13 @@
 % Ce que c'est %
 % ------------ %
 
-\begin{frame}
+\begin{frame}[c]
 
-	\frametitle{Ce que c'est}
-	
-	\begin{columns}
-		\column{.5\textwidth}
+	\frametitle{Ce que c'est / ce que ce n'est pas}
 		
 			\begin{itemize}
 				
-				\item \TeX est un système de mise en	page (\emph{typesetting}) ou de
+				\item \TeX\ est un système de mise en	page (\emph{typesetting}) ou de
 				préparation de documents.
 				
 				\item {\LaTeX} est un ensemble de macro-commandes pour faciliter l’utilisation de \TeX.
@@ -25,11 +22,6 @@
 				\item Accent mis sur la production de documents de grande qualité à la typographie
 					soignée (surtout pour les mathématiques).
 			\end{itemize}
-		
-		\column{.5\textwidth}
-		
-			(TODO : mettre ici la photo de Donald Knuth)
-	\end{columns}
 
 \end{frame}
 
@@ -61,7 +53,7 @@
 		\item Instable
 		\begin{itemize}
 			\item noyau arrivé à maturité
-			\item \TeX est aujourd’hui considéré essentiellement exempt de bogue
+			\item \TeX\ est aujourd’hui considéré essentiellement exempt de bogues
 		\end{itemize}
 	
 		\item Imprévisible
@@ -69,6 +61,29 @@
 			\item {\LaTeX} fait ce qu’on lui demande, ni plus, ni moins
 		\end{itemize}
 	\end{itemize}
+\end{frame}
+
+% ------------------ %
+% Moteurs et formats %
+% ------------------ %
+
+\begin{frame}[c]
+
+\frametitle{Moteurs et formats}
+
+\begin{table}
+	\begin{tabular}{rlcc}
+		\hline\hline
+						&	Moteur				&	Format			&	Fichier de sortie \\
+		\hline
+						&	tex					&	plain \TeX		&	DVI	\\
+						&	tex (latex)			&	\LaTeX			&	DVI \\
+		\faArrowRight	&	pdftex (pdflatex)	&	pdf\LaTeX		&	PDF \\
+						&	xetex (xelatex)		&	\XeLaTeX		&	PDF \\
+		\hline\hline
+	\end{tabular}
+\end{table}
+
 \end{frame}
 
 % ----------------------------------------- %
@@ -101,21 +116,6 @@
 	
 \end{frame}
 
-% ---------- %
-% Exercice 1 %
-% ---------- %
-
-\begin{frame}[c]
-	
-	\frametitle{Exercice 1}
-	
-	\begin{enumerate}
-		\item Démarrez votre éditeur de code intégré.
-		\item Ouvrez et compilez le fichier \texttt{exercice\_minimal.tex}.
-	\end{enumerate}
-
-\end{frame}
-
 % ------------------------------------------ %
 % Qques choses simples à réaliser avec LaTeX %
 % ------------------------------------------ %
@@ -138,29 +138,6 @@
 
 \end{frame}
 
-% ------------------ %
-% Moteurs et formats %
-% ------------------ %
-
-\begin{frame}[c]
-	
-	\frametitle{Moteurs et formats}
-	
-	\begin{table}
-		\begin{tabular}{lcc}
-			\hline\hline
-			Moteur				&	Format			&	Fichier de sortie \\
-			\hline
-			tex					&	plain \TeX		&	DVI	\\
-			tex (latex)			&	\LaTeX			&	DVI \\
-			pdftex (pdflatex)	&	pdf\LaTeX		&	PDF \\
-			xetex (xelatex)		&	\XeLaTeX		&	PDF \\
-			\hline\hline
-		\end{tabular}
-	\end{table}
-
-\end{frame}
-
 % ------------- %
 % Distributions %
 % ------------- %
@@ -177,4 +154,20 @@
 		\item Une autre distribution a été testée avec \texttt{hecthese} :
 			\href{https://miktex.org/download}{MiK\TeX}
 	\end{itemize}
+\end{frame}
+
+% ---------- %
+% Exercice 1 %
+% ---------- %
+
+\begin{frame}[c]
+
+\frametitle{Exercice 1}
+
+\begin{enumerate}
+	\item TODO : refaire cet exercice avec baconipsum et à partir du fichier du premier exercice
+	\item Démarrez votre éditeur de code intégré.
+	\item Ouvrez et compilez le fichier \texttt{exercice\_minimal.tex}.
+\end{enumerate}
+
 \end{frame}
