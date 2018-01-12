@@ -18,7 +18,7 @@
 		\texttt{\textbackslash textit\{texte\} {\faArrowRight} \textbackslash emph\{texte\}}
 		
 		\item Apparence prise en charge par {\LaTeX} et généralement préférable	de ne pas la modifier.
-		\item Mots séparés par une ou plusieurs \textbf{espaces}.
+		\item Mots séparés par un ou plusieurs \textbf{espaces}.
 		\item Paragraphes séparés par une ou plusieurs \textbf{lignes blanches}.
 		\item Utilisation de \textbf{commandes} pour indiquer la structure du texte
 	\end{itemize}
@@ -29,7 +29,7 @@
 % Structure d'un document %
 % ----------------------- %
 
-\begin{frame}[fragile]
+\begin{frame}[fragile,c]
 
 	\frametitle{Structure d'un document}
 	
@@ -48,6 +48,16 @@
 		vitae ipsum vel, fermentum pellentesque orci.		
 	\end{document}
 	\end{codesource}
+
+	\begin{textblock*}{\linewidth}(85mm,42mm)
+		\Large\bfseries
+		\faArrowLeft\ Préambule
+	\end{textblock*}
+
+	\begin{textblock*}{\linewidth}(85mm,57mm)
+		\Large\bfseries
+		\faArrowLeft\ Corps du document
+	\end{textblock*}
 	
 \end{frame}
 
@@ -82,25 +92,26 @@
 	\end{itemize}
 \end{frame}
 
-% ---------- %
-% Exercice 2 %
-% ---------- %
+% -------- %
+% Exercice %
+% -------- %
 
 \begin{frame}[c]
 
-\frametitle{Exercice 2}
+\frametitle{Exercice \thenoExercice}
 
-TODO : Utiliser le fichier du nouvel exercice 1
-
-Utiliser le fichier \texttt{exercice\_minimal.tex}.
+Travaillez à partir de votre document \texttt{.tex}. À chaque étape de l'exercice, compilez votre
+document pour observer les résultats.
 
 \begin{enumerate}
-	\item Compiler le document avec la classe \textbf{article}, puis avec la classe
-	\textbf{book}. Observer le résultat.
-	
-	\item Ajouter du texte en français (avec accents) et observer le résultat.
+	\item Compilez le document avec la classe \textbf{article}, puis avec la classe
+		\textbf{book}.
+	\item Changez les options de votre classe de document, par exemple en changeant la taille de la
+		police de caractères (10pt, 11pt, 12pt).
+	\item Ajoutez du texte en français (avec des diacritiques).
 \end{enumerate}
 \end{frame}
+\stepcounter{noExercice}
 
 % ---------- %
 % Paquetages %
@@ -108,16 +119,16 @@ Utiliser le fichier \texttt{exercice\_minimal.tex}.
 
 \begin{frame}[c,fragile]
 
-	\frametitle{Paquetages}
+	\frametitle{\emph{Packages}}
 	
 	\begin{itemize}
 		\item Permettent de modifier des commandes ou d’ajouter des	fonctionnalités au système
 		\item Chargés dans le préambule avec
 		
 	\begin{codesource}
-	\usepackage{paquetage}
-	\usepackage[options]{paquetage}
-	\usepackage{paquetage1,paquetage2,...}
+	\usepackage{package}
+	\usepackage[options]{package}
+	\usepackage{package1,package2,...}
 	\end{codesource}
 	\end{itemize}
 \end{frame}
@@ -137,6 +148,7 @@ Utiliser le fichier \texttt{exercice\_minimal.tex}.
 	\begin{codesource}
 	\nomcommande[arg_optionnel]{arg_obligatoire}
 	\nomcommande*[arg_optionnel]{arg_obligatoire}
+	\nomcommande
 	\end{codesource}
 					
 		\item Arguments obligatoires entre \{  et \}.
