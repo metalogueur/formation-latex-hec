@@ -113,6 +113,33 @@ document pour observer les résultats.
 \end{frame}
 \stepcounter{noExercice}
 
+% --------------------------- %
+% Les diacritiques dans LaTeX %
+% --------------------------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{[Intermède] Les diacritiques et \LaTeX}
+	
+	\LaTeX\ ne supporte pas les diacritiques de façon native.
+	
+	\begin{columns}
+		\column{.4\textwidth}
+	\begin{codesource}
+	\'{E}crire \`{a} la fran\c{c}aise 
+	peut \^{e}tre vraiment p\'{e}nible 
+	si on ne conna\^{i}t pas le truc\dots
+	\end{codesource}
+		\column{.4\textwidth}
+		\\[4pt]
+		Écrire à la française peut être pénible si on ne connaît pas le truc\dots
+	\end{columns}
+
+	On peut apprendre la \href{https://en.wikibooks.org/wiki/LaTeX/Special_Characters#Escaped_codes}%
+	{liste des commandes de diacritiques} par coeur\dots\ ou on peut
+	ajouter des fonctionnalités à \LaTeX\ pour le franciser.
+\end{frame}
+
 % ---------- %
 % Paquetages %
 % ---------- %
@@ -132,6 +159,63 @@ document pour observer les résultats.
 	\end{codesource}
 	\end{itemize}
 \end{frame}
+
+% -------------------------------------------- %
+% LaTeX en français -- préambule pour pdfLaTeX %
+% -------------------------------------------- %
+
+\begin{frame}[fragile]
+
+\frametitle{{\LaTeX} en français -- préambule pour pdf\LaTeX}
+
+Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
+
+\begin{codesource}
+	\documentclass[french]{memoir}
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{icomma}
+\end{codesource}
+
+\pause
+
+\begin{itemize}
+	\item \textbf{babel} : traduction des mots-clés prédéfinis, typographie française, coupure de mots, document multilingue
+	
+	\pause
+	
+	\item \textbf{inputenc} et \textbf{fontenc} : lettres accentuées dans le code source
+	
+	\pause
+	
+	\item \textbf{icomma} : virgule comme séparateur décimal
+	
+	\pause
+	
+	\item \textbf{numprint} : espace comme séparateur des milliers
+\end{itemize}
+\end{frame}
+
+% -------- %
+% Exercice %
+% -------- %
+
+\begin{frame}[c,fragile]
+
+	\frametitle{Exercice \thenoExercice}
+	
+	À partir de votre document \texttt{.tex}, faites les étapes suivantes. Après chacune d'entre elles,
+	compilez votre document et observez le résultat.
+	
+	\begin{enumerate}
+		\item Ajoutez les \emph{packages} nécessaires à la francisation de votre document.
+		\item Saississez n'importe quel grand nombre (dans les millions) avec de nombreuses décimales (utilisez le point comme séparateur de décimales).
+		\item Insérez votre nombre dans la commande \lstinline|\nombre{}|.
+	\end{enumerate}
+\end{frame}
+\stepcounter{noExercice}
 
 % --------- %
 % Commandes %
@@ -223,7 +307,7 @@ document pour observer les résultats.
 		\begin{columns}
 			\column{.4\textwidth}
 			
-			\lstinline|L'augmentation de 2~\$ repr{\'e}sente|
+			\lstinline[literate={é}{{\'e}}1]|L'augmentation de 2~\$ représente|
 			\lstinline|une hausse de 5~\%.|
 			
 			\column{.4\textwidth}
@@ -278,85 +362,27 @@ document pour observer les résultats.
 	\end{itemize}
 \end{frame}
 
-% -------------------------------------------- %
-% LaTeX en français -- préambule pour pdfLaTeX %
-% -------------------------------------------- %
+% -------- %
+% Exercice %
+% -------- %
 
 \begin{frame}[fragile]
 
-	\frametitle{{\LaTeX} en français -- préambule pour pdf\LaTeX}
+	\frametitle{Exercice \thenoExercice}
 	
-	Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
+	À partir de votre document \texttt{.tex}, faites les étapes suivantes. Après chaque étape,
+	compilez votre document et observez les résultats.
 	
+	\begin{enumerate}
+		\item Encadrez la première phrase dans des guillemets anglais.
+		\item Encadrez le premier paragraphe dans des guillemets français.
+		\item À la fin du préambule, saisissez la commande suivante et observez la différence
+		après la compilation:		
 	\begin{codesource}
-	\documentclass[french]{memoir}
-	\usepackage{babel}
-	\usepackage[autolanguage]{numprint}
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
-	\usepackage{icomma}
+	\frenchbsetup{og=«,fg=»}
 	\end{codesource}
+		\item Encadrez deux paragraphes consécutifs dans l'environnement \texttt{quote}.
 
-	\pause
-	
-	\begin{itemize}
-		\item \textbf{babel} : traduction des mots-clés prédéfinis, typographie française, coupure de mots, document multilingue
-		
-		\pause
-		
-		\item \textbf{inputenc} et \textbf{fontenc} : lettres accentuées dans le code source
-		
-		\pause
-		
-		\item \textbf{icomma} : virgule comme séparateur décimal
-		
-		\pause
-		
-		\item \textbf{numprint} : espace comme séparateur des milliers
-	\end{itemize}
+	\end{enumerate}
 \end{frame}
-
-% ---------- %
-% Exercice 3 %
-% ---------- %
-
-\begin{frame}[c]
-
-\frametitle{Exercice 3}
-
-Question de voir ce que {\LaTeX} peut faire, compiler le document élaboré
-\texttt{exercice\_demo.tex} de la manière suivante :
-
-\begin{enumerate}
-	\item une fois avec LaTeX ;
-	\item une fois avec BibTeX ;
-	\item deux à trois fois avec LaTeX.
-\end{enumerate}
-
-\end{frame}
-
-% ---------- %
-% Exercice 4 %
-% ---------- %
-
-\begin{frame}[fragile]
-
-\frametitle{Exercice 4}
-
-Utiliser le fichier \texttt{exercice\_classe+paquetages.tex}.
-
-\begin{enumerate}
-	\item Compiler le fichier tel que fourni.
-	\item Changer la police du document pour 11 points, puis 12 points.
-	Observer l’effet sur les marges et sur la coupure automatique
-	des mots.
-	\item Activer le paquetage \textbf{icomma} en supprimant le symbole \% au
-	début de la ligne dans le préambule. Observer l’effet sur la
-	formule mathématique.
-	\item Charger le paquetage \textbf{numprint} avec l’option \texttt{autolanguage}
-	(\emph{après} le paquetage \textbf{babel}). Dans le code source de la formule
-	mathématique, changer \texttt{10 000} pour \texttt{\textbackslash nombre\{10000\}}
-	et observer le résultat.
-\end{enumerate}
-
-\end{frame}
+\stepcounter{noExercice}
