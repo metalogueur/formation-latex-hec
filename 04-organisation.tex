@@ -132,9 +132,9 @@
 			au début du corps du document.
 		\item Encadrez le premier paragraphe de votre document dans l'environnement \texttt{abstract}.
 		\item Divisez votre document en deux chapitres et donnez un titre à chacun d'entre eux.
-		\item Divisez chaque document en au moins une section et sous-section et donnez un titre à chacune d'entre elles.
+		\item Divisez chaque chapitre en au moins une section et sous-section et donnez un titre à chacune d'entre elles.
 		\item Compilez votre document et observez le résultat.
-		\item Changes la classe de document actuelle de votre document pour une autre (\texttt{article} ou \texttt{book}), recompilez votre document et observez la différence.
+		\item Changez la classe de document actuelle de votre document pour une autre (\texttt{article} ou \texttt{book}), recompilez votre document et observez la différence.
 	\end{enumerate}
 \end{frame}
 \stepcounter{noExercice}
@@ -272,3 +272,30 @@
 			\end{enumerate}
 	\end{itemize}
 \end{frame}
+
+% -------- %
+% Exercice %
+% -------- %
+
+\begin{frame}[fragile]
+
+	\frametitle{Exercice \thenoExercice}
+	
+	À partir de votre document \texttt{.tex}\dots	
+	\begin{enumerate}
+		\item Insérez la table des matières à la suite de votre page titre.
+		\item Définissez une ou plusieurs étiquettes pour un chapitre, une section ou une %
+			sous-section.
+		\item Ailleurs dans le texte, rédigez une courte phrase renvoyant à une étiquette 
+			définie, sans type de renvoi (commande \lstinline|\ref{}|), et rédigez une autre 
+			phrase avec type de renvoi (commande \lstinline|\autoref{}|).
+		\item Compilez votre document au moins deux fois et observez le résultat.
+		\item Ajoutez le package \textbf{hyperref} à votre document et la commande suivante dans 
+			votre préambule :
+	\begin{codesource}
+	\hypersetup{colorlinks=true,allcolors=blue}
+	\end{codesource}
+		\item Recompilez votre document au moins deux fois et observez la différence.
+	\end{enumerate}
+\end{frame}
+\stepcounter{noExercice}
