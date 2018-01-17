@@ -91,32 +91,36 @@
 	\frametitle{Italique}
 	
 	\begin{itemize}
-		\item Commande sémantique : \\
-		\lstinline|\emph{texte}|
+		\item Commande sémantique : \lstinline|\emph{texte}|
 		
 		\pause
 		
 		\item Par défaut : texte en italique dans texte droit et vice versa
 		\begin{columns}
 			\column{.4\textwidth}
-				\lstinline[literate={é}{{\'e}}1]|C'était un peu \emph{rough}|
-				\lstinline|par moments| 
+			\vspace{-1.4em}
+	\begin{codesource}
+	C'était un peu \emph{rough}
+	par moments	
+	\end{codesource}
 			\column{.4\textwidth}
 				C'était un peu \emph{rough} par moments
 		\end{columns}
 		
 		\begin{columns}
 			\column{.4\textwidth}
-				\lstinline[literate={«}{{\og}}1]|Il m'a dit: «\emph{Enough|
-				\lstinline[literate={»}{{\fg}}1]|\emph{poutine} for the week!}»| 
+			\vspace{-1.4em}
+	\begin{codesource}
+	Il m'a dit: «\emph{Enough
+	\emph{poutine} for the week!}»	
+	\end{codesource} 
 			\column{.4\textwidth}
 				Il m’a dit : « \emph{Enough {\em poutine} for the week !} »
 		\end{columns}
 	
 		\pause
 		
-		\item Pas de commande pour souligner en {\LaTeX}\dots  et ce n’est pas une
-		omission !
+		\item Pas de commande pour souligner en {\LaTeX}\dots
 	\end{itemize}
 \end{frame}
 
@@ -184,8 +188,7 @@
 	\frametitle{Notes de bas de page}
 	
 	\begin{itemize}
-		\item Note de bas de page insérée avec la commande \\
-			\lstinline|\footnote{texte de la note}|
+		\item Note de bas de page insérée avec la commande \lstinline|\footnote{texte de la note}|
 			
 		\item Commande doit suivre immédiatement le texte à annoter
 		
@@ -204,7 +207,7 @@
 % Code source %
 % ----------- %
 
-\begin{frame}[fragile]
+\begin{frame}[fragile,c]
 
 	\frametitle{Code source}
 	
@@ -217,8 +220,7 @@
 	\end{verbatim}
 		\end{codesource}
 	
-		\item Commande \texttt{\textbackslash verb} dont la syntaxe est \\
-			\lstinline|\verbcsourcec| \\
+		\item Commande \texttt{\textbackslash verb} dont la syntaxe est \lstinline|\verbcsourcec| 
 			où \textit{c} est un caractère quelconque ne se trouvant pas dans \textit{source}
 			
 		\item Pour usage plus intensif, voir le paquetage \textbf{listings}

@@ -124,14 +124,14 @@ document pour observer les résultats.
 	\LaTeX\ ne supporte pas les diacritiques de façon native.
 	
 	\begin{columns}
-		\column{.4\textwidth}
+		\column{.4\textwidth}		
+		\vspace{-1.4em}
 	\begin{codesource}
 	\'{E}crire \`{a} la fran\c{c}aise 
 	peut \^{e}tre vraiment p\'{e}nible 
 	si on ne conna\^{i}t pas le truc\dots
 	\end{codesource}
 		\column{.4\textwidth}
-		\\[4pt]
 		Écrire à la française peut être pénible si on ne connaît pas le truc\dots
 	\end{columns}
 
@@ -298,8 +298,8 @@ Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
 		
 		\item Pour les utiliser, précéder par \textbackslash  :\\
 		\begin{tabular}{lcr}
-			\lstinline|\#|  \#	&	\lstinline|\$|  \$	&	\lstinline|\%|  \% \\
-			\lstinline|\_|  --	&	\lstinline|\{|  \{	&	\lstinline|\}|  \}
+			\lstinline|\#| \faArrowRight\ \#	&	\lstinline|\$| \faArrowRight\ \$	&	\lstinline|\%| \faArrowRight\ \% \\
+			\lstinline|\_| \faArrowRight\ --	&	\lstinline|\{| \faArrowRight\ \{	&	\lstinline|\}| \faArrowRight\ \}
 		\end{tabular}
 	
 		\item On écrira donc
@@ -307,8 +307,10 @@ Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
 		\begin{columns}
 			\column{.4\textwidth}
 			
-			\lstinline[literate={é}{{\'e}}1]|L'augmentation de 2~\$ représente|
-			\lstinline|une hausse de 5~\%.|
+	\begin{codesource}
+	L'augmentation de 2~\$ représente
+	une hausse de 5~\%.	
+	\end{codesource}
 			
 			\column{.4\textwidth}
 			
@@ -338,9 +340,10 @@ Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
 		\begin{columns}
 			\column{.4\textwidth}
 			
-			\lstinline|``guillemets anglais''|
-			
-			\lstinline[literate={«}{{\og}}1{»}{{\fg}}1{ç}{{\c c}}1]|«guillemets français»|
+	\begin{codesource}
+	``guillemets anglais''
+	«guillemets français»	
+	\end{codesource}
 			
 			\column{.4\textwidth}
 			
@@ -353,11 +356,11 @@ Il faut charger un certain nombre de paquetages pour franciser {\LaTeX}.
 		
 		\begin{columns}
 			\column{.263 \textwidth}
-				\lstinline|-|  -
+				\lstinline|-| \faArrowRight\ -
 			\column{.263 \textwidth}
-				\lstinline|--|  --
+				\lstinline|--| \faArrowRight\ --
 			\column{.263 \textwidth}
-				\lstinline|---|  ---
+				\lstinline|---| \faArrowRight\ ---
 		\end{columns}
 	\end{itemize}
 \end{frame}

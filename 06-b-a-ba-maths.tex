@@ -22,8 +22,11 @@
 			\item espaces entre les symboles et autour des opérateurs gérées automatiquement
 		\end{itemize}
 	
-		\item Vous voulez utiliser le paquetage \textbf{amsmath} \\
-			\lstinline|\usepackage{amsmath}|
+		\item Vous voulez utiliser le paquetage \textbf{amsmath}
+			\begin{codesource}
+	\usepackage{amsmath}	
+			\end{codesource}
+
 			\begin{itemize}
 				\item lire la documentation de ce paquetage pour connaître toutes ses fonctionnalités
 			\end{itemize}
@@ -40,9 +43,10 @@
 	
 	\begin{enumerate}
 		\item « En ligne » directement dans le texte comme %
-		$(a + b)2 = a2 + 2ab + b^2$ en plaçant l’équation entre \$  \$ \\
-		\lstinline[literate={«}{{\og}}1{»}{{\fg{}}}1]|«En ligne»  directement dans le texte|
-		\lstinline|comme $(a + b)^2 = a^2 + 2ab + b^2$|
+		$(a + b)^2 = a^2 + 2ab + b^2$ en plaçant l’équation entre \$\ et \$
+			\begin{codesource}
+	«En ligne» directement dans le texte comme $(a + b)^2 = a^2 + 2ab + b^2$
+			\end{codesource}
 		
 		\item « Hors paragraphe » séparé du texte principal comme
 		\begin{equation*}
@@ -68,10 +72,13 @@
 	\frametitle{Quelques règles de base}
 	
 	\begin{itemize}
-		\item En mode mathématique, \TeX  respecte automatiquement la convention d’écrire les constantes en romain et les variables en italique
+		\item En mode mathématique, \TeX\ respecte automatiquement la convention d’écrire les constantes en romain et les variables en italique
 		\begin{columns}
 			\column{.4\textwidth}
-				\lstinline|$z = 2a + 3y$|
+			\vspace{-1.4em}
+			\begin{codesource}
+	$z = 2a + 3y$	
+			\end{codesource}
 			\column{.4\textwidth}
 				$z = 2a + 3y$
 		\end{columns}
@@ -79,7 +86,10 @@
 		\item Espacement entre les éléments géré automatiquement, peu importe le code source
 		\begin{columns}
 			\column{.4\textwidth}
-				\lstinline|$z=2 a+3 y$|
+			\vspace{-1.4em}
+				\begin{codesource}
+	$z=2 a+3 y$
+				\end{codesource}
 			\column{.4\textwidth}
 				$z=2 a+3 y$
 		\end{columns}
@@ -88,7 +98,10 @@
 			texte à l’intérieur du mode mathématique
 		\begin{columns}
 			\column{.4\textwidth}
-				\lstinline|$x = 0 \text{ si } y < 2$|
+			\vspace{-1.4em}
+				\begin{codesource}
+	$x = 0 \text{ si } y < 2$
+				\end{codesource}
 			\column{.4\textwidth}
 				$x = 0 \text{ si } y < 2$
 		\end{columns}
