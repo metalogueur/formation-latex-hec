@@ -95,7 +95,7 @@
 		\hfill
 		\insertshortdate
 		\hspace{2.5mm}
-		\HECpiedDePage
+		\insertshortauthor %\HECpiedDePage
 		\hfill
 		\ifdebutSection
 			\color{white}\insertframenumber
@@ -198,6 +198,9 @@
 	}
 }
 
+\newcommand{\HECauteur}[2]{%
+	\author[\MakeUppercase{#1}]{#2}
+}
 \makeatletter
 	\newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
@@ -244,7 +247,7 @@
 % ----------------------- %
 \title{Rédaction avec \\ \textbackslash \texttt{title}\{\textrm{\LaTeX}\}}
 \subtitle{Premier pas}
-\author{Benoit Hamel}
+\HECauteur{Benoit Hamel}{Benoit Hamel}
 \date[2018-01-15]{\today}
 \subject{} % Sujet inséré dans les métadonnées du pdf
 \keywords{} % Mots-clés insérés dans les métadonnées du pdf
