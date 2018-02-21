@@ -8,3 +8,7 @@
 *.toc
 *.vrb
 *.zip
+*.sty
+
+#files to ignore
+hecppt.*
