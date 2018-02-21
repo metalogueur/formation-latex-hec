@@ -1,20 +1,27 @@
-\documentclass[aspectratio=1610,compress,t,gabarita,english,french]{hecppt}
+\documentclass[aspectratio=1610,compress,t,gabaritb,english,french]{hecppt}
+
+%% Packages
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+%% Options des packages
+\hypersetup{colorlinks=true,allcolors=bleuFoncePrimaire}
+\setlength{\parskip}{1ex}
 
 %% Métadonnées du document
 
-\title{}
-\subtitle{}
-\HECauteur{}{}
-\date[]{}
+\title{Rédaction avec \\ \texttt{\textbackslash title}\{\textrm{\LaTeX}\} }
+\subtitle{Principes de base}
+\HECauteur{Benoit Hamel}{Benoit Hamel}
+\date[]{\today}
 \subject{} % Sujet inséré dans les métadonnées du pdf
 \keywords{} % Mots-clés insérés dans les métadonnées du pdf
 
 \begin{document}
+\scriptsize
 
 \pageTitre
 
-\begin{frame}
-Ceci est une diapositive\ldots
-\end{frame}
+\include{00-pages-liminaires}
 
 \end{document}
