@@ -6,7 +6,11 @@
 \usepackage{hyperref}
 
 %% Options des packages
-\hypersetup{colorlinks=true,allcolors=bleuFoncePrimaire}
+\hypersetup{colorlinks=true,%
+	urlcolor=bleuFoncePrimaire,%
+	linkcolor=white,%
+	pdfauthor=Benoit Hamel,%
+	pdftitle=Rédaction avec LaTeX : Principes de base}
 \frenchbsetup{og=«,fg=»}
 \setlength{\parskip}{1ex}
 
@@ -20,11 +24,11 @@
 \keywords{} % Mots-clés insérés dans les métadonnées du pdf
 
 \begin{document}
-\scriptsize
 
 \pageTitre
 
 \include{00-pages-liminaires}
+\include{01-presentation}
 \include{99-bibliographie}
 
 \end{document}
