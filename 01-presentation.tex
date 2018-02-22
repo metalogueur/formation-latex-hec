@@ -62,6 +62,61 @@
 
 % Processus de création d'un document LaTeX
 \begin{frame}[c]{Processus de création d'un document \LaTeX}
+	\Huge
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faFileTextO \\ \bigskip
+		\footnotesize
+		rédaction du texte et balisage avec un \emph{éditeur de texte}
+	\end{minipage}
+	\hfill\faArrowRight\hfill
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faCogs \\  \bigskip
+		\footnotesize
+		compilation avec un \emph{moteur} {\TeX} depuis la ligne de commande
+	\end{minipage}
+	\hfill\faArrowRight\hfill
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+		\faFilePdfO \\  \bigskip
+		\footnotesize
+		visualisation avec visionneuse externe
+	\end{minipage}
+\end{frame}
 
+% Quelques choses simple à réaliser avec LaTeX
+\begin{frame}{Quelques choses simples à réaliser avec \LaTeX\ldots}
+	\framesubtitle{\ldots\ et pas nécessairement avec un logiciel de traitement de texte}
+	
+	\begin{itemize}
+		\item Page de titre
+		\item Table des matières
+		\item Numérotation des pages
+		\item Figures et tableaux : disposition sur la page, numérotation, renvois
+		\item Équations mathématiques : disposition, numérotation et renvois
+		\item Citations et composition de la bibliographie
+		\item Coupure de mots
+		\item Document recto verso
+	\end{itemize}
+\end{frame}
 
+% Les outils dont vous aurez besoin
+\begin{frame}[c]{Les outils dont vous aurez besoin}
+	
+	\begin{itemize}
+		\item Une distribution \TeX
+			\begin{itemize}
+				\item \href{https://www.tug.org/texlive/}{\TeX\ Live} (Windows et Unix/Linux)
+				\item \href{https://www.tug.org/mactex/}{Mac\TeX}, dérivée de \TeX\ Live (Mac OS)
+				\item \href{https://miktex.org/}{MiK\TeX} (Windows, Mac OS et Unix/Linux)
+			\end{itemize}
+		\item Un environnement de rédaction intégré
+			\begin{itemize}
+				\item Une \href{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}{flopée}\ldots
+				\item La bibliothèque utilise et recommande \href{https://www.texstudio.org/}{%
+					\TeX Studio}
+			\end{itemize}
+		\item Un éditeur de ligne de commande
+	\end{itemize}
 \end{frame}
