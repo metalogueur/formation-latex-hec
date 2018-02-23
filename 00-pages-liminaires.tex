@@ -44,5 +44,12 @@
 
 % Table des matières
 \begin{frame}{Sommaire de la formation}
-	\tableofcontents
+	\begin{columns}[onlytextwidth]
+		\begin{column}{.49\textwidth}
+			\tableofcontents[sections={1-2}]
+		\end{column}
+		\begin{column}{.49\textwidth}
+			\tableofcontents[sections={3}]
+		\end{column}
+	\end{columns}
 \end{frame}
