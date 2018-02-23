@@ -6,6 +6,25 @@
 \usepackage{listings}
 \usepackage{hyperref}
 
+%% Environnements
+\lstnewenvironment{codesource}{%
+	\lstset{%
+		basicstyle=\tiny,
+		language=[LaTeX]TeX,
+		backgroundcolor=\color{bleuPaleSecondaire!10},
+		tabsize=2,
+		% frame=leftline,
+		% numbers=left,
+		% numberstyle=\tiny,
+		literate=%
+		{à}{{\`a}}1
+		{é}{{\'e}}1
+		{ç}{{\c c}}1
+		{«}{{\og}}1
+		{»}{{\fg}}1
+	}
+}{}
+
 %% Options des packages
 \hypersetup{colorlinks=true,%
 	urlcolor=bleuFoncePrimaire,%

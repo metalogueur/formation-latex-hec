@@ -65,24 +65,25 @@
 	\Huge
 	\begin{minipage}[t]{0.25\linewidth}
 		\centering
-		\faFileTextO \\ \bigskip
-		\footnotesize
-		rédaction du texte et balisage avec un \emph{éditeur de texte}
+		\faFileTextO
 	\end{minipage}
 	\hfill\faArrowRight\hfill
 	\begin{minipage}[t]{0.25\linewidth}
 		\centering
-		\faCogs \\  \bigskip
-		\footnotesize
-		compilation avec un \emph{moteur} {\TeX} depuis la ligne de commande
+		\faCogs
 	\end{minipage}
 	\hfill\faArrowRight\hfill
 	\begin{minipage}[t]{0.25\linewidth}
 		\centering
-		\faFilePdfO \\  \bigskip
-		\footnotesize
-		visualisation avec visionneuse externe
+		\faFilePdfO
 	\end{minipage}
+
+	\begin{picture}(0,0)
+		\footnotesize\thicklines\color{bleuFonceSecondaire}
+		\onslide<2>\put(0,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{rédaction du texte et balisage avec éditeur de texte\smallskip}}}}
+		\onslide<3>\put(54,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{compilation avec un moteur \TeX\ à partir de la ligne de commande\smallskip}}}}
+		\onslide<4>\put(108,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{visualisation avec une visionneuse externe\smallskip}}}}
+	\end{picture}
 \end{frame}
 
 % Quelques choses simple à réaliser avec LaTeX

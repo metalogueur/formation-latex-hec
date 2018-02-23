@@ -4,13 +4,126 @@
 
 \subsection{Structure d'un document}
 
+% Structure d'un document
 \begin{frame}[fragile]{Structure d'un document}
 
 	Un document \LaTeX\ est toujours composé de deux parties :
 	
-\begin{lstlisting}
-	contenu...
-\end{lstlisting}
+\begin{codesource}
+	
+	\documentclass[11pt,french]{article}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	
+	\begin{document}
+		
+		\section{Primo}
+		
+		Ac class dis donec erat facilisis magna mattis 
+		placerat potenti praesent primis sed tellus turpis 
+		ut vehicula. Ad amet eleifend eros fames habitant 
+		imperdiet integer laoreet leo magna magnis neque 
+		netus senectus taciti torquent. 
+		
+		\section{Deuxio}
+		
+		Cursus dui egestas eget eros et hac magna massa mollis 
+		natoque penatibus sagittis sed tellus urna velit 
+		vestibulum vitae vulputate. 
+	\end{document}
+\end{codesource}
+
+	\begin{picture}(0,0)
+		\thicklines\color{bleuFonceSecondaire}
+		\onslide<2>\put(1,47){\dashbox{1}(87,15){}}
+		\onslide<2>\put(89,53){\Large\textbf{\faArrowLeft\ Préambule}}
+		\onslide<3>\put(1,6){\dashbox{1}(87,41){}}
+		\onslide<3>\put(89,24){\Large\textbf{\faArrowLeft\ Corps du document}}
+	\end{picture}
+\end{frame}
+
+% Préambule : la classe de document
+\begin{frame}[fragile]{Préambule}
+	\framesubtitle{La classe de document}
+	La \textbf{première commande} du préambule est normalement la déclaration de la classe.
+	
+\begin{codesource}
+	\documentclass[options]{classe}	
+\end{codesource}
+
+	\begin{columns}
+		
+		\pause
+		
+		\begin{HECcomparaison}{Principales classes}
+			\begin{itemize}
+				\item article, book, letter, report
+				\item memoir, \textbf{hecthese}
+				\item slides, beamer, \textbf{hecppt}
+			\end{itemize}
+		\end{HECcomparaison}
+	
+		\pause
+		
+		\begin{HECcomparaison}{Principales options}
+			\begin{itemize}
+				\item 10pt, 11pt, 12pt
+				\item oneside, twoside
+				\item openright, openany
+				\item english, french
+			\end{itemize}
+		\end{HECcomparaison}
+	\end{columns}
+\end{frame}
+
+% Préambule : les packages
+\begin{frame}[fragile,c]{Préambule}
+	\framesubtitle{Les \emph{packages}}
+	Les \emph{packages} permettent de \textbf{modifier des commandes} ou d’\textbf{ajouter des fonctionnalités} au système.
+	
+	Ils sont chargés dans le préambule avec la commande \lstinline|\usepackage[options]{package}|.
+	
+\begin{codesource}
+	\documentclass[options]{classe}
+	
+	\usepackage{package}
+	\usepackage[options]{package}
+	\usepackage{package1,package2,package3,...}
+\end{codesource}
+\end{frame}
+
+% Commandes
+\begin{frame}[fragile]{Commandes}
+	\begin{itemize}
+		\item Débutent toujours par un \textbackslash
+		\item Formes générales:
+\begin{codesource}
+	\nomcommande[args_optionnels]{args_obligatoires}
+	\nomcommande*[args_optionnels]{args_obligatoires}
+	\nomcommande
+\end{codesource}
+		\item Arguments obligatoires entre \{\ et \}
+		\item Arguments optionnels entre [ et ]
+		\item Commande sans argument : le nom se termine par tout caractère qui n’est pas une lettre (y
+		compris l’espace)
+		\item Portée d’une commande limitée à la zone entre \{\ et \}.
+	\end{itemize}
+\end{frame}
+
+% Environnements
+\begin{frame}[fragile,c]{Environnements}
+	\begin{itemize}
+		\item Délimités par
+\begin{codesource}
+	\begin{environnement}
+		...
+	\end{environnement}
+\end{codesource}
+		\item Contenu de l’environnement traité différemment du reste du texte
+		\item Changements s’appliquent uniquement à l’intérieur de l’environnement
+	\end{itemize}
 \end{frame}
 
 \subsection{Rédaction}
