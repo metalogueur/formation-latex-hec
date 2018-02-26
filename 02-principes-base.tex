@@ -127,3 +127,119 @@
 \end{frame}
 
 \subsection{Rédaction}
+
+% Rédaction
+\begin{frame}[fragile,c]{Rédaction}
+	\begin{itemize}
+		\item On rédige notre texte à l'intérieur de l'environnement \lstinline|document|:
+\begin{codesource}
+	\begin{document}
+		Le contenu de votre travail est rédigé ici...
+	\end{document}
+\end{codesource}
+		\item On rédige notre document en texte brut et on utilise les commandes et les environnements
+		pour structurer notre texte;
+		\item On rédige notre texte comme n'importe où ailleurs:
+			\begin{itemize}
+				\item Les mots sont séparés par un ou plusieurs espaces;
+				\item Les paragraphes sont séparés par une ou plusieurs lignes blanches;
+				\item Tous les espaces blancs supplémentaires sont supprimés à la compilation.
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% Caractères spéciaux
+\begin{frame}{Caractères spéciaux}
+	\framesubtitle{Caractères réservés par \TeX}
+	\begin{description}[\#]
+		\item[\#] Numéro d'argument dans les commandes
+		\item[\$] Délimiteur du mode mathématique
+		\item[\&] Délimiteur de colonne dans les tableaux
+		\item[\%] Annonce le début d'un commentaire
+		\item[\_] Indice (mathématiques)
+		\item[\textasciicircum] Exposant (mathématiques)
+		\item[\textasciitilde] Espace insécable
+		\item[\{] Ouvre une définition de commande ou d'environnement
+		\item[\}] Ferme une définition de commande ou d'environnement
+	\end{description}
+	\begin{picture}(0,0)
+	\thicklines\color{bleuFonceSecondaire}
+	\onslide<2>\put(90,5){\dashbox{1}(53,58){}}
+	\onslide<2>\put(97,59){\textbf{\MakeUppercase{Pour les utiliser:}}}
+	\onslide<2>\put(94,55){\parbox[t]{.3\textwidth}{\centering\bfseries\textbackslash \# \\[5pt] %
+			\textbackslash \$ \\[5pt] \textbackslash \& \\[5pt] \textbackslash \% \\[5pt] %
+			\textbackslash \_ \\[5pt] \textbackslash textasciicircum \\[4pt] %
+			\textbackslash textasciitilde \\[4pt] \textbackslash \{ \\[4pt] %
+			\textbackslash \} }}
+	\end{picture}
+\end{frame}
+
+% Diacritiques et LaTeX
+\begin{frame}[fragile,c]{Diacritiques et ligatures dans \LaTeX}
+	\LaTeX\ ne supporte pas les diacritiques de manière native.
+	\begin{columns}				
+		\begin{column}{.49\textwidth}
+			\vspace{-5.2mm}
+\begin{codesource}
+	 	\'{E}crire \`{a} la fran\c{c}aise
+	 	peut \^{e}tre vraiment p\'{e}nible
+	 	si on ne conna\^{i}t pas le truc\ldots
+\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+			Écrire à la française peut être vraiment pénible si on ne connaît pas
+			le truc\ldots
+		\end{column}
+	\end{columns}
+
+	On peut apprendre la \href{https://en.wikibooks.org/wiki/LaTeX/Special_Characters#Escaped_codes}{liste des commandes} 
+	par coeur\ldots ou on peut ajouter des fonctionnalités à \LaTeX\ pour le franciser.
+\end{frame}
+
+% LaTeX en français - préambule pour pdfLaTeX
+\begin{frame}[fragile]{\LaTeX\ en français -- préambule pour pdf\LaTeX}
+	Il faut charger un certain nombre de \emph{packages} pour franciser \LaTeX.
+	
+\begin{codesource}
+	\documentclass[french]{hecthese}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	\usepackage{icomma}
+\end{codesource}
+
+	\pause
+	\begin{description}[inputenc et fontenc]
+		\item[babel] traduction des mots-clés prédéfinis, typographie française, coupure de mots,
+			document multilingue
+			
+		\pause
+		\item[inputenc et fontenc] lettres accentuées dans le code source
+		
+		\pause
+		\item[icomma] virgule comme séparateur décimal
+		
+		\pause
+		\item[numprint] espace comme séparateur de milliers
+	\end{description}
+\end{frame}
+
+% Caractères spéciaux - la suite
+\begin{frame}[fragile]{Caractères spéciaux}
+	\framesubtitle{La suite\ldots}
+	\begin{itemize}
+		\item Guillemets
+			\begin{itemize}
+				\item On ouvre les guillemets anglais simples avec un accent grave (\lstinline|`|)
+					et les doubles avec deux accents graves (\lstinline|``|). On les ferme avec un 
+					(\lstinline|'|) ou deux (\lstinline|''|) apostrophes, selon la situation.
+				\item On utilise les chevrons (« et ») pour ouvrir et fermer les guillemets français.
+					Il faut cependant inscrire la commande suivante à la fin de notre préambule:
+\begin{codesource}
+	\frenchbsetup{og=«,fg=»}
+\end{codesource}				
+			\end{itemize}
+		\item On inscrit les traits d'union avec un tiret (\lstinline|-|), les traits demi-cadratins avec deux tirets (\lstinline|--|) et les traits cadratins avec trois tirets (\lstinline|---|).
+	\end{itemize}
+\end{frame}
