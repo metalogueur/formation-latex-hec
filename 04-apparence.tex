@@ -104,3 +104,95 @@
 \end{frame}
 
 \subsection{Disposition du texte}
+
+% Listes
+\begin{frame}[fragile]{Listes}
+	\begin{itemize}
+		\item Deux principales sortes de listes:
+		\begin{enumerate}
+			\item \textbf{à puce} avec l'environnement \texttt{itemize}
+			\item \textbf{numérotée} avec l'environnement \texttt{enumerate}
+		\end{enumerate}
+		\item Possibilité de les imbriquer les unes dans les autres
+		\item Marqueurs adaptés automatiquement jusqu'à quatre niveaux
+
+		\pause
+\begin{codesource}
+	\begin{itemize}
+		\item Deux principales sortes de listes:
+		\begin{enumerate}
+			\item \textbf{à puce} avec l'environnement \verb=itemize=
+			\item \textbf{numérotée} avec l'environnement \verb=enumerate=
+		\end{enumerate}
+		\item Possibilité de les imbriquer les unes dans les autres
+		\item Marqueurs adaptés automatiquement jusqu'à quatre niveaux
+	\end{itemize}
+\end{codesource}
+
+		\pause
+		\item Une troisième liste est disponible : \texttt{description}
+	\end{itemize}
+\end{frame}
+
+% Citations
+\begin{frame}[fragile,c]{Citations}
+	\framesubtitle<1>{Citations courtes}
+	\framesubtitle<2>{Citations longues}
+	\begin{onlyenv}<1>
+		On utilise l'environnement \texttt{quote} pour insérer une citation courte (un paragraphe)
+		dans le texte.
+	
+		\begin{columns}
+			\begin{column}{.49\textwidth}
+				\vspace{-17mm}
+\begin{codesource}
+	\begin{quote}
+		Life is what happens to you while 
+		you're busy making other plans. 
+		-- John Lennon
+	\end{quote}
+\end{codesource}
+			\end{column}
+		
+			\begin{column}{.49\textwidth}
+				\begin{quote}
+					Life is what happens to you while you're busy making other plans. -- John Lennon
+				\end{quote}
+			\end{column}
+		\end{columns}
+	\end{onlyenv}
+
+	\begin{onlyenv}<2>
+		On utilise l'environnement \texttt{quotation} pour insérer une citation longue (plus
+		d'un paragraphe)
+		
+		\begin{columns}
+			\begin{column}{.49\textwidth}
+				\vspace{-38mm}
+\begin{codesource}
+	\begin{quotation}
+		I've missed more than 9000 shots in my 
+		career. I've lost almost 300 games. 26 
+		times I've been trusted to take the game 
+		winning shot and missed.
+		
+		I've failed over and over and over again 
+		in my life. And that is why I succeed. 
+		-- Michael Jordan
+	\end{quotation}
+\end{codesource}	
+			\end{column}
+		
+			\begin{column}{.49\textwidth}
+\begin{quotation}
+	I've missed more than 9000 shots in my career. 
+	I've lost almost 300 games. 26 times I've been 
+	trusted to take the game winning shot and missed.
+	
+	I've failed over and over and over again in my life. 
+	And that is why I succeed. -- Michael Jordan
+\end{quotation}
+			\end{column}
+		\end{columns}
+	\end{onlyenv}
+\end{frame}
