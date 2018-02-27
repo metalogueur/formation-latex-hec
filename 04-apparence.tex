@@ -1,0 +1,106 @@
+% Apparence du texte
+
+\section{Apparence du texte}
+
+\subsection{Polices de caractères}
+
+% Polices de caractères
+\begin{frame}{Polices de caractères}
+	\begin{itemize}
+		\item Par défaut, tous les documents \LaTeX\ utilisent la même police, \textrm{Computer Modern}.
+		\item Privilégier les polices de grande qualité et très complètes (lettres accentuées, grand choix de symboles)
+		\item Peu de polices sont adaptées pour les mathématiques : Palatino, Times, Lucida (\$) sont des choix sûrs
+		\item Dans la classe \textbf{hecthese}, les paquetages mathptmx et mathpazo sont chargés par défaut afin	d’offrir les polices de caractères Times et Palatino.
+	\end{itemize}
+\end{frame}
+
+% Changement d'attribut de la police
+\begin{frame}{Changement d'attribut de la police}
+	\begin{tabularx}{\textwidth}{XXX}
+		\arrayrulecolor{grisPrimaire!40}\hline\hline
+		\multicolumn{3}{l}{\textbf{familles}}	\\
+		\hline
+		\textrm{romain}						&	\textbackslash rmfamily		&	\textbackslash textrm\{\emph{texte}\}\\
+		\texttt{largeur fixe}				&	\textbackslash ttfamily		&	\textbackslash texttt\{\emph{texte}\}\\
+		sans empattements					&	\textbackslash sffamily		&	\textbackslash textsf\{\emph{texte}\}\\
+		\hline
+		\multicolumn{3}{l}{\textbf{formes}}	\\
+		\hline
+		droit								&	\textbackslash upshape		&	\textbackslash textup\{\emph{texte}\}\\
+		\emph{italique}						&	\textbackslash itshape		&	\textbackslash textit\{\emph{texte}\}\\
+		\textsl{penché}						&	\textbackslash slshape		&	\textbackslash textsl\{\emph{texte}\}\\
+		\textrm{\textsc{petites capitales}}	&	\textbackslash scshape		&	\textbackslash textsc\{\emph{texte}\} \\
+		\hline
+		\multicolumn{3}{l}{\textbf{séries}}	\\
+		\hline
+		\textmd{moyen}						&	\textbackslash mdseries		&	\textbackslash textmd\{\emph{texte}\}	\\
+		\textbf{gras}						&	\textbackslash bfseries		&	\textbackslash textbf\{\emph{texte}\}	\\
+		\hline\hline
+	\end{tabularx}
+
+	\begin{picture}(0,0)
+	\thicklines\color{bleuFonceSecondaire}
+	\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique à tout le texte qui suit}}}}
+	\onslide<3>\put(89,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
+	\end{picture}
+\end{frame}
+
+% Italique
+\begin{frame}[fragile,c]{Italique}
+	 Lorsque l'italique est utilisé pour mettre l'\emph{emphase} sur une partie du texte, on privilégie
+	 la commande sémantique suivante:
+	 
+\begin{codesource}
+	\emph{texte}
+\end{codesource}
+
+	Les commandes \lstinline|\emph{texte}| peuvent être imbriquées une dans l'autre. Le texte mis en italique redevient droit et vice versa.
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\vspace{-5.5mm}
+\begin{codesource}
+	C'était un peu \emph{rough}	par 
+	moments.
+\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+			C'était un peu \emph{rough} par moments.
+		\end{column}
+	\end{columns}
+
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\vspace{-5.5mm}
+\begin{codesource}
+	Il m'a dit: « \emph{Enough 
+	\emph{poutine} for the week!»}
+\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+			Il m'a dit: « \emph{Enough \textup{poutine} for the week!»}
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+% Taille de la police
+\begin{frame}{Taille de la police}
+	\begin{tabularx}{\textwidth}{l|l}
+		\arrayrulecolor{grisPrimaire!40}
+		\textbf{Commandes standards} 	& 	\textbf{Rendu}	\\
+		\hline
+		\textbackslash tiny				&	{\tiny vraiment petit}	\\
+		\textbackslash scriptsize		&	{\scriptsize encore plus petit}	\\
+		\textbackslash footnotesize		&	{\footnotesize plus petit}	\\
+		\textbackslash small			&	{\small petit}	\\
+		\textbackslash normal			&	{\normalsize normal}	\\
+		\textbackslash large			&	{\large grand}	\\
+		\textbackslash Large			&	{\Large plus grand}	\\
+		\textbackslash LARGE			&	{\LARGE encore plus grand}	\\
+		\textbackslash huge				&	{\huge énorme}	\\
+		\textbackslash Huge				&	{\Huge encore plus énorme}		
+	\end{tabularx}
+\end{frame}
+
+\subsection{Disposition du texte}
