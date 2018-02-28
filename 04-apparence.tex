@@ -20,28 +20,28 @@
 		\arrayrulecolor{grisPrimaire!40}\hline\hline
 		\multicolumn{3}{l}{\textbf{familles}}	\\
 		\hline
-		\textrm{romain}						&	\textbackslash rmfamily		&	\textbackslash textrm\{\emph{texte}\}\\
-		\texttt{largeur fixe}				&	\textbackslash ttfamily		&	\textbackslash texttt\{\emph{texte}\}\\
-		sans empattements					&	\textbackslash sffamily		&	\textbackslash textsf\{\emph{texte}\}\\
+		\textrm{romain}						&	\cmd{rmfamily}		&	\cmd{textrm\{<texte>\}}\\
+		\texttt{largeur fixe}				&	\cmd{ttfamily}		&	\cmd{texttt\{<texte>\}}\\
+		sans empattements					&	\cmd{sffamily}		&	\cmd{textsf\{<texte>\}}\\
 		\hline
 		\multicolumn{3}{l}{\textbf{formes}}	\\
 		\hline
-		droit								&	\textbackslash upshape		&	\textbackslash textup\{\emph{texte}\}\\
-		\emph{italique}						&	\textbackslash itshape		&	\textbackslash textit\{\emph{texte}\}\\
-		\textsl{penché}						&	\textbackslash slshape		&	\textbackslash textsl\{\emph{texte}\}\\
-		\textrm{\textsc{petites capitales}}	&	\textbackslash scshape		&	\textbackslash textsc\{\emph{texte}\} \\
+		droit								&	\cmd{upshape}		&	\cmd{textup\{<texte>\}}\\
+		\emph{italique}						&	\cmd{itshape}		&	\cmd{textit\{<texte>\}}\\
+		\textsl{penché}						&	\cmd{slshape}		&	\cmd{textsl\{<texte>\}}\\
+		\textrm{\textsc{petites capitales}}	&	\cmd{scshape}		&	\cmd{textsc\{<texte>\}}\\
 		\hline
 		\multicolumn{3}{l}{\textbf{séries}}	\\
 		\hline
-		\textmd{moyen}						&	\textbackslash mdseries		&	\textbackslash textmd\{\emph{texte}\}	\\
-		\textbf{gras}						&	\textbackslash bfseries		&	\textbackslash textbf\{\emph{texte}\}	\\
+		\textmd{moyen}						&	\cmd{mdseries}		&	\cmd{textmd\{<texte>\}}\\
+		\textbf{gras}						&	\cmd{bfseries}		&	\cmd{textbf\{<texte>\}}\\
 		\hline\hline
 	\end{tabularx}
 
 	\begin{picture}(0,0)
 	\thicklines\color{bleuFonceSecondaire}
 	\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique à tout le texte qui suit}}}}
-	\onslide<3>\put(89,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
+	\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
 	\end{picture}
 \end{frame}
 
@@ -54,7 +54,7 @@
 	\emph{texte}
 \end{codesource}
 
-	Les commandes \lstinline|\emph{texte}| peuvent être imbriquées une dans l'autre. Le texte mis en italique redevient droit et vice versa.
+	Les commandes \cmd{emph\{<texte>\}} peuvent être imbriquées une dans l'autre. Le texte mis en italique redevient droit et vice versa.
 	
 	\begin{columns}
 		\begin{column}{.49\textwidth}
@@ -90,16 +90,16 @@
 		\arrayrulecolor{grisPrimaire!40}
 		\textbf{Commandes standards} 	& 	\textbf{Rendu}	\\
 		\hline
-		\textbackslash tiny				&	{\tiny vraiment petit}	\\
-		\textbackslash scriptsize		&	{\scriptsize encore plus petit}	\\
-		\textbackslash footnotesize		&	{\footnotesize plus petit}	\\
-		\textbackslash small			&	{\small petit}	\\
-		\textbackslash normal			&	{\normalsize normal}	\\
-		\textbackslash large			&	{\large grand}	\\
-		\textbackslash Large			&	{\Large plus grand}	\\
-		\textbackslash LARGE			&	{\LARGE encore plus grand}	\\
-		\textbackslash huge				&	{\huge énorme}	\\
-		\textbackslash Huge				&	{\Huge encore plus énorme}		
+		\cmd{tiny}						&	{\tiny vraiment petit}	\\
+		\cmd{scriptsize}				&	{\scriptsize encore plus petit}	\\
+		\cmd{footnotesize}				&	{\footnotesize plus petit}	\\
+		\cmd{small}						&	{\small petit}	\\
+		\cmd{normalsize}				&	{\normalsize normal}	\\
+		\cmd{large}						&	{\large grand}	\\
+		\cmd{Large}						&	{\Large plus grand}	\\
+		\cmd{LARGE}						&	{\LARGE encore plus grand}	\\
+		\cmd{huge}						&	{\huge énorme}	\\
+		\cmd{Huge}						&	{\Huge encore plus énorme}		
 	\end{tabularx}
 \end{frame}
 
@@ -110,8 +110,8 @@
 	\begin{itemize}
 		\item Deux principales sortes de listes:
 		\begin{enumerate}
-			\item \textbf{à puce} avec l'environnement \texttt{itemize}
-			\item \textbf{numérotée} avec l'environnement \texttt{enumerate}
+			\item \textbf{à puce} avec l'environnement \cmd{itemize}
+			\item \textbf{numérotée} avec l'environnement \cmd{enumerate}
 		\end{enumerate}
 		\item Possibilité de les imbriquer les unes dans les autres
 		\item Marqueurs adaptés automatiquement jusqu'à quatre niveaux
@@ -194,5 +194,65 @@
 \end{quotation}
 			\end{column}
 		\end{columns}
+	\end{onlyenv}
+\end{frame}
+
+% Notes de bas de page
+\begin{frame}[fragile,c]{Notes de bas de page}
+	\begin{itemize}
+		\item Une note de bas de page est insérée avec la commande suivante:
+\begin{codesource}
+	\footnote{texte de la note}
+\end{codesource}
+		\item La commande doit suivre immédiatement le texte à annoter.
+		\item Méthode recommandée :
+\begin{codesource}
+	fera remarquer que Pierre Lasou\footnote{%
+	Spécialiste en ressources documentaires} %
+	fut une grande aide dans la préparation de ...
+\end{codesource}
+		\item La numérotation et la disposition sont automatiques.
+	\end{itemize}
+\end{frame}
+
+% Code source
+\begin{frame}[fragile,c]{Code source}
+	\begin{onlyenv}<1>
+		\begin{itemize}
+			\item Pour rédiger du code source en bloc, on utilise l'environnement \texttt{verbatim}
+\begin{codesource}
+	\begin{verbatim}
+		Texte disposé tel qu'il est saisi
+		dans une police à largeur fixe.
+	\end{verbatim}
+\end{codesource}
+			\item Pour rédiger du code source à même le texte, on utilise la commande \cmd{verb}, dont la
+			syntaxe est \cmd{verbcsourcec} où \emph{c} est un caractère quelconque ne se trouvant pas dans \emph{source}.
+			\item Pour un usage plus intensif, consultez la documentation du \emph{package} \textbf{listings}.
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<2>
+	Un exemple\footnote{tiré du site \href{http://r4stats.com/examples/programming/}{r4stats.com}.} :
+\begin{codesource}
+	# ---Writing Your Own Functions (Macros)---
+	
+	# A good function that just prints.
+	mystats <- function(x) {
+		print( mean(x, na.rm = TRUE) )
+		print(   sd(x, na.rm = TRUE) )
+	}
+	mystats(myvar)
+	
+	# A function with vector output.
+	mystats  <- function(x) {
+		mymean <- mean(x, na.rm = TRUE)
+		mysd   <-   sd(x, na.rm = TRUE)
+		c(mean = mymean, sd = mysd )
+	}
+	mystats(myvar)
+	myVector <- mystats(myvar)
+	myVector
+\end{codesource}
 	\end{onlyenv}
 \end{frame}
