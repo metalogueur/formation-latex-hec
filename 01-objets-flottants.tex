@@ -1,0 +1,141 @@
+\section{Objets flottants}
+
+\subsection{Tableaux}
+
+% Tableaux (introduction)
+\begin{frame}[fragile,c]{Les tableaux}
+	\framesubtitle{Introduction}
+	
+	\begin{itemize}
+		\item Construire des tableaux avec \LaTeX\ demande du doigté.
+		\item Il n'existe pas une, pas deux, mais de multiples manières de construire des tableaux.
+		\item \LaTeX\ fournit deux environnements de base : \texttt{tabular} et \texttt{tabular*}
+	\end{itemize}
+
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+\begin{codesource}
+	\begin{tabular}{colonnes}
+		cellule1 & cellule2 & cellule3 \\
+		cellule4 & cellule5 & cellule6 \\
+		cellule7 & cellule8 & cellule9
+	\end{tabular}
+\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+\begin{codesource}
+	\begin{tabular*}{largeur}{colonnes}
+		cellule1 & cellule2 & cellule3 \\
+		cellule4 & cellule5 & cellule6 \\
+		cellule7 & cellule8 & cellule9
+	\end{tabular*}
+\end{codesource}
+		\end{column}
+	\end{columns}
+
+	\begin{itemize}
+		\item Nous verrons également un troisième environnement, \texttt{tabularx}, fourni avec
+		le \emph{package} du même nom.
+		\item La syntaxe de \texttt{tabularx} est identique à celle de \texttt{tabular}.
+	\end{itemize}
+\end{frame}
+
+% Tableaux (construction)
+\begin{frame}[fragile]{Les tableaux}
+	\framesubtitle{Construction}
+	Reprenons les tableaux de la diapositive précédente:
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\begin{codesource}
+				\begin{tabular}{colonnes}
+					cellule1 & cellule2 & cellule3 \\
+					cellule4 & cellule5 & cellule6 \\
+					cellule7 & cellule8 & cellule9
+				\end{tabular}
+			\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+			\begin{codesource}
+				\begin{tabular*}{largeur}{colonnes}
+					cellule1 & cellule2 & cellule3 \\
+					cellule4 & cellule5 & cellule6 \\
+					cellule7 & cellule8 & cellule9
+				\end{tabular*}
+			\end{codesource}
+		\end{column}
+	\end{columns}
+
+	\begin{onlyenv}<2>
+		\begin{itemize}
+			\item On spécifie le \textbf{nombre de colonnes} et l'\textbf{alignement du texte} dans l'argument \texttt{colonnes}.
+			\begin{itemize}
+				\scriptsize
+				\item Les arguments possibles sont \texttt{l} (\emph{left}), \texttt{c} (\emph{center}),
+					et \texttt{r} (\emph{right}).
+				\item On spécifie une colonne de largeur spécifique avec \texttt{p\{largeur\}}.
+				\item \texttt{tabularx} accepte aussi l'argument \texttt{X}, qui ajuste la largeur de la
+					colonne en fonction de la largeur du tableau.
+				\item Le symbole \texttt{|} est utilisé pour insérer une ligne verticale entre des colonnes.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<3>
+		\begin{itemize}
+			\item La \textbf{largeur} d'un tableau dépend de l'environnement utilisé :
+			\begin{itemize}
+				\scriptsize
+				\item \texttt{tabular} : largeur du tableau = largeur de son contenu;
+				\item \texttt{tabular*} et \texttt{tabularx} : largeur déterminée par l'argument 
+					\texttt{largeur}.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<4>
+		\begin{itemize}
+			\item On sépare chaque cellule d'une \textbf{ligne} avec le symbole \texttt{\&}.
+			\item On termine une ligne avec \textbackslash\textbackslash, \textbf{à l'exception de la dernière ligne}.
+			\item On insère une ligne horizontale pleine largeur entre deux lignes avec \cmd{hline}.
+			\item La commande \cmd{multicolumn\{cols\}\{pos\}\{text\}} sert à «fusionner» les cellules d'une ligne.
+			\begin{itemize}
+				\scriptsize
+				\item \texttt{cols} : étendue de la cellule en colonnes;
+				\item \texttt{pos} : alignement du texte (\texttt{l},\texttt{c},\texttt{r});
+				\item \texttt{text} : le contenu de la cellule.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+	
+\end{frame}
+
+% Tableaux (exemple concret)
+\begin{frame}[fragile,c]{Les tableaux}
+	\framesubtitle{Exemple concret}
+\begin{codesource}
+	\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+		\textbf{\'{E}quipes}	&	\multicolumn{7}{c}{\textbf{Statistiques}} \\
+		\hline\hline
+		NFC North Team		&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+		\hline
+		Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+		Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+		Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+		Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+	\end{tabularx}
+\end{codesource}
+
+	\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+		\textbf{Équipes}	&	\multicolumn{7}{c}{\textbf{Statistiques}} \\
+		\hline\hline
+		NFC North Team		&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+		\hline
+		Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+		Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+		Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+		Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+	\end{tabularx}
+\end{frame}
+
+\subsection{Figures}
