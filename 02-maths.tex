@@ -23,8 +23,156 @@
 
 \subsection{Modes mathématiques}
 
+% Modes mathématiques
+\begin{frame}[fragile]{Modes mathématiques}
+	Il existe deux méthodes d'écrire des équations avec \LaTeX:
+	
+	\begin{enumerate}
+		\item «En ligne», directement dans le texte comme $(a + b)^2 = a^2 + 2ab + b^2$ en
+		plaçant l'équation entre \$\ et \$.
+\begin{codesource}
+	«En ligne», directement dans le texte comme $(a + b)^2 = a^2 + 2ab + b^2$ en
+	plaçant l'équation entre \$\ et \$.
+\end{codesource}
+		\item «Hors paragraphe» séparé du texte principal comme
+			\begin{equation*}
+				\int_0^\infty f(x)\, dx =
+				\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
+			\end{equation*}
+			en utilisant divers types d'environnements.
+\begin{codesource}
+	«Hors paragraphe» séparé du texte principal comme
+	\begin{equation*}
+		\int_0^\infty f(x)\, dx =
+		\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
+	\end{equation*}
+	en utilisant divers types d'environnements.
+\end{codesource}
+	\end{enumerate}
+\end{frame}
 
+% Environnements mathématiques standards
+
+\begin{frame}[fragile,c]{Environnements mathématiques}
+	\framesubtitle{Environnements standards \LaTeX}
+	Il existe de nombreux environnements pour écrire des équations avec \LaTeX:
+	\begin{itemize}
+		\item Équations sur une seule ligne:
+\begin{codesource}
+	\begin{displaymath} équation...	\end{displaymath}
+	\begin{equation} équation... \end{equation}
+	\begin{equation*} équation... \end{equation*}
+\end{codesource}
+		\item Équations sur plusieurs lignes:
+\begin{codesource}
+	\begin{eqnarray} équation...  \end{eqnarray}
+	\begin{eqnarray*} équation... \end{eqnarray*}
+\end{codesource}
+	\end{itemize}
+
+	\pause
+	On préférera cependant utiliser les environnements du \emph{package} \textbf{amsmath} pour les équations sur plusieurs lignes. Ils sont plus polyvalents, plus simples à utiliser et ils donnent un meilleur rendu.
+\end{frame}
+
+% Environnements mathématiques de amsmath
+
+\begin{frame}[fragile,c]{Environnements mathématiques}
+	\framesubtitle{Environnements du package \textbf{amsmath}}
+	\begin{description}[aaaaaaaaaaaaaaaaaaa]
+		\item[\texttt{multline, multline*}] Pour les équations trop longues pour entrer sur une ligne.
+		\item[\texttt{align, align*}] Pour les équations multiples alignées sur un marqueur (généralement le signe =).
+		\item[\texttt{gather, gather*}] Pour les équations multiples, centrées horizontalement.
+		\item[\texttt{falign, falign*}] Pareil que \texttt{align}, mais sépare les deux côtés d'une équation pour remplir toute la ligne.
+		\item[\texttt{alignat, alignat*}] Le contraire de \texttt{falign} : aucun espace ne sépare les deux côtés d'une équation.
+		\item[\texttt{split}] Pour les équations trop longues pour entrer sur une ligne; permet l'alignement de chaque ligne avec un marqueur.
+	\end{description}
+\end{frame}
+
+% Environnements mathématiques (exemples)
+
+\begin{frame}[fragile]{Environnements mathématiques}
+	\framesubtitle{Exemples}
+
+	\begin{onlyenv}<1>
+\begin{codesource}
+	\begin{equation}
+		a = b
+	\end{equation}
+\end{codesource}	
+	\begin{equation}
+		a = b
+	\end{equation}
+	
+\begin{codesource}
+	\begin{equation*}
+		a = b
+	\end{equation*}
+\end{codesource}	
+	\begin{equation*}
+		a = b
+	\end{equation*}
+	
+\begin{codesource}
+	\begin{multline}
+		a + b + c + d + e + f \\
+		+ i + j + k + l + m + n
+	\end{multline}
+\end{codesource}
+	\begin{multline}
+	a + b + c + d + e + f \\
+	+ o + p + q + r + s + t
+	\end{multline}	
+	\end{onlyenv}
+
+	\begin{onlyenv}<2>
+\begin{codesource}
+	\begin{align}
+		a_1 &= b_1 + c_1 \\
+		a_2 &= b_2 + c_2 - d_2 + e_2
+	\end{align}
+\end{codesource}
+	\begin{align}
+		a_1 &= b_1 + c_1 \\
+		a_2 &= b_2 + c_2 - d_2 + e_2
+	\end{align}
+	
+\begin{codesource}
+	\begin{gather}
+		a_1 = b_1 + c_1 \\
+		a_2 = b_2 + c_2 - d_2 + e_2
+	\end{gather}
+\end{codesource}
+	\begin{gather}
+		a_1 = b_1 + c_1 \\
+		a_2 = b_2 + c_2 - d_2 + e_2
+	\end{gather}
+	\end{onlyenv}
+
+	\begin{onlyenv}<3>
+\begin{codesource}
+	\begin{equation}
+		\begin{split}
+			a &= b + c - d \\
+			&\phantom{=} + e - f \\
+			&= g + h \\
+			&= i
+		\end{split}
+	\end{equation}
+\end{codesource}
+		\begin{equation}
+			\begin{split}
+				a &= b + c - d \\
+				&\phantom{=} + e - f \\
+				&= g + h \\
+				&= i
+			\end{split}
+		\end{equation}
+	\end{onlyenv}
+\end{frame}
 
 \subsection{Symboles}
+
+% Principaux éléments du mode mathématique
+
 
 \subsection{Équations sur plusieurs lignes}
