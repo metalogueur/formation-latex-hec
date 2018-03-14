@@ -173,6 +173,182 @@
 \subsection{Symboles}
 
 % Principaux éléments du mode mathématique
+\begin{frame}[fragile,c]{Principaux éléments du mode mathématique}
+	\begin{itemize}
+		\item Symboles mathématiques «de base»:
+		 	\texttt{+ - = < > / : ! ' | [ ] ( ) \{ \}}
+		\item On écrit les exposants avec la commande \textasciicircum. \lstinline|x^2| devient $x^2$.
+		\item On écrit les indices avec la commande \_. \lstinline|a_n| devient $a_n$.
+		\item On peut combiner exposants et indices : \lstinline|x_i^k| devient $x_i^k$.
+		\item On regroupe les exposants et les indices avec \{ et \}. \lstinline|A_{i_s, k^n}^{y_i}|
+			devient $A_{i_s, k^n}^{y_i}$.
+	\end{itemize}
+\end{frame}
 
+% Fractions
+\begin{frame}[fragile,c]{Fractions}
+	\begin{itemize}
+		\item On rédige des fractions avec la commande \cmd{frac\{numérateur\}\{dénominateur\}}.
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+			\vspace{-4.5mm}
+\begin{codesource}
+	% Taille au fil du texte
+	On a $z_1 = \frac{x}{y}$ et
+	$z_2 = xy$.
+\end{codesource}
+			\end{column}
+			\begin{column}{.4\textwidth}
+				On a $z_1 = \frac{x}{y}$ et
+				$z_2 = xy$.
+			\end{column}
+		\end{columns}
+	
+		\pause
+		
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\vspace{-4.5mm}
+\begin{codesource}
+	% taille hors paragraphe
+	On a
+	\begin{equation*}
+		z_1 = \frac{x}{y}
+	\end{equation*}
+	et $z_2 = xy$.
+\end{codesource}
+			\end{column}
+			\begin{column}{.4\textwidth}
+				On a
+				\begin{equation*}
+					z_1 = \frac{x}{y}
+				\end{equation*}
+				et $z_2 = xy$.
+			\end{column}
+		\end{columns}
+	
+		\pause
+		
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\vspace{-4.5mm}
+\begin{codesource}
+	% Deux tailles combinées
+	Soit
+	\begin{equation*}
+		z = \frac{\frac{x}{2} + 1}{y}.
+	\end{equation*}
+\end{codesource}
+			\end{column}
+			\begin{column}{.4\textwidth}
+				Soit
+				\begin{equation*}
+					z = \frac{\frac{x}{2} + 1}{y}.
+				\end{equation*}
+			\end{column}
+		\end{columns}
+	\end{itemize}
+\end{frame}
 
-\subsection{Équations sur plusieurs lignes}
+\begin{frame}[fragile]{Racines}
+	\begin{itemize}
+		\item On rédige des racines avec la commande \cmd{sqrt[n]\{radicande\}}.
+		\begin{itemize}
+			\scriptsize
+			\item Le radical par défaut (si on ne spécifie par l'argument \texttt{n}) est la racine carrée.
+			\item Le radical s'adapte toujours au radicande.
+		\end{itemize}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+			\vspace{-4.5mm}
+\begin{codesource}
+	\sqrt{2}
+	
+		
+	\sqrt{625}
+	
+		
+	\sqrt[3]{8}
+	
+	
+	\sqrt[n]{x + y + z}
+	
+	
+	\sqrt{\frac{x + y}{x^2 - y^2}}
+\end{codesource}
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\begin{equation*}					
+					\sqrt{2}		
+				\end{equation*}	
+				\begin{equation*}
+					\sqrt{625}
+				\end{equation*}		
+				\begin{equation*}				
+					\sqrt[3]{8}				
+				\end{equation*}
+				\begin{equation*}
+					\sqrt[n]{x + y + z}
+				\end{equation*}
+				\begin{equation*}
+					\sqrt{\frac{x + y}{x^2 - y^2}}
+				\end{equation*}
+			\end{column}
+		\end{columns}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,c]{Sommes et intégrales}
+	\begin{itemize}
+		\item On écrit des sommes avec la commande \cmd{sum}.
+		\item On écrit des intégrales avec la commande \cmd{int}
+		\item On saisit les limites inférieures et supérieures avec des indices (\_) et 
+			des exposants (\textasciicircum).
+			\begin{columns}
+				\column{.4\textwidth}					
+\begin{codesource}
+	\sum_{i = 0}^n x_1
+\end{codesource}
+				\column{.4\textwidth}
+					\begin{equation*}
+						\sum_{i = 0}^n x_1
+					\end{equation*}
+			\end{columns}
+			\begin{columns}
+				\column{.4\textwidth}
+\begin{codesource}
+	\int_0^{10} f(x)\, dx
+\end{codesource}
+				\column{.4\textwidth}
+					\begin{equation*}
+						\int_0^{10} f(x)\, dx
+					\end{equation*}
+			\end{columns}
+		\item Le \emph{package} \textbf{amsmath} fournit également les commandes \cmd{iint}
+			et \cmd{iiint} pour afficher des intégrales multiples comme $\iint$ et $\iiint$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Fonctions, opérateurs, etc.}
+	Puisque le mode mathématique considère les lettres comme des variables, on ne peut pas écrire 
+	les fonctions textuellement. \LaTeX\ définit donc des commandes pour ces fonctions :
+	
+	\begin{center}
+		\begin{tabular}{lllllll}
+			\cmd{arccos} & \cmd{cosh} & \cmd{det} & \cmd{inf} & \cmd{limsup} & \cmd{Pr} & \cmd{tan} \\
+			\cmd{arcsin} & \cmd{cot} & \cmd{dim} & \cmd{ker} & \cmd{ln} & \cmd{sec} & \cmd{tanh} \\
+			\cmd{arctan} & \cmd{coth} & \cmd{exp} & \cmd{lg} & \cmd{log} & \cmd{sin} & 	\\
+			\cmd{arg} &	\cmd{csc} & \cmd{gcd} & \cmd{lim} & \cmd{max} & \cmd{sinh} &	\\
+			\cmd{cos} & \cmd{deg} & \cmd{hom} & \cmd{liminf} & \cmd{min} & \cmd{sup} &	
+		\end{tabular}
+	\end{center}
+
+	\pause
+	
+	Il existe aussi des commandes pour les \textbf{lettres grecques}, le \textbf{texte} et les \textbf{espaces}, les \textbf{points de suspension}, les \textbf{lettres modifiées}, les
+	\textbf{opérateurs binaires} et les \textbf{relations}, les \textbf{flèches}, les \textbf{accents} et bien plus encore!
+	
+	Consultez la documentation du \emph{package} \textbf{amsmath} ainsi que la 
+	\href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{Comprehensive \LaTeX\ Symbol List} -- 338 pages de bonheur! -- pour connaître l'étendue de toutes les fonctionnalités.
+	
+\end{frame}
