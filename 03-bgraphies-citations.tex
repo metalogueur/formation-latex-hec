@@ -75,6 +75,75 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Citations}
+\begin{frame}[c]{Compilation d'un document avec BiB\TeX}
+	\begin{itemize}
+		\item À la formation précédente, nous avons schématisé la compilation d'un document comme suit:
+	\end{itemize}
+	{
+		\begin{minipage}[t]{0.25\linewidth}
+			\centering
+			{\Large\faFileTextO} \\
+			code source
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.25\linewidth}
+			\centering
+			{\Large\faCogs} \\
+			pdf\LaTeX
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.25\linewidth}
+			\centering
+			{\Large\faFilePdfO} \\
+			document .pdf
+		\end{minipage}
+	}
+	
+	\pause
+	
+	\begin{itemize}
+		\item Avec BiB\TeX, la séquence de compilations change:		
+	\end{itemize}
+
+	{
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faFileTextO} \\
+			code source
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faCogs} \\
+			pdf\LaTeX
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faCogs} \\
+			BiB\TeX
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faCogs} \\
+			pdf\LaTeX
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faCogs} \\
+			pdf\LaTeX
+		\end{minipage}
+		\hfill{\Large\faArrowRight}\hfill
+		\begin{minipage}[t]{0.125\linewidth}
+			\centering
+			{\Large\faFilePdfO} \\
+			document .pdf
+		\end{minipage}
+	}
+\end{frame}
 
 \subsection{Création d'une bibliographie}
+
+\subsection{Citations}
