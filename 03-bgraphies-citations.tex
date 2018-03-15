@@ -146,4 +146,99 @@
 
 \subsection{Création d'une bibliographie}
 
+\begin{frame}[fragile]{Création d'une base de données}
+	La première chose à faire est de se créer une base de données de références qu'on stockera dans un fichier \texttt{.bib}.
+	
+\begin{codesource}
+	% Exemple de contenu d'un fichier bibliographie.bib
+	
+	@article{amaralcardiac2014,
+		author = {Amaral, Joice Anaize Tonon do and Nogueira, Marcela Leme and Roque, Adriano L 
+			and Guida, Heraldo Lorena and Abreu, Luiz Carlos de and Raimundo, Rodrigo Daminello 
+			and Vanderlei, Luiz Carlos Marques and Ribeiro, Vivian F and Ferreira, Celso and 
+			Valenti, Vitor Engrácia},
+		title = {Cardiac autonomic regulation during exposure to auditory stimulation with classical
+			baroque or heavy metal music of different intensities},
+		journal = {Archives of the Turkish Society of Cardiology},
+		pages = {139-146},
+		ISSN = {1016-5169},
+		year = {2014},
+		type = {Journal Article}
+	}
+	
+	@article{mobergfaster2009,
+		author = {Moberg, Marcus},
+		title = {Faster for the master!: exploring issues of religious expression and alternative
+			Christian identity within the Finnish Christian metal music scene},
+		year = {2009},
+		type = {Journal Article}
+	}
+\end{codesource}
+\end{frame}
+
+% Package natbib
+\begin{frame}[fragile]{\emph{Package} natbib}
+	\begin{itemize}
+		\item Par défaut, \LaTeX\ ne supporte que les bibliographies avec un format de citation numérique.
+		\item Le format de citations adopté dans les sciences sociales en général, et à HEC Montréal en particulier, est le format \emph{auteur, année}.
+		\item Le \emph{package} \textbf{natbib} permet l'utilisation des citations \emph{auteur, année}.
+
+		\pause
+		
+\begin{codesource}
+	\documentclass[english,french]{hecthese}
+	
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{babel}
+	\usepackage[autolanguage]{numprint}
+	\usepackage{icomma}
+	\usepackage{natbib}
+	\usepackage{hyperref}
+	
+	\begin{document}
+		contenu...
+	\end{document}
+\end{codesource}
+		\item natbib doit \textbf{absolument} être appelé \textbf{après} babel.
+	\end{itemize}
+\end{frame}
+
+% Insertion de la bibliographie
+\begin{frame}[fragile]{Insertion de la bibliographie}
+	\begin{itemize}
+		\item Avant d'insérer la bibliographie dans le texte, il faut signifier à BiB\TeX\ dans quel
+		style bibliographique nous voulons que nos références s'affichent.
+\begin{codesource}
+	\bibliographystyle{style}
+\end{codesource}
+		
+		\pause
+		
+		\item Ce ne sont pas tous les styles bibliographiques qui sont compatibles avec le format de 
+			citation \emph{auteur, année}.
+			\begin{itemize}
+				\scriptsize
+				\item Utilisez le style \texttt{francais} si vous rédigez en français;
+				\item Utilisez le style \texttt{apalike} si vous rédigez en anglais.
+\begin{codesource}
+	% Rédaction en français
+	\bibliographystyle{francais}
+	
+	% Rédaction en anglais
+	\bibliographystyle{apalike}
+\end{codesource}
+				\item Ces deux styles sont ceux qui se rapprochent le plus de celui de HEC Montréal.
+			\end{itemize}
+		
+		\pause
+		
+		\item Une fois qu'on a choisi notre style, on insère la bibliographie.
+\begin{codesource}
+	\bibliographystyle{francais}
+	\bibliography{fichier_bib} % Nom du fichier .bib entre accolades, sans l'extension .bib
+\end{codesource}
+	\end{itemize}
+\end{frame}
+
 \subsection{Citations}
