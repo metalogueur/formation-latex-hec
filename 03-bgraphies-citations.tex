@@ -1,0 +1,80 @@
+% Bibliographies et citations
+
+\section{Bibliographies et citations}
+
+\subsection{Types de bibliographies}
+
+% Bibliographie manuelle
+\begin{frame}[fragile,c]{Bibliographie manuelle}
+	\begin{itemize}
+		\item On peut se «tricoter» une bibliographie à la main avec l'environnement \texttt{thebibliography}.
+\begin{codesource}
+	\begin{thebibliography}{libellé le plus long}
+		\bibitem[libellé]{id_citation} Entrée bibliographique #1
+		\bibitem[libellé]{id_citation} Entrée bibliographique #2
+		[...]
+	\end{thebibliography}
+\end{codesource}
+		
+		\pause
+		
+		\item Chaque entrée bibliographique est rédigée avec la commande \cmd{bibitem}.
+		\begin{itemize}
+			\scriptsize
+			\item Le \texttt{libellé} est ce qu'on retrouvera dans la référence à l'intérieur du texte. S'il n'y a pas de libellé, \LaTeX\ produira un numéro séquentiel à la place.
+			\item \texttt{id\_citation} est l'élément qu'on utilise pour citer une source.
+			\item L'\texttt{entrée bibliographique} contient toutes les informations bibliographiques
+				de notre source.
+		\end{itemize}
+	
+		\pause
+		
+		\item Le \texttt{libellé le plus long} à l'ouverture correspond à celui des libellés de tous 
+		les \cmd{bibitem} qui est le plus long.
+		\item La bibliographie est insérée dans le document là où l'environnement 
+			\texttt{thebibliography} est inséré dans le code.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,c]{Bibliographie manuelle}
+	\framesubtitle{Un exemple\ldots}
+\begin{codesource}
+	\begin{thebibliography}{99}		
+		\bibitem[Kopka and Daly, 2004]{kopkadaly:2004}
+			Kopka, Helmut et Patrick W. Daly (2004).
+			\newblock Guide to \LaTeX, Fourth Edition,
+			\newblock Addison-Wesley,
+			\newblock ISBN 978-0-321-17385-0, 597 p.
+		\bibitem[Mittelbach et al., 2004]{mittelbach:2004}
+			Mittelbach, Frank \emph{et al.} (2004).
+			\newblock The \LaTeX\ Companion, Second Edition,
+			\newblock Addison-Wesley,
+			\newblock ISBN 978-0201362992, 1120p.
+		\bibitem[Goossens and Mittelbach, 2007]{goossens:2007}
+			Goossens, Michel et Franck Mittelbach (2007).
+			\newblock The \LaTeX\ Graphics Companion, Second Edition,
+			\newblock Addison-Wesley,
+			\newblock ISBN 978-0321508928, 976p.
+	\end{thebibliography}
+\end{codesource}
+\end{frame}
+
+\begin{frame}[c]{Bibliographie automatique}
+	\framesubtitle{Une introduction à BiB\TeX}
+	
+	\begin{itemize}
+		\item BiB\TeX\ est un programme (un compilateur) auxiliaire de \LaTeX\ qui construit 
+			automatiquement une bibliographie à partir d'une base de données.
+		\item Il est \emph{de facto} le système standard de traitement des bibliographies.
+		\item Il est stable et simple à utiliser.
+		\item C'est généralement le seul format accepté par les revues scientifiques.
+		\item Vous pouvez exporter nos références bibliographiques stockées dans \textbf{EndNote}
+			directement en format BiB\TeX.
+		\item Vous pouvez télécharger des références en format BiB\TeX depuis HECo, Google Scholar,
+			ProQuest, Ebsco et de nombreuses autres banques de données de la bibliothèque.
+	\end{itemize}
+\end{frame}
+
+\subsection{Citations}
+
+\subsection{Création d'une bibliographie}
