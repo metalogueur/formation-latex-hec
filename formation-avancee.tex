@@ -44,6 +44,15 @@
 
 \renewcommand{\frenchtablename}{Tableau}
 
+%% Ajustement des espaces entre les éléments de la table des matières
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+{\vfill}
+{}
+{}
+{}
+\makeatother 
+
 %% Métadonnées du document
 
 \title{Rédaction avec \\ \texttt{\textbackslash title}\{\textrm{\LaTeX}\} }
