@@ -242,3 +242,109 @@
 \end{frame}
 
 \subsection{Citations}
+
+% Comment citer ses sources
+\begin{frame}[c]{Comment citer ses sources}
+	\begin{itemize}
+	\item Il existe trois commandes pour citer des sources bibliographiques dans le texte, dont deux 	
+		proviennent de \textbf{natbib} :
+	
+	\begin{description}[aaaaaaaaaaaaaaaaaaaaaaaaaaa]
+		\item[\cmd{cite[extra]\{id\_citation\}}] Citation numérique
+		\item[\cmd{citet[extra]\{id\_citation\}}] Citation textuelle
+		\item[\cmd{citep[extra]\{id\_citation\}}] Citation entre parenthèses
+	\end{description}
+	
+	\item L'argument \texttt{id\_citation} est celui qu'on a utilisé pour identifier un item
+		bibliographique.
+	\item L'argument optionnel \texttt{extra} permet d'ajouter des informations supplémentaires
+		à la suite d'une situation comme, par exemple, un numéro de page.
+	\item Nous vous recommandons d'utiliser les commandes \cmd{citet} et \cmd{citep}, qui sont plus descriptives.
+	\end{itemize}
+\end{frame}
+
+% Exemples de citations
+\begin{frame}[fragile]{Exemples de citation}
+	
+	Soit l'item bibliographique suivant:
+\begin{codesource}
+	\bibitem{jones99}
+		F. J. Jones, H. P. Baker, and W. V. Toms, [...] 1999.
+\end{codesource}
+
+	Voici un aperçu de ce que donnerait chaque commande de citation:
+	
+	\pause
+	
+	\begin{columns}
+		\column{.49\textwidth}
+		\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que quelqu'un
+	pense comme moi\cite{jones99}\ldots
+\end{codesource}
+		\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que quelqu'un
+			pense comme moi[1]\ldots
+	\end{columns}
+
+	\begin{columns}
+		\column{.49\textwidth}
+		\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que quelqu'un
+	pense comme moi\cite[p.22]{jones99}\ldots
+\end{codesource}
+		\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que quelqu'un
+			pense comme moi[1, p.22]\ldots
+		\end{columns}
+	
+	\pause
+
+	\begin{columns}
+		\column{.49\textwidth}
+		\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que 
+	\citet{jones99}pense comme moi\ldots
+\end{codesource}
+		\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que Jones et al., (1999) pense comme moi\ldots
+		\end{columns}
+
+		\begin{columns}
+		\column{.49\textwidth}
+		\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que 
+	\citet[p.22]{jones99}pense comme moi\ldots
+\end{codesource}
+		\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que Jones et al., (1999, p.22) pense comme moi\ldots
+		\end{columns}
+	
+		\pause
+		
+		\begin{columns}
+			\column{.49\textwidth}
+			\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que quelqu'un
+	pense comme moi\citep{jones99}\ldots
+\end{codesource}
+			\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que quelqu'un pense comme moi (Jones et al., 1999)\ldots
+		\end{columns}
+	
+		\begin{columns}
+			\column{.49\textwidth}
+			\vspace{-4.5mm}
+\begin{codesource}
+	Je ne suis pas peu fier de voir que quelqu'un
+	pense comme moi\citep[p.22]{jones99}\ldots
+\end{codesource}
+			\column{.49\textwidth}
+			Je ne suis pas peu fier de voir que quelqu'un pense comme moi (Jones et al., 1999, p.22)\ldots
+		\end{columns}
+\end{frame}
