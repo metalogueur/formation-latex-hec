@@ -1,54 +1,53 @@
 % Organisation d'un document
 
-\section{Organisation d'un document}
+\section{Document Organization}
 
-\subsection{Parties d'un document}
+\subsection{Parts of a Document}
 
 % Choix d'une classe
-\begin{frame}[c]{Choix d'une classe}
-	La première chose que l'on doit faire lorsqu'on débute la rédaction d'un document \LaTeX,
-	c'est de choisir une classe de document.
+\begin{frame}[c]{Class Choice}
+	The first thing you need to do when writing a \LaTeX\ document is to choose a document class.
 	
-	\begin{table}[c]
+	\begin{table}[fragile,c]
 		\begin{tabularx}{\textwidth}{lllll}
 			\arrayrulecolor{grisPrimaire!40}\hline\hline
-			\textbf{Classe} & \textbf{Divisions} & \textbf{Disposition} & \textbf{Entête} &	\textbf{Pied de page} \\
+			\textbf{Class} & \textbf{Divisions} & \textbf{Organization} & \textbf{Header} &	\textbf{Footer} \\
 			\hline
-			\texttt{article}			&	parties, sections, \ldots				&	recto		&	vide			&	folio centré \\
-			\texttt{report}				&	parties, chapitres, sections, \ldots	&	recto		&	vide			&	folio centré \\
-			\texttt{book}				&	parties, chapitres, sections, \ldots	&	recto verso	&
-			folio, titres	&	vide \\
-			\texttt{hecthese}	&	chapitres, sections, sous-sections		&	recto verso	&
-			vide			&	folio centré \\
+			\texttt{article}			&	\makecell{parts, sections,\\ \ldots}				&	one-sided		&	empty			&	centered page number \\
+			\texttt{report}				&	\makecell{parts, chapters, \\ sections, \ldots}	&	one-sided		&	empty			&	centered page number \\
+			\texttt{book}				&	\makecell{parts, chapiters, \\ sections, \ldots}	&	two-sided	&
+			\makecell{page numbers, \\ titles}	&	empty \\
+			\texttt{hecthese}	&	\makecell{chapiters, sections, \\ subsections}		&	two-sided	&
+			empty			&	centered page number \\
 			\hline\hline
 		\end{tabularx}
 	\end{table}
 \end{frame}
 
 % Titre et page de titre
-\begin{frame}[fragile]{Titre et page de titre}
-	Mise en forme automatique :
+\begin{frame}[fragile]{Titles and Title Page}
+	Automatic layout:
 \begin{codesource}
-	% Commandes du préambule
-	\title[titre court]{titre au long}
-	\author[nom(s) d'auteur(s) court(s)]{noms des auteurs au long}
-	\date[date courte]{date au long}
+	% Preamble commands
+	\title[short title]{long title}
+	\author[short author name]{long author name}
+	\date[short date]{long date}
 	[...]
 	
-	% Commande du corps du document
+	% Document body command
 	\maketitle
 \end{codesource}
 
-	Mise en forme libre :
+	Manual layout:
 		\begin{columns}
-			\begin{HECcomparaison}{Classes standards}
+			\begin{HECcomparaison}{Standard classes}
 \begin{codesource}
 	\begin{titlepage}
 		...
 	\end{titlepage}
 \end{codesource}
 			\end{HECcomparaison}
-			\begin{HECcomparaison}{Classes memoir et hecthese}
+			\begin{HECcomparaison}{memoir and hecthese classes}
 \begin{codesource}
 	\begin{titlingpage}
 		...
@@ -57,78 +56,76 @@
 			\end{HECcomparaison}
 		\end{columns}
 	
-	Dans la classe \textbf{hecthese}, les pages titre sont générées automatiquement.
+	In the \textbf{hecthese} document class, title pages are automatically generated.
 \end{frame}
 
 % Résumé
-\begin{frame}[fragile,c]{Résumé}
+\begin{frame}[fragile,c]{Abstract}
 	\begin{itemize}
-		\item Classes \textbf{article}, \textbf{report} ou \textbf{memoir}: résumé créé avec
-		l'environnement \lstinline|abstract|
+		\item \textbf{article}, \textbf{report} or \textbf{memoir} classes : abstract generated with the
+		\lstinline|abstract| environment
 \begin{codesource}
 	\begin{abstract}
 		...
 	\end{abstract}
 \end{codesource}
 
-		\item Classe \textbf{hecthese} : résumés français et anglais traités comme des chapitres
-		normaux (non numérotés)
+		\item \textbf{hecthese} class: french and english abstracts treated as normal, unnumbered chapters
 	\end{itemize}
 \end{frame}
 
 % Sections
 \begin{frame}[fragile]{Sections}
 	\begin{itemize}
-		\item Découpage du document en sections avec les commandes
+		\item The document is subdivided with the following commands:
 \begin{codesource}
-	\part[titre court]{titre au long}
-	\chapter[titre court]{titre au long}
-	\section[titre court]{titre au long}
-	\subsection[titre court]{titre au long}
+	\part[short title]{long title}
+	\chapter[short title]{long title}
+	\section[short title]{long title}
+	\subsection[short title]{long title}
 	
-	\subsubsection[titre court]{titre au long} 	% à éviter dans un livre
+	\subsubsection[short title]{long title} 	% avoid using in books
 	
-	\paragraph[titre court]{titre au long} 		% ne jamais utiliser
-	\subparagraph[titre court]{titre au long} 	% ne jamais JAMAIS utiliser
+	\paragraph[short title]{long title} 		% evil! never use!
+	\subparagraph[short title]{long title} 	% EVIL! never EVER use!
 \end{codesource}
 
-		\item Numérotation automatique
-		\item Commande suivie d'un * = section non numérotée
-		\item Titre court en argument optionnel
+		\item Automatic numbering
+		\item Commands followed by an * = unnumbered section 
+		\item Short title as an optional argument
 	\end{itemize}
 \end{frame}
 
 % Annexes
-\begin{frame}[fragile,c]{Annexes}
+\begin{frame}[fragile,c]{Appendices}
 	\begin{itemize}
-		\item Les annexes sont des sections ou des chapitres avec une numérotation alphanumérique (A,
+		\item Appendices are sections and chapters with an alphanumeric numbering (A,
 		A.1, \ldots).
-		\item Les sections suivantes sont identifiées comme des annexes par la commande 
-			\cmd{appendix}.
-		\item Dans le titre, «Chapitre» est changé pour «Annexe».
+		\item Sections following the \cmd{appendix} command are all considered appendices.
+		\item In the title, ``Chapter'' is changed into ``Appendix''.
 	\end{itemize}
 \end{frame}
 
 % Structure logique d'un livre
-\begin{frame}[fragile]{Structure logique d'un livre}
-	\framesubtitle{Classes book, memoir, hecthese}
+\begin{frame}[fragile]{A Book's Logical Structure}
+	\framesubtitle{book, memoir, hecthese classes}
 
 \begin{onlyenv}<1>
 \begin{codesource}
 	\frontmatter
 \end{codesource}	
 	\begin{itemize}
-		\item préface, table des matières, etc.
-		\item numérotation des pages en chiffres romains (i, ii, \ldots)
-		\item chapitres non numérotés
+		\item preface, table of contents, etc.
+		\item roman page numbering (i, ii, \ldots)
+		\item unnumbered chapters 
 	\end{itemize}
 \begin{codesource}
 	\mainmatter
 \end{codesource}	
 	\begin{itemize}
-		\item le contenu à proprement parler
-		\item numérotation des pages à partir de 1 en chiffres arabes
-		\item chapitres numérotés
+		\item the book's content
+		\item arabic page numbering, starting at 1
+		\item numbered chapters
 	\end{itemize}
 \end{onlyenv}
 
@@ -137,45 +134,46 @@
 	\backmatter
 \end{codesource}
 	\begin{itemize}
-		\item tout le reste (bibliographie, index, etc.)
-		\item numérotation des pages se poursuit
-		\item chapitres non numérotés
+		\item everything else (bibliography, index, etc.)
+		\item the page numbering continues
+		\item unnumbered chapters
 	\end{itemize}
 \end{onlyenv}
 \end{frame}
 
-\subsection{Table des matières et renvois}
+\subsection{Table of Contents and Referencing}
 
 % Table des matières
-\begin{frame}[fragile,c]{Table des matières}
+\begin{frame}[fragile,c]{Table of Contents}
 	
 	\begin{itemize}
-		\item La table des matières est produite automatiquement avec \cmd{tableofcontents}.
-		\item Requiert \textbf{plusieurs} compilations.
-		\item Les sections non numérotées ne sont pas incluses.
-		\item Avec le \emph{package} \textbf{hyperref}, \cmd{tableofcontents} produit également la table des matières du fichier .pdf.
+		\item The table of contents is automatically generated with \cmd{tableofcontents}.
+		\item Needs \textbf{more than one} compilation to be generated.
+		\item Unnumbered sections are not included.
+		\item With the \textbf{hyperref} package, \cmd{tableofcontents} generates the .pdf file's
+		table of contents.
 		\pause
-		\item La classe memoir fournit également \cmd{tableofcontents*} qui n’insère pas la table des matières dans la table des matières.
+		\item \cmd{tableofcontents*}, from the memoir document class, doesn't include the table of contents in the table of contents.
 		\pause
-		\item \cmd{listoffigures} produit la liste des figures.
-		\item \cmd{listoftables} produit la liste des tableaux.
+		\item \cmd{listoffigures} generates the list of figures.
+		\item \cmd{listoftables} generates the list of tables.
 	\end{itemize}
 
 \end{frame}
 
 % Étiquettes et renvois automatiques
-\begin{frame}[fragile]{Étiquettes et renvois automatiques}
-	\framesubtitle{Parce que l'ordinateur le fera mieux que vous\ldots}
+\begin{frame}[fragile]{Labels and Automatic Referencing}
+	\framesubtitle{Because your computer will do it better than you\ldots}
 	\begin{onlyenv}<1>
 		\begin{itemize}
-			\item Ne \textbf{jamais} renvoyer manuellement à un numéro de section, d’équation, de tableau, etc.
-			\item «Nommer» un élément avec \cmd{label}
-			\item Faire référence par son nom avec \cmd{ref}
-			\item Requiert 2 à 3 compilations
+			\item \textbf{Never} refer manually to a section, an equation, a table, etc.
+			\item ``Name'' an element with \cmd{label}
+			\item Refer to that label with \cmd{ref}
+			\item Needs 2 to 3 compilations to generate
 		\end{itemize}
 	
 \begin{codesource}
-	\section{Définitions}
+	\section{Definitions}
 		\label{sec:definitions}
 	
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -183,24 +181,23 @@
 		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 		nisi ut aliquip ex ea commodo consequat.
 	
-	\section{Historique}
-		Tel que vu à la section \ref{sec:definitions}...
+	\section{History}
+		As seen in Section \ref{sec:definitions}...
 \end{codesource}
 	\end{onlyenv}
 	\begin{onlyenv}<2>
 		\begin{itemize}
-			\item Le \emph{package} \textbf{hyperref} insère des hyperliens vers des renvois dans les fichiers .pdf.
-			\item La commande \cmd{autoref\{\}} permet de:
+			\item The \textbf{hyperref} package generates hyperlinks to the references in the .pdf files.
+			\item The \cmd{autoref\{\}} command\ldots
 				\begin{enumerate}
-					\item nommer automatiquement le type de renvoi (section, équation, tableau, etc.);
-					\item transformer en hyperlien le texte \textbf{et} le numéro de la référence.
+					\item automatically identifies the reference type (section, equation, table, etc.);
+					\item generates a hyperlink with the text \textbf{and} number of the reference.
 \begin{codesource}
-	Tel que vu à la \autoref{sec:definitions}...
+	As seen in \autoref{sec:definitions}...
 \end{codesource}
 				\end{enumerate}
-			\item La commande \cmd{pageref\{\}} renvoie à la page de la référence.
-			\item Le \emph{package} \textbf{amsmath} fournit la commande \cmd{eqref\{\}} pour
-				référencer les équations.
+			\item The \cmd{pageref\{\}} command refers to a page number.
+			\item The  \textbf{amsmath} package provides the \cmd{eqref\{\}} command to refer to equations.
 		\end{itemize}
 	\end{onlyenv}
 \end{frame}
