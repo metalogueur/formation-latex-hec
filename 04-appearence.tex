@@ -1,71 +1,71 @@
 % Apparence du texte
 
-\section{Apparence du texte}
+\section{Text Appearance}
 
-\subsection{Polices de caractères}
+\subsection{Fonts}
 
 % Polices de caractères
-\begin{frame}{Polices de caractères}
+\begin{frame}[c]{Fonts}
 	\begin{itemize}
-		\item Par défaut, tous les documents \LaTeX\ utilisent la même police, \textrm{Computer Modern}.
-		\item Privilégier les polices de grande qualité et très complètes (lettres accentuées, grand choix de symboles)
-		\item Peu de polices sont adaptées pour les mathématiques : Palatino, Times, Lucida (\$) sont des choix sûrs
-		\item Dans la classe \textbf{hecthese}, les paquetages mathptmx et mathpazo sont chargés par défaut afin	d’offrir les polices de caractères Times et Palatino.
+		\item By default, all \LaTeX\  documents use the same font, \textrm{Computer Modern}.
+		\item You should choose high-quality and complete fonts (diacritics, great choice of symbols).
+		\item Very few fonts are adapted to maths: Palatino, Times, Lucida (\$) are safe choices.
+		\item In the \textbf{hecthese} document class, mathptmx and mathpazo packages are preloaded so you can choose between Times and Palatino fonts.
 	\end{itemize}
 \end{frame}
 
 % Changement d'attribut de la police
-\begin{frame}{Changement d'attribut de la police}
+\begin{frame}{Font Attributes}
 	\begin{tabularx}{\textwidth}{XXX}
 		\arrayrulecolor{grisPrimaire!40}\hline\hline
-		\multicolumn{3}{l}{\textbf{familles}}	\\
+		\multicolumn{3}{l}{\textbf{families}}	\\
 		\hline
-		\textrm{romain}						&	\cmd{rmfamily}		&	\cmd{textrm\{<texte>\}}\\
-		\texttt{largeur fixe}				&	\cmd{ttfamily}		&	\cmd{texttt\{<texte>\}}\\
-		sans empattements					&	\cmd{sffamily}		&	\cmd{textsf\{<texte>\}}\\
+		\textrm{roman}						&	\cmd{rmfamily}		&	\cmd{textrm\{<text>\}}\\
+		\texttt{fixed width}				&	\cmd{ttfamily}		&	\cmd{texttt\{<text>\}}\\
+		sans serif							&	\cmd{sffamily}		&	\cmd{textsf\{<text>\}}\\
 		\hline
-		\multicolumn{3}{l}{\textbf{formes}}	\\
+		\multicolumn{3}{l}{\textbf{shapes}}	\\
 		\hline
-		droit								&	\cmd{upshape}		&	\cmd{textup\{<texte>\}}\\
-		\emph{italique}						&	\cmd{itshape}		&	\cmd{textit\{<texte>\}}\\
-		\textsl{penché}						&	\cmd{slshape}		&	\cmd{textsl\{<texte>\}}\\
-		\textrm{\textsc{petites capitales}}	&	\cmd{scshape}		&	\cmd{textsc\{<texte>\}}\\
+		upright								&	\cmd{upshape}		&	\cmd{textup\{<text>\}}\\
+		\emph{italic}						&	\cmd{itshape}		&	\cmd{textit\{<text>\}}\\
+		\textsl{slanted}					&	\cmd{slshape}		&	\cmd{textsl\{<text>\}}\\
+		\textrm{\textsc{small caps}}		&	\cmd{scshape}		&	\cmd{textsc\{<text>\}}\\
 		\hline
-		\multicolumn{3}{l}{\textbf{séries}}	\\
+		\multicolumn{3}{l}{\textbf{series}}	\\
 		\hline
-		\textmd{moyen}						&	\cmd{mdseries}		&	\cmd{textmd\{<texte>\}}\\
-		\textbf{gras}						&	\cmd{bfseries}		&	\cmd{textbf\{<texte>\}}\\
+		\textmd{medium}						&	\cmd{mdseries}		&	\cmd{textmd\{<text>\}}\\
+		\textbf{bold}						&	\cmd{bfseries}		&	\cmd{textbf\{<text>\}}\\
 		\hline\hline
 	\end{tabularx}
 
 	\begin{picture}(0,0)
 	\thicklines\color{bleuFonceSecondaire}
-	\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique à tout le texte qui suit}}}}
-	\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
+	\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{applies to all the following text}}}}
+	\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{applies to the text in the command}}}}
 	\end{picture}
 \end{frame}
 
 % Italique
-\begin{frame}[fragile,c]{Italique}
-	 Lorsque l'italique est utilisé pour mettre l'\emph{emphase} sur une partie du texte, on privilégie
-	 la commande sémantique suivante:
+\begin{frame}[fragile,c]{Italics}
+	 When using italics to put \emph{emphasis} on parts of a text, you should use the following semantic command instead:
 	 
 \begin{codesource}
-	\emph{texte}
+	\emph{text}
 \end{codesource}
 
-	Les commandes \cmd{emph\{<texte>\}} peuvent être imbriquées une dans l'autre. Le texte mis en italique redevient droit et vice versa.
+	\cmd{emph\{<text>\}} commands can be nested in one another. Text in italics becomes upright and vice versa.
 	
 	\begin{columns}
 		\begin{column}{.49\textwidth}
 			\vspace{-5.5mm}
 \begin{codesource}
-	C'était un peu \emph{rough}	par 
-	moments.
+	This house lacks a certain
+	\emph{je ne sais quoi}\ldots
 \end{codesource}
 		\end{column}
 		\begin{column}{.49\textwidth}
-			C'était un peu \emph{rough} par moments.
+			This house lacks a certain
+			\emph{je ne sais quoi}\ldots
 		\end{column}
 	\end{columns}
 
@@ -73,74 +73,73 @@
 		\begin{column}{.49\textwidth}
 			\vspace{-5.5mm}
 \begin{codesource}
-	Il m'a dit: « \emph{Enough 
+	He said: « \emph{Enough 
 	\emph{poutine} for the week!»}
 \end{codesource}
 		\end{column}
 		\begin{column}{.49\textwidth}
-			Il m'a dit: « \emph{Enough \textup{poutine} for the week!»}
+			He said: « \emph{Enough \textup{poutine} for the week!»}
 		\end{column}
 	\end{columns}
 	
 \end{frame}
 
 % Taille de la police
-\begin{frame}{Taille de la police}
+\begin{frame}{Font size}
 	\begin{tabularx}{\textwidth}{l|l}
 		\arrayrulecolor{grisPrimaire!40}
-		\textbf{Commandes standards} 	& 	\textbf{Rendu}	\\
+		\textbf{Standard commands} 		& 	\textbf{Size}	\\
 		\hline
-		\cmd{tiny}						&	{\tiny vraiment petit}	\\
-		\cmd{scriptsize}				&	{\scriptsize encore plus petit}	\\
-		\cmd{footnotesize}				&	{\footnotesize plus petit}	\\
-		\cmd{small}						&	{\small petit}	\\
-		\cmd{normalsize}				&	{\normalsize normal}	\\
-		\cmd{large}						&	{\large grand}	\\
-		\cmd{Large}						&	{\Large plus grand}	\\
-		\cmd{LARGE}						&	{\LARGE encore plus grand}	\\
-		\cmd{huge}						&	{\huge énorme}	\\
-		\cmd{Huge}						&	{\Huge encore plus énorme}		
+		\cmd{tiny}						&	{\tiny tiny}	\\
+		\cmd{scriptsize}				&	{\scriptsize script size}	\\
+		\cmd{footnotesize}				&	{\footnotesize footnote size}	\\
+		\cmd{small}						&	{\small small}	\\
+		\cmd{normalsize}				&	{\normalsize normal size}	\\
+		\cmd{large}						&	{\large large}	\\
+		\cmd{Large}						&	{\Large larger}	\\
+		\cmd{LARGE}						&	{\LARGE largest}	\\
+		\cmd{huge}						&	{\huge huge}	\\
+		\cmd{Huge}						&	{\Huge humongous}		
 	\end{tabularx}
 \end{frame}
 
-\subsection{Disposition du texte}
+\subsection{Displaying text}
 
 % Listes
-\begin{frame}[fragile]{Listes}
+\begin{frame}[fragile]{Lists}
 	\begin{itemize}
-		\item Deux principales sortes de listes:
+		\item Two main types of lists:
 		\begin{enumerate}
-			\item \textbf{à puce} avec l'environnement \cmd{itemize}
-			\item \textbf{numérotée} avec l'environnement \cmd{enumerate}
+			\item \textbf{unordered} with the \cmd{itemize} environment
+			\item \textbf{ordered} with the \cmd{enumerate} environment
 		\end{enumerate}
-		\item Possibilité de les imbriquer les unes dans les autres
-		\item Marqueurs adaptés automatiquement jusqu'à quatre niveaux
+		\item Lists can be nested into one another
+		\item Markers are adapted to up to four nesting levels
 
 		\pause
 \begin{codesource}
 	\begin{itemize}
-		\item Deux principales sortes de listes:
+		\item Two main types of lists:
 		\begin{enumerate}
-			\item \textbf{à puce} avec l'environnement \verb=itemize=
-			\item \textbf{numérotée} avec l'environnement \verb=enumerate=
+			\item \textbf{unordered} with the \verb=itemize= environment
+			\item \textbf{ordered} with the \verb=enumerate= environment
 		\end{enumerate}
-		\item Possibilité de les imbriquer les unes dans les autres
-		\item Marqueurs adaptés automatiquement jusqu'à quatre niveaux
+		\item Lists can be nested into one another
+		\item Markers are adapted to up to four nesting levels
 	\end{itemize}
 \end{codesource}
 
 		\pause
-		\item Une troisième liste est disponible : \texttt{description}
+		\item A third list type is available: \texttt{description}
 	\end{itemize}
 \end{frame}
 
 % Citations
-\begin{frame}[fragile,c]{Citations}
-	\framesubtitle<1>{Citations courtes}
-	\framesubtitle<2>{Citations longues}
+\begin{frame}[fragile,c]{Quotations}
+	\framesubtitle<1>{Short Quotes}
+	\framesubtitle<2>{Long Quotations}
 	\begin{onlyenv}<1>
-		On utilise l'environnement \texttt{quote} pour insérer une citation courte (un paragraphe)
-		dans le texte.
+		We use the \texttt{quote} environment to insert a short, one-paragraph quote in our text.
 	
 		\begin{columns}
 			\begin{column}{.49\textwidth}
@@ -163,8 +162,7 @@
 	\end{onlyenv}
 
 	\begin{onlyenv}<2>
-		On utilise l'environnement \texttt{quotation} pour insérer une citation longue (plus
-		d'un paragraphe).
+		We use the \texttt{quotation} environment to insert long quotations.
 		
 		\begin{columns}
 			\begin{column}{.49\textwidth}
@@ -198,42 +196,41 @@
 \end{frame}
 
 % Notes de bas de page
-\begin{frame}[fragile,c]{Notes de bas de page}
+\begin{frame}[fragile,c]{Footnotes}
 	\begin{itemize}
-		\item Une note de bas de page est insérée avec la commande suivante:
+		\item A footnote is inserted with the following command:
 \begin{codesource}
-	\footnote{texte de la note}
+	\footnote{text}
 \end{codesource}
-		\item La commande doit suivre immédiatement le texte à annoter.
-		\item Méthode recommandée :
+		\item The command must immediately follow the annotated text.
+		\item Recommended method:
 \begin{codesource}
 	... fera remarquer que Pierre Lasou\footnote{%
 	Spécialiste en ressources documentaires} %
 	fut une grande aide dans la préparation de ...
 \end{codesource}
-		\item La numérotation et la disposition sont automatiques.
+		\item Footnote numbering and display are automatically generated.
 	\end{itemize}
 \end{frame}
 
 % Code source
-\begin{frame}[fragile,c]{Code source}
+\begin{frame}[fragile,c]{Source Code}
 	\begin{onlyenv}<1>
 		\begin{itemize}
-			\item Pour rédiger du code source en bloc, on utilise l'environnement \texttt{verbatim}
+			\item To write source code in our text, we use the \texttt{verbatim} environment.
 \begin{codesource}
 	\begin{verbatim}
-		Texte disposé tel qu'il est saisi
-		dans une police à largeur fixe.
+		Text displayed as is in a
+		fixed-width font.
 	\end{verbatim}
 \end{codesource}
-			\item Pour rédiger du code source à même le texte, on utilise la commande \cmd{verb}, dont la
-			syntaxe est \cmd{verbcsourcec} où \emph{c} est un caractère quelconque ne se trouvant pas dans \emph{source}.
-			\item Pour un usage plus intensif, consultez la documentation du \emph{package} \textbf{listings}.
+			\item To write source code inline in our text, we use the \cmd{verb} command. Its syntax is \cmd{verbcsourcec} where \emph{c} can be any character not found in \emph{source}.
+			\item For more thorough inclusions of source code, you should use the \textbf{listings} package.
 		\end{itemize}
 	\end{onlyenv}
 
 	\begin{onlyenv}<2>
-	Un exemple\footnote{tiré du site \href{http://r4stats.com/examples/programming/}{r4stats.com}.} :
+	Example\footnote{taken from the \href{http://r4stats.com/examples/programming/}{r4stats.com} Website.} :
 \begin{codesource}
 	# ---Writing Your Own Functions (Macros)---
 	
