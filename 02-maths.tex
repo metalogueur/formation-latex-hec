@@ -1,97 +1,96 @@
 % Mathématiques
 
-\section{Mathématiques}
+\section{Maths}
 
 % Introduction
-\begin{frame}[c]{Mathématiques et \LaTeX}
+\begin{frame}[c]{Maths in \LaTeX}
 	\framesubtitle{Introduction}
 
 	\begin{itemize}
-		\item Les mathématiques sont \textbf{LA} raison de l'existence de \TeX. \TeX\ existe parce qu'il est très difficile de typographier correctement des équations complexes dans un document.
-		\item L'\emph{American Mathematical Society} supporte \TeX\ et \LaTeX\ depuis le début. Elle a conçu plusieurs \emph{packages} pour faciliter la transcription et la typographie des mathématiques.
-		\item Un package \textbf{essentiel} que vous \textbf{devez} utiliser est 
+		\item Maths are \textbf{THE} reason why \TeX\ exists. \TeX\ exists because it is otherwise very difficult to render complex equations in a document.
+		\item The \emph{American Mathematical Society} supports \TeX\ and \LaTeX\ from the beginning. It has built numerous packages to facilitate the writing and rendering of maths.
+		\item An \textbf{essential} package that you \textbf{have to use} is
 		\href{https://ctan.org/pkg/amsmath}{\texttt{amsmath}}.
-		\item \LaTeX\ gère automatiquement les conventions typographiques:
+		\item \LaTeX\ takes care of all typographic conventions:
 		\begin{itemize}
 			\scriptsize
-			\item constantes vs variables, disposition des équations, numérotation;
-			\item espaces entre les symboles et autour des opérateurs.
+			\item constants vs variables, equation layout and numbering;
+			\item spaces between symbols and operators.
 		\end{itemize}
-		\item Pour utiliser les mathématiques avec \LaTeX, il faut mettre celui-ci en «mode mathématiques».
+		\item To use maths in \LaTeX, you have to put it in ``Math Mode''.
 	\end{itemize}
 \end{frame}
 
-\subsection{Modes mathématiques}
+\subsection{Math Modes}
 
 % Modes mathématiques
-\begin{frame}[fragile]{Modes mathématiques}
-	Il existe deux méthodes d'écrire des équations avec \LaTeX:
+\begin{frame}[fragile]{Math Modes}
+	There is two ways of writing equations in \LaTeX:
 	
 	\begin{enumerate}
-		\item «En ligne», directement dans le texte comme $(a + b)^2 = a^2 + 2ab + b^2$ en
-		plaçant l'équation entre \$\ et \$.
+		\item ``Inline'', directly in the text like $(a + b)^2 = a^2 + 2ab + b^2$ by placing the equation between \$\ and \$.
 \begin{codesource}
-	«En ligne», directement dans le texte comme $(a + b)^2 = a^2 + 2ab + b^2$ en
-	plaçant l'équation entre \$\ et \$.
+	``Inline'', directly in the text like $(a + b)^2 = a^2 + 2ab + b^2$ by placing 
+	the equations between \$\ and \$.
 \end{codesource}
-		\item «Hors paragraphe» séparé du texte principal comme
+		\item In their own ``paragraph'', separated from the text like
 			\begin{equation*}
 				\int_0^\infty f(x)\, dx =
 				\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
 			\end{equation*}
-			en utilisant divers types d'environnements.
+			by using different types of environments.
 \begin{codesource}
-	«Hors paragraphe» séparé du texte principal comme
+	In their own ``paragraph'', separated from the text like
 	\begin{equation*}
 		\int_0^\infty f(x)\, dx =
 		\sum_{i = 1}^n \alpha_i e^{x_i} f(x_i)
 	\end{equation*}
-	en utilisant divers types d'environnements.
+	by using different types of environments.
 \end{codesource}
 	\end{enumerate}
 \end{frame}
 
 % Environnements mathématiques standards
 
-\begin{frame}[fragile,c]{Environnements mathématiques}
-	\framesubtitle{Environnements standards \LaTeX}
-	Il existe de nombreux environnements pour écrire des équations avec \LaTeX:
+\begin{frame}[fragile,c]{Math Environments}
+	\framesubtitle{\LaTeX\ Standard Environments}
+	There are several \LaTeX\ environments you can use to write equations:
 	\begin{itemize}
-		\item Équations sur une seule ligne:
+		\item One-line equations:
 \begin{codesource}
-	\begin{displaymath} équation...	\end{displaymath}
-	\begin{equation} équation... \end{equation}
-	\begin{equation*} équation... \end{equation*}
+	\begin{displaymath} equation...	\end{displaymath}
+	\begin{equation} equation... \end{equation}
+	\begin{equation*} equation... \end{equation*}
 \end{codesource}
-		\item Équations sur plusieurs lignes:
+		\item Multiline equations:
 \begin{codesource}
-	\begin{eqnarray} équation...  \end{eqnarray}
-	\begin{eqnarray*} équation... \end{eqnarray*}
+	\begin{eqnarray} equation...  \end{eqnarray}
+	\begin{eqnarray*} equation... \end{eqnarray*}
 \end{codesource}
 	\end{itemize}
 
 	\pause
-	On préférera cependant utiliser les environnements du \emph{package} \textbf{amsmath} pour les équations sur plusieurs lignes. Ils sont plus polyvalents, plus simples à utiliser et ils donnent un meilleur rendu.
+	For multiline equations, you should use the \textbf{amsmath} package's environments. They are more versatile, easier to use and they give a better rendering of equations.
 \end{frame}
 
 % Environnements mathématiques de amsmath
 
-\begin{frame}[fragile,c]{Environnements mathématiques}
-	\framesubtitle{Environnements du package \textbf{amsmath}}
+\begin{frame}[fragile,c]{Math Environments}
+	\framesubtitle{\textbf{amsmath} package's Environments}
 	\begin{description}[aaaaaaaaaaaaaaaaaaa]
-		\item[\texttt{multline, multline*}] Pour les équations trop longues pour entrer sur une ligne.
-		\item[\texttt{align, align*}] Pour les équations multiples alignées sur un marqueur (généralement le signe =).
-		\item[\texttt{gather, gather*}] Pour les équations multiples, centrées horizontalement.
-		\item[\texttt{falign, falign*}] Pareil que \texttt{align}, mais sépare les deux côtés d'une équation pour remplir toute la ligne.
-		\item[\texttt{alignat, alignat*}] Le contraire de \texttt{falign} : aucun espace ne sépare les deux côtés d'une équation.
-		\item[\texttt{split}] Pour les équations trop longues pour entrer sur une ligne; permet l'alignement de chaque ligne avec un marqueur.
+		\item[\texttt{multline, multline*}] For single equations too long to fit on one line.
+		\item[\texttt{align, align*}] For multiple equations aligned on a single marker (usually the = sign).
+		\item[\texttt{gather, gather*}] For multiple equations, horizontally centered.
+		\item[\texttt{falign, falign*}] Like \texttt{align}, but separates both sides of the equation to fit the line width.
+		\item[\texttt{alignat, alignat*}] The opposite of \texttt{falign}: no space separates both sides of the equation.
+		\item[\texttt{split}] For single equations too long to fit on one line; allows the alignment of the equation on a single marker.
 	\end{description}
 \end{frame}
 
 % Environnements mathématiques (exemples)
 
-\begin{frame}[fragile]{Environnements mathématiques}
-	\framesubtitle{Exemples}
+\begin{frame}[fragile]{Math Environments}
+	\framesubtitle{Examples}
 
 	\begin{onlyenv}<1>
 \begin{codesource}
@@ -170,37 +169,37 @@
 	\end{onlyenv}
 \end{frame}
 
-\subsection{Symboles}
+\subsection{Symbols}
 
 % Principaux éléments du mode mathématique
-\begin{frame}[fragile,c]{Principaux éléments du mode mathématique}
+\begin{frame}[fragile,c]{Main elements of Math Mode}
 	\begin{itemize}
-		\item Symboles mathématiques «de base»:
+		\item Basic math symbols:
 		 	\texttt{+ - = < > / : ! ' | [ ] ( ) \{ \}}
-		\item On écrit les exposants avec la commande \textasciicircum. \lstinline|x^2| devient $x^2$.
-		\item On écrit les indices avec la commande \_. \lstinline|a_n| devient $a_n$.
-		\item On peut combiner exposants et indices : \lstinline|x_i^k| devient $x_i^k$.
-		\item On regroupe les exposants et les indices avec \{ et \}. \lstinline|A_{i_s, k^n}^{y_i}|
-			devient $A_{i_s, k^n}^{y_i}$.
+		\item Exponents are written with \textasciicircum. \lstinline|x^2| becomes $x^2$.
+		\item Indices are written with the underscore \_. \lstinline|a_n| becomes $a_n$.
+		\item Exponents and indices can be combined: \lstinline|x_i^k| becomes $x_i^k$.
+		\item Exponents and indices can be grouped with \{ and \}. \lstinline|A_{i_s, k^n}^{y_i}|
+			becomes $A_{i_s, k^n}^{y_i}$.
 	\end{itemize}
 \end{frame}
 
 % Fractions
 \begin{frame}[fragile,c]{Fractions}
 	\begin{itemize}
-		\item On rédige des fractions avec la commande \cmd{frac\{numérateur\}\{dénominateur\}}.
+		\item Fractions are written with \cmd{frac\{numerator\}\{denominator\}}.
 		\begin{columns}
 			\begin{column}{.4\textwidth}
 			\vspace{-4.5mm}
 \begin{codesource}
-	% Taille au fil du texte
-	On a $z_1 = \frac{x}{y}$ et
-	$z_2 = xy$.
+	% Fraction size inside text
+	Let $z_1 = \frac{x}{y}$ and
+	$z_2 = xy$...
 \end{codesource}
 			\end{column}
 			\begin{column}{.4\textwidth}
-				On a $z_1 = \frac{x}{y}$ et
-				$z_2 = xy$.
+				Let $z_1 = \frac{x}{y}$ and
+				$z_2 = xy$...
 			\end{column}
 		\end{columns}
 	
@@ -210,20 +209,20 @@
 			\begin{column}{.4\textwidth}
 				\vspace{-4.5mm}
 \begin{codesource}
-	% taille hors paragraphe
-	On a
+	% Fraction size outside text
+	Let
 	\begin{equation*}
 		z_1 = \frac{x}{y}
 	\end{equation*}
-	et $z_2 = xy$.
+	and $z_2 = xy$...
 \end{codesource}
 			\end{column}
 			\begin{column}{.4\textwidth}
-				On a
+				Let
 				\begin{equation*}
 					z_1 = \frac{x}{y}
 				\end{equation*}
-				et $z_2 = xy$.
+				and $z_2 = xy$...
 			\end{column}
 		\end{columns}
 	
@@ -233,15 +232,15 @@
 			\begin{column}{.4\textwidth}
 				\vspace{-4.5mm}
 \begin{codesource}
-	% Deux tailles combinées
-	Soit
+	% Combined sizes
+	Let
 	\begin{equation*}
 		z = \frac{\frac{x}{2} + 1}{y}.
 	\end{equation*}
 \end{codesource}
 			\end{column}
 			\begin{column}{.4\textwidth}
-				Soit
+				Let
 				\begin{equation*}
 					z = \frac{\frac{x}{2} + 1}{y}.
 				\end{equation*}
@@ -250,13 +249,13 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Racines}
+\begin{frame}[fragile]{Roots}
 	\begin{itemize}
-		\item On rédige des racines avec la commande \cmd{sqrt[n]\{radicande\}}.
+		\item Roots are written with \cmd{sqrt[n]\{arg\}}.
 		\begin{itemize}
 			\scriptsize
-			\item Le radical par défaut (si on ne spécifie par l'argument \texttt{n}) est la racine carrée.
-			\item Le radical s'adapte toujours au radicande.
+			\item The default root (if \texttt{n} as not been defined) is the square root.
+			\item The root sign is automatically fitted to \texttt{arg}.
 		\end{itemize}
 		\begin{columns}
 			\begin{column}{.4\textwidth}
@@ -298,12 +297,11 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile,c]{Sommes et intégrales}
+\begin{frame}[fragile,c]{Sums and Integrals}
 	\begin{itemize}
-		\item On écrit des sommes avec la commande \cmd{sum}.
-		\item On écrit des intégrales avec la commande \cmd{int}
-		\item On saisit les limites inférieures et supérieures avec des indices (\_) et 
-			des exposants (\textasciicircum).
+		\item Sums are written with \cmd{sum}.
+		\item Integrals are written with \cmd{int}
+		\item Lower and upper limits are written with indices (\_) and exponents (\textasciicircum).
 			\begin{columns}
 				\column{.4\textwidth}					
 \begin{codesource}
@@ -324,14 +322,13 @@
 						\int_0^{10} f(x)\, dx
 					\end{equation*}
 			\end{columns}
-		\item Le \emph{package} \textbf{amsmath} fournit également les commandes \cmd{iint}
-			et \cmd{iiint} pour afficher des intégrales multiples comme $\iint$ et $\iiint$.
+		\item The \textbf{amsmath} package also provides the \cmd{iint}
+			and \cmd{iiint} to generate multiple integrals like $\iint$ and $\iiint$.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Fonctions, opérateurs, etc.}
-	Puisque le mode mathématique considère les lettres comme des variables, on ne peut pas écrire 
-	les fonctions textuellement. \LaTeX\ définit donc des commandes pour ces fonctions :
+\begin{frame}[c]{Functions, operators, etc.}
+	Since in Math Mode letters are considered variables, we can't manually write functions. \LaTeX\ defines commands for these functions:
 	
 	\begin{center}
 		\begin{tabular}{lllllll}
@@ -345,10 +342,9 @@
 
 	\pause
 	
-	Il existe aussi des commandes pour les \textbf{lettres grecques}, le \textbf{texte} et les \textbf{espaces}, les \textbf{points de suspension}, les \textbf{lettres modifiées}, les
-	\textbf{opérateurs binaires} et les \textbf{relations}, les \textbf{flèches}, les \textbf{accents} et bien plus encore!
+	There are also commands for \textbf{greek letters}, \textbf{text} and \textbf{spaces}, \textbf{continuation dots}, \textbf{calligraphic letters}, \textbf{binary operators} and \textbf{relations}, \textbf{arrows}, \textbf{accents} and many more!
 	
-	Consultez la documentation du \emph{package} \textbf{amsmath} ainsi que la 
-	\href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{Comprehensive \LaTeX\ Symbol List} -- 338 pages de bonheur! -- pour connaître l'étendue de toutes les fonctionnalités.
+	Refer to the \textbf{amsmath} package documentation and the
+	\href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{Comprehensive \LaTeX\ Symbol List} -- 338 pages of pleasant reading! -- to learn about all the functionalities.
 	
 \end{frame}
