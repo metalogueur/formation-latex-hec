@@ -1,47 +1,44 @@
 % Bibliographies et citations
 
-\section{Bibliographies et citations}
+\section{Bibliographies and citations}
 
-\subsection{Types de bibliographies}
+\subsection{Types of bibliographies}
 
 % Bibliographie manuelle
-\begin{frame}[fragile,c]{Bibliographie manuelle}
+\begin{frame}[fragile,c]{Manual bibliographies}
 	\begin{itemize}
-		\item On peut se «tricoter» une bibliographie à la main avec l'environnement \texttt{thebibliography}.
+		\item We can manually write our bibliography with the \texttt{thebibliography} environment.
 \begin{codesource}
-	\begin{thebibliography}{libellé le plus long}
-		\bibitem[libellé]{id_citation} Entrée bibliographique #1
-		\bibitem[libellé]{id_citation} Entrée bibliographique #2
+	\begin{thebibliography}{longest label}
+		\bibitem[label]{id_citation} Bibliographic entry #1
+		\bibitem[label]{id_citation} Bibliographic entry #2
 		[...]
 	\end{thebibliography}
 \end{codesource}
 		
 		\pause
 		
-		\item Chaque entrée bibliographique est rédigée avec la commande \cmd{bibitem}.
+		\item Each bibliographic entry is written with the \cmd{bibitem} command.
 		\begin{itemize}
 			\scriptsize
-			\item Le \texttt{libellé} est ce qu'on retrouvera dans la référence à l'intérieur du texte. S'il n'y a pas de libellé, \LaTeX\ produira un numéro séquentiel à la place.
-			\item \texttt{id\_citation} est l'élément qu'on utilise pour citer une source.
-			\item L'\texttt{entrée bibliographique} contient toutes les informations bibliographiques
-				de notre source.
+			\item The \texttt{label} is what we'll find as reference in the text. If there is no label, \LaTeX\ will insert a sequential number.
+			\item \texttt{id\_citation} is what is used to cite a bibliographic entry.
+			\item The \texttt{bibliographic entry} contains all information concerning the source.
 		\end{itemize}
 	
 		\pause
 		
-		\item Le \texttt{libellé le plus long} à l'ouverture correspond à celui des libellés de tous 
-		les \cmd{bibitem} qui est le plus long.
-		\item La bibliographie est insérée dans le document là où l'environnement 
-			\texttt{thebibliography} est inséré dans le code.
+		\item The \texttt{longest label} at the beginning of the environment is the longest of all labels found in the \texttt{bibitem}s.
+		\item The bibliography is inserted in the document where the \texttt{thebibliography} environment has been inserted in the code.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile,c]{Bibliographie manuelle}
-	\framesubtitle{Un exemple\ldots}
+\begin{frame}[fragile,c]{Manual bibliographies}
+	\framesubtitle{Example}
 \begin{codesource}
 	\begin{thebibliography}{99}		
 		\bibitem[Kopka and Daly, 2004]{kopkadaly:2004}
-			Kopka, Helmut et Patrick W. Daly (2004).
+			Kopka, Helmut and Patrick W. Daly (2004).
 			\newblock Guide to \LaTeX, Fourth Edition,
 			\newblock Addison-Wesley,
 			\newblock ISBN 978-0-321-17385-0, 597 p.
@@ -51,7 +48,7 @@
 			\newblock Addison-Wesley,
 			\newblock ISBN 978-0201362992, 1120p.
 		\bibitem[Goossens and Mittelbach, 2007]{goossens:2007}
-			Goossens, Michel et Franck Mittelbach (2007).
+			Goossens, Michel and Franck Mittelbach (2007).
 			\newblock The \LaTeX\ Graphics Companion, Second Edition,
 			\newblock Addison-Wesley,
 			\newblock ISBN 978-0321508928, 976p.
@@ -59,31 +56,29 @@
 \end{codesource}
 \end{frame}
 
-\begin{frame}[c]{Bibliographie automatique}
-	\framesubtitle{Une introduction à BiB\TeX}
+\begin{frame}[c]{Automatic Bibliographies}
+	\framesubtitle{An introduction to BiB\TeX}
 	
 	\begin{itemize}
-		\item BiB\TeX\ est un programme (un compilateur) auxiliaire de \LaTeX\ qui construit 
-			automatiquement une bibliographie à partir d'une base de données.
-		\item Il est \emph{de facto} le système standard de traitement des bibliographies.
-		\item Il est stable et simple à utiliser.
-		\item C'est généralement le seul format accepté par les revues scientifiques.
-		\item Vous pouvez exporter nos références bibliographiques stockées dans \textbf{EndNote}
-			directement en format BiB\TeX.
-		\item Vous pouvez télécharger des références en format BiB\TeX depuis HECo, Google Scholar,
-			ProQuest, Ebsco et de nombreuses autres banques de données de la bibliothèque.
+		\item BiB\TeX\ is a \LaTeX\ auxiliary program (compiler) that automatically builds a bibliography using a database.
+		\item It is the \emph{de facto} standard system for building bibliographies.
+		\item It is stable and simple to use.
+		\item It usually is the only format accepted by scientific journals.
+		\item You can export your bibliographic entries from \textbf{EndNote} to BiB\TeX.
+		\item You can download references in BiB\TeX\ format from HECo, Google Scholar,
+			ProQuest, Ebsco and many more databases found at the Library.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Compilation d'un document avec BiB\TeX}
+\begin{frame}[c]{Compiling a document with BiB\TeX}
 	\begin{itemize}
-		\item À la formation précédente, nous avons schématisé la compilation d'un document comme suit:
+		\item In the previous training session, we have schematized a document's compilation as such:
 	\end{itemize}
 	{
 		\begin{minipage}[t]{0.25\linewidth}
 			\centering
 			{\Large\faFileTextO} \\
-			code source
+			source code
 		\end{minipage}
 		\hfill{\Large\faArrowRight}\hfill
 		\begin{minipage}[t]{0.25\linewidth}
@@ -95,21 +90,21 @@
 		\begin{minipage}[t]{0.25\linewidth}
 			\centering
 			{\Large\faFilePdfO} \\
-			document .pdf
+			.pdf document
 		\end{minipage}
 	}
 	
 	\pause
 	
 	\begin{itemize}
-		\item Avec BiB\TeX, la séquence de compilations change:		
+		\item With BiB\TeX, the compilation sequence changes:		
 	\end{itemize}
 
 	{
 		\begin{minipage}[t]{0.125\linewidth}
 			\centering
 			{\Large\faFileTextO} \\
-			code source
+			source code
 		\end{minipage}
 		\hfill{\Large\faArrowRight}\hfill
 		\begin{minipage}[t]{0.125\linewidth}
@@ -139,18 +134,18 @@
 		\begin{minipage}[t]{0.125\linewidth}
 			\centering
 			{\Large\faFilePdfO} \\
-			document .pdf
+			.pdf document
 		\end{minipage}
 	}
 \end{frame}
 
-\subsection{Création d'une bibliographie}
+\subsection{Creating a Bibliography}
 
-\begin{frame}[fragile]{Création d'une base de données}
-	La première chose à faire est de se créer une base de données de références qu'on stockera dans un fichier \texttt{.bib}.
+\begin{frame}[fragile]{Creating a Database}
+	The first thing to do is to create a database of references that is going to be stored in a \texttt{.bib} file.
 	
 \begin{codesource}
-	% Exemple de contenu d'un fichier bibliographie.bib
+	% Example taken from bibliography.bib
 	
 	@article{amaralcardiac2014,
 		author = {Amaral, Joice Anaize Tonon do and Nogueira, Marcela Leme and Roque, Adriano L 
@@ -177,11 +172,11 @@
 \end{frame}
 
 % Package natbib
-\begin{frame}[fragile]{\emph{Package} natbib}
+\begin{frame}[fragile]{natbib Package}
 	\begin{itemize}
-		\item Par défaut, \LaTeX\ ne supporte que les bibliographies avec un format de citation numérique.
-		\item Le format de citations adopté dans les sciences sociales en général, et à HEC Montréal en particulier, est le format \emph{auteur, année}.
-		\item Le \emph{package} \textbf{natbib} permet l'utilisation des citations \emph{auteur, année}.
+		\item By default, \LaTeX\ only supports numerical citations.
+		\item The citation format used in science in general, and at HEC Montréal particularly, is the \emph{author, year} format.
+		\item The \textbf{natbib} package allows the use of the \emph{author, year} format.
 
 		\pause
 		
@@ -197,46 +192,44 @@
 	\usepackage{hyperref}
 	
 	\begin{document}
-		contenu...
+		content...
 	\end{document}
 \end{codesource}
-		\item natbib doit \textbf{absolument} être appelé \textbf{après} babel.
+		\item natbib must \textbf{absolutely} be loaded \textbf{after} babel.
 	\end{itemize}
 \end{frame}
 
 % Insertion de la bibliographie
-\begin{frame}[fragile]{Insertion de la bibliographie}
+\begin{frame}[fragile]{Inserting a Bibliography}
 	\begin{itemize}
-		\item Avant d'insérer la bibliographie dans le texte, il faut signifier à BiB\TeX\ dans quel
-		style bibliographique nous voulons que nos références s'affichent.
+		\item Before inserting our bibliography in our document, we have to tell BiB\TeX\ in which bibliographic style we want our references to be displayed.
 \begin{codesource}
 	\bibliographystyle{style}
 \end{codesource}
 		
 		\pause
 		
-		\item Ce ne sont pas tous les styles bibliographiques qui sont compatibles avec le format de 
-			citation \emph{auteur, année}.
+		\item Not all bibliographic styles are compatible with the \emph{author, year} citation format. 
 			\begin{itemize}
 				\scriptsize
-				\item Utilisez le style \texttt{francais} si vous rédigez en français;
-				\item Utilisez le style \texttt{apalike} si vous rédigez en anglais.
+				\item Use the \texttt{francais} style if you write in French;
+				\item Use the \texttt{apalike} style if you write in English.
 \begin{codesource}
-	% Rédaction en français
+	% Writing in French
 	\bibliographystyle{francais}
 	
-	% Rédaction en anglais
+	% Writing in English
 	\bibliographystyle{apalike}
 \end{codesource}
-				\item Ces deux styles sont ceux qui se rapprochent le plus de celui de HEC Montréal.
+				\item These two styles resemble most HEC Montréal's style.
 			\end{itemize}
 		
 		\pause
 		
-		\item Une fois qu'on a choisi notre style, on insère la bibliographie.
+		\item Once we have chosen our bibliographic style, we can insert our bibliography.
 \begin{codesource}
-	\bibliographystyle{francais}
-	\bibliography{fichier_bib} % Nom du fichier .bib entre accolades, sans l'extension .bib
+	\bibliographystyle{apalike}
+	\bibliography{bibfile} % Name of .bib file between curly braces, with the file extension
 \end{codesource}
 	\end{itemize}
 \end{frame}
@@ -244,35 +237,32 @@
 \subsection{Citations}
 
 % Comment citer ses sources
-\begin{frame}[c]{Comment citer ses sources}
+\begin{frame}[c]{Referring to sources}
 	\begin{itemize}
-	\item Il existe trois commandes pour citer des sources bibliographiques dans le texte, dont deux 	
-		proviennent de \textbf{natbib} :
+	\item There are three ways to cite bibliographic entries, two of them coming from the \textbf{natbib} package:
 	
 	\begin{description}[aaaaaaaaaaaaaaaaaaaaaaaaaaa]
-		\item[\cmd{cite[extra]\{id\_citation\}}] Citation numérique
-		\item[\cmd{citet[extra]\{id\_citation\}}] Citation textuelle
-		\item[\cmd{citep[extra]\{id\_citation\}}] Citation entre parenthèses
+		\item[\cmd{cite[extra]\{id\_citation\}}] Numerical citation
+		\item[\cmd{citet[extra]\{id\_citation\}}] Inline citation
+		\item[\cmd{citep[extra]\{id\_citation\}}] Citation between parentheses
 	\end{description}
 	
-	\item L'argument \texttt{id\_citation} est celui qu'on a utilisé pour identifier un item
-		bibliographique.
-	\item L'argument optionnel \texttt{extra} permet d'ajouter des informations supplémentaires
-		à la suite d'une situation comme, par exemple, un numéro de page.
-	\item Nous vous recommandons d'utiliser les commandes \cmd{citet} et \cmd{citep}, qui sont plus descriptives.
+	\item The \texttt{id\_citation} argument is what is used to identify a bibliographic entry.
+	\item The optional \texttt{extra} argument allows us to insert extra information after the citation, e.g. a page number.
+	\item We advise you to use the \cmd{citet} and \cmd{citep} commands, which are more descriptive.
 	\end{itemize}
 \end{frame}
 
 % Exemples de citations
-\begin{frame}[fragile]{Exemples de citation}
+\begin{frame}[fragile]{Citation examples}
 	
-	Soit l'item bibliographique suivant:
+	Look at the following bibliographic entry:
 \begin{codesource}
 	\bibitem{jones99}
 		F. J. Jones, H. P. Baker, and W. V. Toms, [...] 1999.
 \end{codesource}
 
-	Voici un aperçu de ce que donnerait chaque commande de citation:
+	This is what each of the citation commands' output looks like :
 	
 	\pause
 	
@@ -280,24 +270,24 @@
 		\column{.49\textwidth}
 		\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que quelqu'un
-	pense comme moi\cite{jones99}\ldots
+	I am so proud that someone thinks exactly
+	like me\cite{jones99}\ldots
 \end{codesource}
 		\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que quelqu'un
-			pense comme moi[1]\ldots
+				I am so proud that someone thinks exactly
+			like me[1]\ldots
 	\end{columns}
 
 	\begin{columns}
 		\column{.49\textwidth}
 		\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que quelqu'un
-	pense comme moi\cite[p.22]{jones99}\ldots
+		I am so proud that someone thinks exactly
+	like me\cite[p.22]{jones99}\ldots
 \end{codesource}
 		\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que quelqu'un
-			pense comme moi[1, p.22]\ldots
+				I am so proud that someone thinks exactly
+			like me[1, p.22]\ldots
 		\end{columns}
 	
 	\pause
@@ -306,22 +296,22 @@
 		\column{.49\textwidth}
 		\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que 
-	\citet{jones99}pense comme moi\ldots
+		I am so proud that \citet{jones99}
+		thinks exactly like me\ldots
 \end{codesource}
 		\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que Jones et al., (1999) pense comme moi\ldots
+			I am so proud that Jones et al., (1999) thinks exactly like me\ldots
 		\end{columns}
 
 		\begin{columns}
 		\column{.49\textwidth}
 		\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que 
-	\citet[p.22]{jones99}pense comme moi\ldots
+	I am so proud that \citet[p.22]{jones99}
+	thinks exactly like me\ldots
 \end{codesource}
 		\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que Jones et al., (1999, p.22) pense comme moi\ldots
+			I am so proud that Jones et al., (1999, p.22) thinks exactly like me\ldots
 		\end{columns}
 	
 		\pause
@@ -330,21 +320,23 @@
 			\column{.49\textwidth}
 			\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que quelqu'un
-	pense comme moi\citep{jones99}\ldots
+	I am so proud that someone thinks exactly
+	like me\citep{jones99}\ldots
 \end{codesource}
 			\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que quelqu'un pense comme moi (Jones et al., 1999)\ldots
+			I am so proud that someone thinks exactly
+			like me (Jones et al., 1999)\ldots
 		\end{columns}
 	
 		\begin{columns}
 			\column{.49\textwidth}
 			\vspace{-4.5mm}
 \begin{codesource}
-	Je ne suis pas peu fier de voir que quelqu'un
-	pense comme moi\citep[p.22]{jones99}\ldots
+	I am so proud that someone thinks exactly
+	like me\citep[p.22]{jones99}\ldots
 \end{codesource}
 			\column{.49\textwidth}
-			Je ne suis pas peu fier de voir que quelqu'un pense comme moi (Jones et al., 1999, p.22)\ldots
+			I am so proud that someone thinks exactly
+			like me (Jones et al., 1999, p.22)\ldots
 		\end{columns}
 \end{frame}
