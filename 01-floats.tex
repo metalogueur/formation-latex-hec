@@ -1,0 +1,310 @@
+\section{Floats}
+
+\begin{frame}[c]{Floats}
+
+	It was already said that the strength of \TeX\ and \LaTeX\ is typography and that it was better to let the systems do their work automatically.
+	
+	Tables and figures (images and graphics) are an excellent example of the systems' power.
+\end{frame}
+
+\subsection{Tables}
+
+% Tableaux (introduction)
+\begin{frame}[fragile,c]{Tables}
+	\framesubtitle{Introduction}
+	
+	\begin{itemize}
+		\item Building tables in \LaTeX\ can be tricky.
+		\item There isn't one, nor two, but many ways to build tables.
+		\item \LaTeX\ provides two environments: \texttt{tabular} and \texttt{tabular*}.
+	\end{itemize}
+
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+\begin{codesource}
+	\begin{tabular}{columns}
+		cell1 & cell2 & cell3 \\
+		cell4 & cell5 & cell6 \\
+		cell7 & cell8 & cell9
+	\end{tabular}
+\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+\begin{codesource}
+	\begin{tabular*}{width}{columns}
+		cell1 & cell2 & cell3 \\
+		cell4 & cell5 & cell6 \\
+		cell7 & cell8 & cell9
+	\end{tabular*}
+\end{codesource}
+		\end{column}
+	\end{columns}
+
+	\begin{itemize}
+		\item We will also take a look at a third environment, \texttt{tabularx}, provided by its eponymic package.
+		\item \texttt{tabularx}'s syntax is the same as \texttt{tabular}'s.
+	\end{itemize}
+\end{frame}
+
+% Tableaux (construction)
+\begin{frame}[fragile]{Tables}
+	\framesubtitle{Building}
+	Let's take a look at the last frame's tables:
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\begin{codesource}
+				\begin{tabular}{columns}
+					cell1 & cell2 & cell3 \\
+					cell4 & cell5 & cell6 \\
+					cell7 & cell8 & cell9
+				\end{tabular}
+			\end{codesource}
+		\end{column}
+		\begin{column}{.49\textwidth}
+			\begin{codesource}
+				\begin{tabular*}{width}{columns}
+					cell1 & cell2 & cell3 \\
+					cell4 & cell5 & cell6 \\
+					cell7 & cell8 & cell9
+				\end{tabular*}
+			\end{codesource}
+		\end{column}
+	\end{columns}
+
+	\begin{onlyenv}<2>
+		\begin{itemize}
+			\item We define the \textbf{number of cells} and their \textbf{horizontal alignment} in the \texttt{columns} argument.
+			\begin{itemize}
+				\scriptsize
+				\item Possible options are \texttt{l} (\emph{left}), \texttt{c} (\emph{center}),
+					and \texttt{r} (\emph{right}).
+				\item We define a fixed-width column with \texttt{p\{width\}}.
+				\item \texttt{tabularx} also takes the \texttt{X} option, which adjusts cell width according to the table width.
+				\item The \texttt{|} symbol is used to insert a vertical line between cells.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<3>
+		\begin{itemize}
+			\item A table's \textbf{width} depends of the environment:
+			\begin{itemize}
+				\scriptsize
+				\item \texttt{tabular} : table width = content width;
+				\item \texttt{tabular*} and \texttt{tabularx} : width determined by the \texttt{width} argument.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<4>
+		\begin{itemize}
+			\item Cells from a specific \textbf{row} are separated by the \texttt{\&} symbol.
+			\item A row ends with \textbackslash\textbackslash, \textbf{except for the last row}.
+			\item A horizontal line can be inserted between rows with \cmd{hline}.
+			\item The \cmd{multicolumn\{cols\}\{pos\}\{text\}} command is used to merge cells in a row.
+			\begin{itemize}
+				\scriptsize
+				\item \texttt{cols} : a cell's column span;
+				\item \texttt{pos} : horizontal alignment (\texttt{l},\texttt{c},\texttt{r});
+				\item \texttt{text} : cell content.
+			\end{itemize}
+		\end{itemize}
+	\end{onlyenv}
+	
+\end{frame}
+
+% Tableaux (exemple concret)
+\begin{frame}[fragile,c]{Tables}
+	\framesubtitle{Example}
+\begin{codesource}
+	\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+		\textbf{Teams}		&	\multicolumn{7}{c}{\textbf{Statistics}} \\
+		\hline\hline
+		NFC North			&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+		\hline
+		Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+		Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+		Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+		Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+	\end{tabularx}
+\end{codesource}
+
+	\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+		\textbf{Teams}		&	\multicolumn{7}{c}{\textbf{Statistics}} \\
+		\hline\hline
+		NFC North			&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+		\hline
+		Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+		Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+		Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+		Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+	\end{tabularx}
+\end{frame}
+
+% Tableaux flottants
+\begin{frame}[fragile]{Floating tables}
+	
+	\begin{onlyenv}<1-2>
+		\begin{itemize}
+			\item The \texttt{tabular}, \texttt{tabular*} and \texttt{tabularx} insert tables in a document where they have been written in the text.
+			\item \LaTeX\ can determine the best place to insert tables with the \texttt{table} environment.
+\begin{codesource}
+	\begin{table}[location]
+		\begin{tabularx}{\textwidth}{lccc}
+			...
+		\end{tabularx}
+		\caption{text}
+	\end{table}
+\end{codesource}
+
+			\pause
+			\item The optional \texttt{location} argument takes one or more of the following options:
+				\begin{description}[b]
+					\item[t] Table inserted on \emph{\textbf{t}op} of the page
+					\item[b] Table inserted at the \emph{\textbf{b}ottom} of the page
+					\item[p] Table inserted in a reserved \emph{\textbf{p}age}
+					\item[h] Table inserted \emph{\textbf{h}ere}, meaning it's inserted where it was written in the text
+				\end{description}
+			\item Use \cmd{caption} to insert a caption below of above a table.
+			\item \cmd{listoftables} generates a list of all the \texttt{table} environments inserted in the text.
+		\end{itemize}
+	\end{onlyenv}
+
+	\begin{onlyenv}<3>
+		\begin{codesource}
+\begin{table}
+	\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+		Teams				&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+		\hline
+		Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+		Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+		Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+		Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+	\end{tabularx}
+	\caption{The NFL NFC North 2017 Season Statistics}
+\end{table}
+		\end{codesource}
+		
+		\begin{table}
+			\begin{tabularx}{\textwidth}{X|rrr|r|rrr}
+				Teams				&	W	&	L	&	T	&	PCT		&	PF	&	PA	&	Net Pts \\
+				\hline
+				Minnesota Vikings	&	13	&	3	&	0	&	.813	&	382	&	252	&	130 \\
+				Detroit Lions		&	9	&	7	&	0	&	.563	&	410	&	376	&	34 \\
+				Green Bay Packers	&	7	&	9	& 	0	&	.438	&	320	&	384	&	-64 \\
+				Chicago Bears		&	5	&	11	&	0	&	.313	&	264	&	320	&	-56
+			\end{tabularx}
+			\caption{The NFL NFC North 2017 Season Statistics}
+		\end{table}
+	\end{onlyenv}
+\end{frame}
+
+\subsection{Figures}
+
+% Insertion d'images
+\begin{frame}[fragile,c]{Inserting images}
+	\begin{itemize}
+		\item To insert images in a \LaTeX\ document , we need three commands:
+\begin{codesource}
+	%% Preamble	
+	\usepackage{graphicx}
+	\graphicspath{{dir1}{dir2}...}
+	
+	%% Document body
+	\includegraphics[options]{imagefile}
+\end{codesource}
+
+		\pause
+		\item The \textbf{graphicx} package must be loaded in the preamble.
+		\item The \cmd{graphicspath} command is used to specify in which directories the image files can be found.
+		\item The \cmd{includegraphics} command inserts the image in the document.
+		\item The options from \cmd{includegraphics} determine, among other things, the image's size, rotation, origin, etc. Refer to the  \href{http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf}{graphicx documentation} to see all available options.
+	\end{itemize}
+\end{frame}
+
+% Environnement picture
+\begin{frame}[fragile]{Inserting graphics}
+	
+	We can draw graphics in \LaTeX\ with the \texttt{picture} environment
+	\footnote{\url{https://en.wikibooks.org/wiki/LaTeX/Picture\#Plotting_graphs}}.
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+\begin{codesource}
+	\setlength{\unitlength}{1cm}
+	\begin{picture}(0,0)(-3,2)
+	\put(-1.5,0){\vector(1,0){3}}
+	\put(2.7,-0.1){$\chi$}
+	\put(0,-1.5){\vector(0,1){3}}
+	\multiput(-2.5,1)(0.4,0){13}
+	{\line(1,0){0.2}}
+	\multiput(-2.5,-1)(0.4,0){13}
+	{\line(1,0){0.2}}
+	\put(0.2,1.4)
+	{$\beta=v/c=\tanh\chi$}
+	\qbezier(0,0)(0.8853,0.8853)
+	(2,0.9640)
+	\qbezier(0,0)(-0.8853,-0.8853)
+	(-2,-0.9640)	
+	\end{picture}
+\end{codesource}	
+		\end{column}
+		
+		\begin{column}{.49\textwidth}
+			\setlength{\unitlength}{1cm}
+			\begin{picture}(0,0)(-3,2)
+			\put(-1.5,0){\vector(1,0){3}}
+			\put(2.7,-0.1){$\chi$}
+			\put(0,-1.5){\vector(0,1){3}}
+			\multiput(-2.5,1)(0.4,0){13}
+			{\line(1,0){0.2}}
+			\multiput(-2.5,-1)(0.4,0){13}
+			{\line(1,0){0.2}}
+			\put(0.2,1.4)
+			{$\beta=v/c=\tanh\chi$}
+			\qbezier(0,0)(0.8853,0.8853)
+			(2,0.9640)
+			\qbezier(0,0)(-0.8853,-0.8853)
+			(-2,-0.9640)	
+			\end{picture}
+		\end{column}
+	\end{columns}	
+	
+	For a more advanced usage of graphics, you can use the 
+	\href{https://ctan.org/pkg/pgf}{\textbf{TikZ PGF}} package.
+\end{frame}
+
+% Images et graphiques flottants
+\begin{frame}[fragile,c]{Floating images and graphics}
+	\begin{itemize}
+		\item As for tables, it is better to let \TeX\ and \LaTeX\ determine where it is best to insert images and graphics.
+		\item This can be done with the \texttt{figure} environment.
+		\vspace{-2.2mm}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+\begin{codesource}
+	\begin{figure}[location]
+		\includegraphics[options]{file}
+		\caption{text}
+	\end{figure}
+\end{codesource}
+			\end{column}
+			\begin{column}{.4\textwidth}
+\begin{codesource}
+	\begin{figure}[location]
+		\begin{picture}(width,height)(x,y)
+			...
+		\end{picture}
+		\caption{text}
+	\end{figure}
+\end{codesource}
+			\end{column}
+		\end{columns}
+	
+		\pause
+		\item The optional \texttt{location} argument takes the options values as \texttt{table}: \texttt{t},\texttt{b},\texttt{p},\texttt{h}.
+		\item \cmd{caption} inserts a captions below of above an image or graphic.
+		\item \cmd{listoffigures} generates a list of all the \texttt{figure} environments inserted in the text.
+	\end{itemize}
+\end{frame}
