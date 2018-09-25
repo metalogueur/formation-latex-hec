@@ -25,41 +25,6 @@
 	\end{table}
 \end{frame}
 
-% Titre et page de titre
-\begin{frame}[fragile]{Titre et page de titre}
-	Mise en forme automatique :
-\begin{codesource}
-	% Commandes du préambule
-	\title[titre court]{titre au long}
-	\author[nom(s) d'auteur(s) court(s)]{noms des auteurs au long}
-	\date[date courte]{date au long}
-	[...]
-	
-	% Commande du corps du document
-	\maketitle
-\end{codesource}
-
-	Mise en forme libre :
-		\begin{columns}
-			\begin{HECcomparaison}{Classes standards}
-\begin{codesource}
-	\begin{titlepage}
-		...
-	\end{titlepage}
-\end{codesource}
-			\end{HECcomparaison}
-			\begin{HECcomparaison}{Classes memoir et hecthese}
-\begin{codesource}
-	\begin{titlingpage}
-		...
-	\end{titlingpage}
-\end{codesource}	
-			\end{HECcomparaison}
-		\end{columns}
-	
-	Dans la classe \textbf{hecthese}, les pages titre sont générées automatiquement.
-\end{frame}
-
 % Résumé
 \begin{frame}[fragile,c]{Résumé}
 	\begin{itemize}
@@ -79,7 +44,7 @@
 % Sections
 \begin{frame}[fragile]{Sections}
 	\begin{itemize}
-		\item Découpage du document en sections avec les commandes
+		\item Découpage du document en sections avec les commandes suivantes :
 \begin{codesource}
 	\part[titre court]{titre au long}
 	\chapter[titre court]{titre au long}

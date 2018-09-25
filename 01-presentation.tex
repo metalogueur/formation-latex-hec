@@ -5,45 +5,36 @@
 
 \subsection{Qu'est-ce que \TeX\ et \LaTeX?}
 
-% Qu'est-ce que TeX?
-\begin{frame}{Qu'est-ce que \TeX?}
-	\begin{columns}
-		\begin{HEClegende}{Donald Knuth}
-			\includegraphics[width=.9\textwidth,keepaspectratio=true]{KnuthAtOpenContentAlliance.jpg}
-			
-			{\tiny\faCreativeCommons\ Jacob Appelbaum, 2005}
-		\end{HEClegende}
-		\begin{HECcontenuLegende}
-			\begin{itemize}
-				\item Un système de mise en page (\emph{typesetting}) et de préparation de documents
-				créé par Donald Knuth.
-				\item «Le système le plus puissant pour produire des ouvrages scientifiques et
-				techniques d'une grande qualité typographique.»\footnote{Kopka \& Daly, p. 6}
-				\item Un système mature, stable et complet, considéré comme exempt de bogues.
-				\item Un ensemble de commandes très primitives parfaites pour la typographie et
-				des fonctions de programmation.
-				\item «\emph{typesetter-level program}»
-			\end{itemize}
-		\end{HECcontenuLegende}
-	\end{columns}
+\begin{frame}[c,label=fr:commencement]{Au commencement (1978), il y eut \TeX\ldots}
+	\includegraphics[width=\textwidth,keepaspectratio=true]{knuth-tex-commencement.jpg}
 \end{frame}
 
-% Qu'est-ce que LaTeX?
+\begin{frame}[c]{Qu'est-ce que \TeX?}
+
+	\begin{itemize}
+		\item Un système de mise en page (\emph{typesetting}) et de préparation de documents;
+		\item «Le système le plus puissant pour produire des ouvrages scientifiques et
+		techniques d'une grande qualité typographique»\footnote{Kopka \& Daly, p. 6};
+		\item Un système mature, stable et complet, considéré comme exempt de bogues;
+		\item Un ensemble de commandes très primitives parfaites pour la typographie et
+		des fonctions de programmation;
+		\item «\emph{typesetter-level program}».
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c,label=fr:sixiemejour]{Au sixième jour (1983), il y eut \LaTeX\ldots}
+	\includegraphics[width=\textwidth,keepaspectratio=true]{creation-of-latex.jpg}
+\end{frame}
+
 \begin{frame}{Qu'est-ce que \LaTeX?}
-	\begin{columns}
-		\begin{HEClegende}{Leslie Lamport}
-			\includegraphics[width=.9\textwidth,keepaspectratio=true]{Leslie_Lamport.jpg}
-		\end{HEClegende}
-		\begin{HECcontenuLegende}
-			\begin{itemize}
-				\item Un ensemble de macro-commandes créées par Leslie Lamport pour faciliter l'utilisation de \TeX.
-				\item Ne requiert aucune connaissance préalable de la typographie en général et de \TeX\ en particulier.
-				\item Langage de balisage (\emph{Markup Language}) typographique et logique pour indiquer la mise en forme du texte (pensez au HTML).
-				\item Langage multiplateforme, identique d'un système d'exploitation à l'autre, et extensible par l'ajout de \emph{packages}.
-				\item «\emph{author-level program}»
-			\end{itemize}
-		\end{HECcontenuLegende}
-	\end{columns}
+	\begin{itemize}
+		\item Un ensemble de macro-commandes pour faciliter l'utilisation de \TeX.
+		\item Ne requiert aucune connaissance préalable de la typographie en général et de \TeX\ en particulier.
+		\item Langage de balisage (\emph{Markup Language}) typographique et logique pour indiquer la mise en forme du texte (pensez au HTML).
+		\item Langage multiplateforme, identique d'un système d'exploitation à l'autre, et extensible par l'ajout de \emph{packages}.
+		\item «\emph{author-level program}»
+	\end{itemize}
 \end{frame}
 
 \subsection{Processus de création d'un document \LaTeX}
@@ -84,40 +75,4 @@
 		\onslide<3>\put(54,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{compilation avec un moteur \TeX\ à partir de la ligne de commande\smallskip}}}}
 		\onslide<4>\put(108,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{visualisation avec une visionneuse externe\smallskip}}}}
 	\end{picture}
-\end{frame}
-
-% Quelques choses simple à réaliser avec LaTeX
-\begin{frame}{Quelques choses simples à réaliser avec \LaTeX\ldots}
-	\framesubtitle{\ldots\ et pas nécessairement avec un logiciel de traitement de texte}
-	
-	\begin{itemize}
-		\item Page de titre
-		\item Table des matières
-		\item Numérotation des pages
-		\item Figures et tableaux : disposition sur la page, numérotation, renvois
-		\item Équations mathématiques : disposition, numérotation et renvois
-		\item Citations et composition de la bibliographie
-		\item Coupure de mots
-		\item Document recto verso
-	\end{itemize}
-\end{frame}
-
-% Les outils dont vous aurez besoin
-\begin{frame}[c]{Les outils dont vous aurez besoin}
-	
-	\begin{itemize}
-		\item Une distribution \TeX
-			\begin{itemize}
-				\item \href{https://www.tug.org/texlive/}{\TeX\ Live} (Windows et Unix/Linux)
-				\item \href{https://www.tug.org/mactex/}{Mac\TeX}, dérivée de \TeX\ Live (Mac OS)
-				\item \href{https://miktex.org/}{MiK\TeX} (Windows, Mac OS et Unix/Linux)
-			\end{itemize}
-		\item Un environnement de rédaction intégré
-			\begin{itemize}
-				\item Une \href{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}{flopée}\ldots
-				\item La bibliothèque utilise et recommande \href{https://www.texstudio.org/}{%
-					\TeX Studio}
-			\end{itemize}
-		\item Un éditeur de ligne de commande
-	\end{itemize}
 \end{frame}
