@@ -1,64 +1,58 @@
 % Présentation de TeX et LaTeX
 \small
 
-\section{A \TeX\ and \LaTeX\ Presentation}
+\section{Présentation de \TeX\ et \LaTeX}
 
-\subsection{What is \TeX\ and \LaTeX?}
+\subsection{Qu'est-ce que \TeX\ et \LaTeX?}
 
-% Qu'est-ce que TeX?
-\begin{frame}{What is \TeX?}
-	\begin{columns}
-		\begin{HEClegende}{Donald Knuth}
-			\includegraphics[width=.9\textwidth,keepaspectratio=true]{KnuthAtOpenContentAlliance.jpg}
-			
-			{\tiny\faCreativeCommons\ Jacob Appelbaum, 2005}
-		\end{HEClegende}
-		\begin{HECcontenuLegende}
-			\begin{itemize}
-				\item A typesetting system created by Donald Knuth.
-				\item ``The most powerful formatting program for producing book-quality text of scientific and technical works.''\footnote{Kopka \& Daly, p. 6}
-				\item A mature, stable, complete, bug-free system.
-				\item A set of primitive commands perfect for typographic and programmatic functions.
-				\item ``\emph{typesetter-level program}''
-			\end{itemize}
-		\end{HECcontenuLegende}
-	\end{columns}
+\begin{frame}[c,label=fr:commencement]{Au commencement (1978), il y eut \TeX\ldots}
+	\includegraphics[width=\textwidth,keepaspectratio=true]{knuth-tex-commencement.jpg}
 \end{frame}
 
-% Qu'est-ce que LaTeX?
-\begin{frame}{What is \LaTeX?}
-	\begin{columns}
-		\begin{HEClegende}{Leslie Lamport}
-			\includegraphics[width=.9\textwidth,keepaspectratio=true]{Leslie_Lamport.jpg}
-		\end{HEClegende}
-		\begin{HECcontenuLegende}
-			\begin{itemize}
-				\item A set of markup commands created by Leslie Lamport to facilitate \TeX's use.
-				\item Doesn't require any knowledge of typography in general and \TeX\ particularly.
-				\item Typographic and logical markup language used to set the text layout (like HTML).
-				\item Cross-platform language, identical from one operating system to the other and extensible with packages.
-				\item ``\emph{author-level program}''
-			\end{itemize}
-		\end{HECcontenuLegende}
-	\end{columns}
+\begin{frame}[c]{Qu'est-ce que \TeX?}
+
+	\begin{itemize}
+		\item Un système de mise en page (\emph{typesetting}) et de préparation de documents;
+		\item «Le système le plus puissant pour produire des ouvrages scientifiques et
+		techniques d'une grande qualité typographique»\footnote{Kopka \& Daly, p. 6};
+		\item Un système mature, stable et complet, considéré comme exempt de bogues;
+		\item Un ensemble de commandes très primitives parfaites pour la typographie et
+		des fonctions de programmation;
+		\item «\emph{typesetter-level program}».
+	\end{itemize}
+
 \end{frame}
 
-\subsection{\LaTeX\ Document Creation Process}
+\begin{frame}[c,label=fr:sixiemejour]{Au sixième jour (1983), il y eut \LaTeX\ldots}
+	\includegraphics[width=\textwidth,keepaspectratio=true]{creation-of-latex.jpg}
+\end{frame}
+
+\begin{frame}{Qu'est-ce que \LaTeX?}
+	\begin{itemize}
+		\item Un ensemble de macro-commandes pour faciliter l'utilisation de \TeX.
+		\item Ne requiert aucune connaissance préalable de la typographie en général et de \TeX\ en particulier.
+		\item Langage de balisage (\emph{Markup Language}) typographique et logique pour indiquer la mise en forme du texte (pensez au HTML).
+		\item Langage multiplateforme, identique d'un système d'exploitation à l'autre, et extensible par l'ajout de \emph{packages}.
+		\item «\emph{author-level program}»
+	\end{itemize}
+\end{frame}
+
+\subsection{Processus de création d'un document \LaTeX}
 
 % Rédiger avec une nouvelle perspective
-\begin{frame}[c]{Writing with a new perspective}
+\begin{frame}[c]{Rédiger avec une nouvelle perspective}
 	
 	\begin{itemize}
-		\item You write your document in plain text and you use commands to describe 
-			\textbf{what the text is} and \textbf{not what it should look like}.
-		\item You focus on your \textbf{content}.
-		\item You let \LaTeX\ do its work, that is taking care of the \textbf{container}.
+		\item Vous rédigez votre document en texte brut et utilisez des commandes pour décrire
+			\textbf{ce que votre texte représente} et \textbf{non pas ce à quoi il doit ressembler}.
+		\item Vous vous concentrez sur votre \textbf{contenu}.
+		\item Vous laissez \LaTeX\ faire son travail, c'est-à-dire s'occuper du \textbf{contenant}.
 	\end{itemize}
 	
 \end{frame}
 
 % Processus de création d'un document LaTeX
-\begin{frame}[c]{\LaTeX\ Document Creation Process}
+\begin{frame}[c]{Processus de création d'un document \LaTeX}
 	\Huge
 	\begin{minipage}[t]{0.25\linewidth}
 		\centering
@@ -77,44 +71,8 @@
 
 	\begin{picture}(0,0)
 		\footnotesize\thicklines\color{bleuFonceSecondaire}
-		\onslide<2>\put(0,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{writing and markup with a text editor\smallskip}}}}
-		\onslide<3>\put(54,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{compilation with a \TeX\ compiler from the command line\smallskip}}}}
-		\onslide<4>\put(108,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{visualization with an external reader\smallskip}}}}
+		\onslide<2>\put(0,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{rédaction du texte et balisage avec éditeur de texte\smallskip}}}}
+		\onslide<3>\put(54,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{compilation avec un moteur \TeX\ à partir de la ligne de commande\smallskip}}}}
+		\onslide<4>\put(108,-10){\dashbox{1}(35,40)[b]{\parbox{.2\textwidth}{\centering\textbf{visualisation avec une visionneuse externe\smallskip}}}}
 	\end{picture}
-\end{frame}
-
-% Quelques choses simple à réaliser avec LaTeX
-\begin{frame}{Some Things Done Simply with \LaTeX\ldots}
-	\framesubtitle{\ldots\ and not necessarily with a word processor}
-	
-	\begin{itemize}
-		\item Title page
-		\item Table of contents
-		\item Page numbering
-		\item Figures and tables: display on a page, numbering, reference
-		\item Equations: display, numbering and reference
-		\item Citations and bibliographies
-		\item Hyphenation
-		\item Two-sided documents
-	\end{itemize}
-\end{frame}
-
-% Les outils dont vous aurez besoin
-\begin{frame}[c]{Tools you'll need}
-	
-	\begin{itemize}
-		\item A \TeX\ distribution
-			\begin{itemize}
-				\item \href{https://www.tug.org/texlive/}{\TeX\ Live} (Windows and Unix/Linux)
-				\item \href{https://www.tug.org/mactex/}{Mac\TeX}, derived from \TeX\ Live (Mac OS)
-				\item \href{https://miktex.org/}{MiK\TeX} (Windows, Mac OS and Unix/Linux)
-			\end{itemize}
-		\item An integrated writing environment
-			\begin{itemize}
-				\item \href{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}{Too many} to list them all\ldots
-				\item The library uses and recommends \href{https://www.texstudio.org/}{%
-					\TeX Studio}
-			\end{itemize}
-		\item A command line terminal
-	\end{itemize}
 \end{frame}

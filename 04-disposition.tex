@@ -1,0 +1,197 @@
+\section{Disposition du texte}
+
+% Alignement du texte
+\begin{frame}[fragile]{Alignement du texte}
+	\begin{itemize}
+		\item Par défaut, le texte est pleinement justifié.
+		\item Pour aligner le texte à gauche, on utilise l'environnement \texttt{flushleft}.
+\begin{codesource}
+\begin{flushleft}
+	Le texte sera aligné à gauche.
+\end{flushleft}
+\end{codesource}
+		\item On utilise l'environnement \texttt{center} pour centrer le texte.
+\begin{codesource}
+	\begin{center}
+		Le texte sera centré.
+	\end{center}
+\end{codesource}
+		\item Pour aligner le texte à droite, on utilise l'environnement \texttt{flushright}.
+\begin{codesource}
+	\begin{flushright}
+		Le texte sera aligné à droite.
+	\end{flushright}
+\end{codesource}
+	\end{itemize}
+\end{frame}
+
+% Listes
+\begin{frame}[fragile]{Listes}
+	\framesubtitle{Listes à puces et listes numérotées}
+	\begin{itemize}
+		\item Les listes à puces sont construites avec l'environnement \texttt{itemize}.
+\begin{codesource}
+	\begin{itemize}
+		\item Premier item
+		\item Deuxième item
+		\item etc.
+	\end{itemize}
+\end{codesource}
+		\item Les listes numérotées sont construites avec l'environnement \texttt{enumerate}.
+\begin{codesource}
+	\begin{enumerate}
+		\item Premier item
+		\item Deuxième item
+		\item etc.
+	\end{enumerate}
+\end{codesource}
+		\item La commande \cmd{item} est utilisée pour lister les items.
+		\item On peut imbriquer jusqu'à quatre niveaux de listes.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Listes}
+	\framesubtitle{Listes de définitions}
+	
+	On crée une liste de définitions avec l'environnement \texttt{description}.
+	
+\begin{codesource}
+	\begin{description}
+		\item[Premier terme] Définition du premier terme.
+		\item[Deuxième terme] Définition du deuxième terme.
+	\end{description}
+\end{codesource}
+
+	\begin{description}
+		\item[Premier terme] Définition du premier terme. Auctor est gravida habitasse leo lobortis mollis nec platea posuere
+		 sollicitudin tempus.
+		\item[Deuxième terme] Définition du deuxième terme. Aenean consequat dictumst dignissim duis facilisis himenaeos id
+		 pharetra placerat porta posuere primis senectus tortor.
+	\end{description}
+\end{frame}
+
+% Citations
+\begin{frame}[fragile,c]{Citations}
+\framesubtitle<1>{Citations courtes}
+\framesubtitle<2>{Citations longues}
+\begin{onlyenv}<1>
+	On utilise l'environnement \texttt{quote} pour insérer une citation courte (un paragraphe)
+	dans le texte.
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\vspace{-17mm}
+\begin{codesource}
+	\begin{quote}
+		Life is what happens to you while 
+		you're busy making other plans. 
+		-- John Lennon
+	\end{quote}
+\end{codesource}
+		\end{column}
+		
+		\begin{column}{.49\textwidth}
+			\begin{quote}
+				Life is what happens to you while you're busy making other plans. -- John Lennon
+			\end{quote}
+		\end{column}
+	\end{columns}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+	On utilise l'environnement \texttt{quotation} pour insérer une citation longue (plus
+	d'un paragraphe).
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\vspace{-38mm}
+\begin{codesource}
+	\begin{quotation}
+		I've missed more than 9000 shots in my 
+		career. I've lost almost 300 games. 26 
+		times I've been trusted to take the game 
+		winning shot and missed.
+		
+		I've failed over and over and over again 
+		in my life. And that is why I succeed. 
+		-- Michael Jordan
+	\end{quotation}
+\end{codesource}	
+		\end{column}
+		
+		\begin{column}{.49\textwidth}
+			\begin{quotation}
+				I've missed more than 9000 shots in my career. 
+				I've lost almost 300 games. 26 times I've been 
+				trusted to take the game winning shot and missed.
+				
+				I've failed over and over and over again in my life. 
+				And that is why I succeed. -- Michael Jordan
+			\end{quotation}
+		\end{column}
+	\end{columns}
+\end{onlyenv}
+\end{frame}
+
+% Notes de bas de page
+\begin{frame}[fragile,c]{Notes de bas de page}
+\begin{itemize}
+\item Une note de bas de page est insérée avec la commande suivante:
+\begin{codesource}
+	\footnote{texte de la note}
+\end{codesource}
+\item La commande doit suivre immédiatement le texte à annoter.
+\item Méthode recommandée :
+\begin{codesource}
+	... fera remarquer que Pierre Lasou\footnote{%
+		Spécialiste en ressources documentaires} %
+	fut une grande aide dans la préparation de ...
+\end{codesource}
+\item La numérotation et la disposition sont automatiques.
+\end{itemize}
+\end{frame}
+
+% Code source
+\begin{frame}[fragile,c]{Code source}
+\begin{onlyenv}<1>
+\begin{itemize}
+\item Pour rédiger du code source en bloc, on utilise l'environnement \texttt{verbatim}
+\begin{codesource}
+	\begin{verbatim}
+        Texte disposé tel qu'il est saisi
+        dans une police à largeur fixe.
+	\end{verbatim}
+\end{codesource}
+\item Pour rédiger du code source à même le texte, on utilise la commande \cmd{verb}, dont la
+syntaxe est \cmd{verbcsourcec} où \emph{c} est un caractère quelconque ne se trouvant pas dans \emph{source}.
+\begin{codesource}
+	Du texte avec \verb|du code|.
+\end{codesource}
+\item Pour un usage plus intensif, consultez la documentation du \emph{package} \textbf{listings}.
+\end{itemize}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+Un exemple\footnote{tiré du site \href{http://r4stats.com/examples/programming/}{r4stats.com}.} :
+\begin{codesource}
+# ---Writing Your Own Functions (Macros)---
+
+# A good function that just prints.
+mystats <- function(x) {
+	print( mean(x, na.rm = TRUE) )
+	print(   sd(x, na.rm = TRUE) )
+}
+mystats(myvar)
+
+# A function with vector output.
+mystats  <- function(x) {
+	mymean <- mean(x, na.rm = TRUE)
+	mysd   <-   sd(x, na.rm = TRUE)
+	c(mean = mymean, sd = mysd )
+}
+mystats(myvar)
+myVector <- mystats(myvar)
+myVector
+\end{codesource}
+\end{onlyenv}
+\end{frame}

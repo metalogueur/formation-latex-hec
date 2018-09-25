@@ -1,0 +1,173 @@
+\section{Rédaction}
+
+\subsection{Formatage de base}
+
+% Titre, auteur et date du document
+\begin{frame}[fragile]{Titre, auteur et date du document}
+	\begin{itemize}
+		\item Formatage automatique
+\begin{codesource}
+	\documentclass{article}
+	
+	\title{Le titre du document}
+	\author{Le nom de l'auteur}
+	\date{Une date}
+	
+	\begin{document}
+		\maketitle
+		
+		% Le contenu du document...
+	\end{document}
+\end{codesource}
+		\item Formatage manuel
+\begin{codesource}
+	\documentclass{article}
+	
+	\begin{document}
+		\begin{titlepage}
+			% Page titre construite manuellement...
+		\end{titlepage}
+	\end{document}
+\end{codesource}
+	\end{itemize}
+\end{frame}
+
+% Paragraphes, sauts de lignes et espaces blancs
+\begin{frame}[c]{Paragraphes, sauts de lignes et espaces blancs}
+	\begin{itemize}
+		\item \LaTeX\ supprime automatiquement tous les espaces blancs superflus.
+		\item Les sauts de ligne sont créés avec \textbackslash\textbackslash.
+		\item Il faut au moins une ligne vide entre deux paragraphes pour les distinguer dans le texte.
+	\end{itemize}
+\end{frame}
+
+% Caractères spéciaux
+\begin{frame}{Caractères spéciaux}
+	\framesubtitle{Caractères réservés par \TeX}
+	\begin{description}[\#]
+		\item[\#] Numéro d'argument dans les commandes
+		\item[\$] Délimiteur du mode mathématique
+		\item[\&] Délimiteur de colonne dans les tableaux
+		\item[\%] Annonce le début d'un commentaire
+		\item[\_] Indice (mathématiques)
+		\item[\textasciicircum] Exposant (mathématiques)
+		\item[\textasciitilde] Espace insécable
+		\item[\{] Ouvre une définition de commande ou d'environnement
+		\item[\}] Ferme une définition de commande ou d'environnement
+	\end{description}
+	\begin{picture}(0,0)
+	\thicklines\color{bleuFonceSecondaire}
+	\onslide<2>\put(90,5){\dashbox{1}(53,58){}}
+	\onslide<2>\put(97,59){\textbf{\MakeUppercase{Pour les utiliser:}}}
+	\onslide<2>\put(94,55){\parbox[t]{.3\textwidth}{\centering\bfseries\textbackslash \# \\[5pt] %
+			\textbackslash \$ \\[5pt] \textbackslash \& \\[5pt] \textbackslash \% \\[5pt] %
+			\textbackslash \_ \\[5pt] \textbackslash textasciicircum \\[4pt] %
+			\textbackslash textasciitilde \\[4pt] \textbackslash \{ \\[4pt] %
+			\textbackslash \} }}
+	\end{picture}
+\end{frame}
+
+% Caractères spéciaux - la suite
+\begin{frame}[fragile]{Caractères spéciaux}
+	\framesubtitle{La suite\ldots}
+	\begin{itemize}
+		\item Guillemets
+			\begin{itemize}
+				\item On ouvre les guillemets anglais simples avec un accent grave (\lstinline|`|)
+					et les doubles avec deux accents graves (\lstinline|``|). On les ferme avec un 
+					(\lstinline|'|) ou deux (\lstinline|''|) apostrophes, selon la situation.
+				\item On utilise les chevrons (« et ») pour ouvrir et fermer les guillemets français.
+					Il faut cependant inscrire la commande suivante à la fin de notre préambule:
+\begin{codesource}
+	\frenchbsetup{og=«,fg=»}
+\end{codesource}				
+			\end{itemize}
+		\item On inscrit les traits d'union avec un tiret (\lstinline|-|), les traits demi-cadratins avec deux tirets (\lstinline|--|) et les traits cadratins avec trois tirets (\lstinline|---|).
+	\end{itemize}
+\end{frame}
+
+% Commentaires
+\begin{frame}[c]{Commentaires}
+\begin{itemize}
+\item Pour se retrouver dans le code (ou des documents longs), il est conseillé 
+d'y insérer des commentaires.
+\item Ceux-ci commencent toujours avec le symbole \texttt{\%}.
+\item Ils s'affichent dans le code, mais pas dans le document final.
+\end{itemize}
+\end{frame}
+
+\subsection{Apparence du texte}
+
+% Polices de caractères
+\begin{frame}[c]{Polices de caractères}
+	\begin{itemize}
+		\item Par défaut, tous les documents \LaTeX\ utilisent la même police, \textrm{Computer Modern}.
+		\item Privilégier les polices de grande qualité et très complètes (lettres accentuées, grand choix de symboles)
+		\item Peu de polices sont adaptées pour les mathématiques : Palatino, Times, Lucida (\$) sont des choix sûrs
+		\item Dans la classe \textbf{hecthese}, les paquetages mathptmx et mathpazo sont chargés par défaut afin	d’offrir les polices de caractères Times et Palatino.
+	\end{itemize}
+\end{frame}
+
+% Changement d'attribut de la police
+\begin{frame}{Changement d'attribut de la police}
+	\begin{tabularx}{\textwidth}{XXX}
+		\arrayrulecolor{grisPrimaire!40}\hline\hline
+		\multicolumn{3}{l}{\textbf{familles}}	\\
+		\hline
+		\textrm{romain}						&	\cmd{rmfamily}		&	\cmd{textrm\{<texte>\}}\\
+		\texttt{largeur fixe}				&	\cmd{ttfamily}		&	\cmd{texttt\{<texte>\}}\\
+		sans empattements					&	\cmd{sffamily}		&	\cmd{textsf\{<texte>\}}\\
+		\hline
+		\multicolumn{3}{l}{\textbf{formes}}	\\
+		\hline
+		droit								&	\cmd{upshape}		&	\cmd{textup\{<texte>\}}\\
+		\emph{italique}						&	\cmd{itshape}		&	\cmd{textit\{<texte>\}}\\
+		\textsl{penché}						&	\cmd{slshape}		&	\cmd{textsl\{<texte>\}}\\
+		\textrm{\textsc{petites capitales}}	&	\cmd{scshape}		&	\cmd{textsc\{<texte>\}}\\
+		\hline
+		\multicolumn{3}{l}{\textbf{séries}}	\\
+		\hline
+		\textmd{moyen}						&	\cmd{mdseries}		&	\cmd{textmd\{<texte>\}}\\
+		\textbf{gras}						&	\cmd{bfseries}		&	\cmd{textbf\{<texte>\}}\\
+		\hline\hline
+	\end{tabularx}
+
+	\begin{picture}(0,0)
+		\thicklines\color{bleuFonceSecondaire}
+		\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique à tout le texte qui suit}}}}
+		\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
+	\end{picture}
+\end{frame}
+
+% Taille de la police
+\begin{frame}{Taille de la police}
+	\begin{tabularx}{\textwidth}{l|l}
+		\arrayrulecolor{grisPrimaire!40}
+		\textbf{Commandes standards} 	& 	\textbf{Rendu}	\\
+		\hline
+		\cmd{tiny}						&	{\tiny vraiment petit}	\\
+		\cmd{scriptsize}				&	{\scriptsize encore plus petit}	\\
+		\cmd{footnotesize}				&	{\footnotesize plus petit}	\\
+		\cmd{small}						&	{\small petit}	\\
+		\cmd{normalsize}				&	{\normalsize normal}	\\
+		\cmd{large}						&	{\large grand}	\\
+		\cmd{Large}						&	{\Large plus grand}	\\
+		\cmd{LARGE}						&	{\LARGE encore plus grand}	\\
+		\cmd{huge}						&	{\huge énorme}	\\
+		\cmd{Huge}						&	{\Huge encore plus énorme}		
+	\end{tabularx}
+\end{frame}
+
+% Caractères gras, italiques et soulignés
+\begin{frame}[c]{Caractères gras, italiques et soulignés}
+	\begin{itemize}
+		\item Caractères \textbf{gras} : \cmd{textbf\{\}}
+		\item Caractères \emph{italiques} :
+		\begin{itemize}
+			\item \cmd{textit\{\}}
+			\item \cmd{emph\{\}} -- commande à privilégier
+		\end{itemize}
+		\item Caractères \underline{soulignés} : \cmd{underline\{\}}
+	\end{itemize}
+\end{frame}
+

@@ -1,0 +1,171 @@
+% Organisation d'un document
+
+\section{Organisation d'un document}
+
+\subsection{Parties d'un document}
+
+% Choix d'une classe
+\begin{frame}[c]{Choix d'une classe}
+	La première chose que l'on doit faire lorsqu'on débute la rédaction d'un document \LaTeX,
+	c'est de choisir une classe de document.
+	
+	\begin{table}[c]
+		\begin{tabularx}{\textwidth}{lllll}
+			\arrayrulecolor{grisPrimaire!40}\hline\hline
+			\textbf{Classe} & \textbf{Divisions} & \textbf{Disposition} & \textbf{Entête} &	\textbf{Pied de page} \\
+			\hline
+			\texttt{article}			&	parties, sections, \ldots				&	recto		&	vide			&	folio centré \\
+			\texttt{report}				&	parties, chapitres, sections, \ldots	&	recto		&	vide			&	folio centré \\
+			\texttt{book}				&	parties, chapitres, sections, \ldots	&	recto verso	&
+			folio, titres	&	vide \\
+			\texttt{hecthese}	&	chapitres, sections, sous-sections		&	recto verso	&
+			vide			&	folio centré \\
+			\hline\hline
+		\end{tabularx}
+	\end{table}
+\end{frame}
+
+% Résumé
+\begin{frame}[fragile,c]{Résumé}
+	\begin{itemize}
+		\item Classes \textbf{article}, \textbf{report} ou \textbf{memoir}: résumé créé avec
+		l'environnement \lstinline|abstract|
+\begin{codesource}
+	\begin{abstract}
+		...
+	\end{abstract}
+\end{codesource}
+
+		\item Classe \textbf{hecthese} : résumés français et anglais traités comme des chapitres
+		normaux (non numérotés)
+	\end{itemize}
+\end{frame}
+
+% Sections
+\begin{frame}[fragile]{Sections}
+	\begin{itemize}
+		\item Découpage du document en sections avec les commandes suivantes :
+\begin{codesource}
+	\part[titre court]{titre au long}
+	\chapter[titre court]{titre au long}
+	\section[titre court]{titre au long}
+	\subsection[titre court]{titre au long}
+	
+	\subsubsection[titre court]{titre au long} 	% à éviter dans un livre
+	
+	\paragraph[titre court]{titre au long} 		% ne jamais utiliser
+	\subparagraph[titre court]{titre au long} 	% ne jamais JAMAIS utiliser
+\end{codesource}
+
+		\item Numérotation automatique
+		\item Commande suivie d'un * = section non numérotée
+		\item Titre court en argument optionnel
+	\end{itemize}
+\end{frame}
+
+% Annexes
+\begin{frame}[fragile,c]{Annexes}
+	\begin{itemize}
+		\item Les annexes sont des sections ou des chapitres avec une numérotation alphanumérique (A,
+		A.1, \ldots).
+		\item Les sections suivantes sont identifiées comme des annexes par la commande 
+			\cmd{appendix}.
+		\item Dans le titre, «Chapitre» est changé pour «Annexe».
+	\end{itemize}
+\end{frame}
+
+% Structure logique d'un livre
+\begin{frame}[fragile]{Structure logique d'un livre}
+	\framesubtitle{Classes book, memoir, hecthese}
+
+\begin{onlyenv}<1>
+\begin{codesource}
+	\frontmatter
+\end{codesource}	
+	\begin{itemize}
+		\item préface, table des matières, etc.
+		\item numérotation des pages en chiffres romains (i, ii, \ldots)
+		\item chapitres non numérotés
+	\end{itemize}
+\begin{codesource}
+	\mainmatter
+\end{codesource}	
+	\begin{itemize}
+		\item le contenu à proprement parler
+		\item numérotation des pages à partir de 1 en chiffres arabes
+		\item chapitres numérotés
+	\end{itemize}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+\begin{codesource}
+	\backmatter
+\end{codesource}
+	\begin{itemize}
+		\item tout le reste (bibliographie, index, etc.)
+		\item numérotation des pages se poursuit
+		\item chapitres non numérotés
+	\end{itemize}
+\end{onlyenv}
+\end{frame}
+
+\subsection{Table des matières et renvois}
+
+% Table des matières
+\begin{frame}[fragile,c]{Table des matières}
+	
+	\begin{itemize}
+		\item La table des matières est produite automatiquement avec \cmd{tableofcontents}.
+		\item Requiert \textbf{plusieurs} compilations.
+		\item Les sections non numérotées ne sont pas incluses.
+		\item Avec le \emph{package} \textbf{hyperref}, \cmd{tableofcontents} produit également la table des matières du fichier .pdf.
+		\pause
+		\item La classe memoir fournit également \cmd{tableofcontents*} qui n’insère pas la table des matières dans la table des matières.
+		\pause
+		\item \cmd{listoffigures} produit la liste des figures.
+		\item \cmd{listoftables} produit la liste des tableaux.
+	\end{itemize}
+
+\end{frame}
+
+% Étiquettes et renvois automatiques
+\begin{frame}[fragile]{Étiquettes et renvois automatiques}
+	\framesubtitle{Parce que l'ordinateur le fera mieux que vous\ldots}
+	\begin{onlyenv}<1>
+		\begin{itemize}
+			\item Ne \textbf{jamais} renvoyer manuellement à un numéro de section, d’équation, de tableau, etc.
+			\item «Nommer» un élément avec \cmd{label}
+			\item Faire référence par son nom avec \cmd{ref}
+			\item Requiert 2 à 3 compilations
+		\end{itemize}
+	
+\begin{codesource}
+	\section{Définitions}
+		\label{sec:definitions}
+	
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+		nisi ut aliquip ex ea commodo consequat.
+	
+	\section{Historique}
+		Tel que vu à la section \ref{sec:definitions}...
+\end{codesource}
+	\end{onlyenv}
+	\begin{onlyenv}<2>
+		\begin{itemize}
+			\item Le \emph{package} \textbf{hyperref} insère des hyperliens vers des renvois dans les fichiers .pdf.
+			\item La commande \cmd{autoref\{\}} permet de:
+				\begin{enumerate}
+					\item nommer automatiquement le type de renvoi (section, équation, tableau, etc.);
+					\item transformer en hyperlien le texte \textbf{et} le numéro de la référence.
+\begin{codesource}
+	Tel que vu à la \autoref{sec:definitions}...
+\end{codesource}
+				\end{enumerate}
+			\item La commande \cmd{pageref\{\}} renvoie à la page de la référence.
+			\item Le \emph{package} \textbf{amsmath} fournit la commande \cmd{eqref\{\}} pour
+				référencer les équations.
+		\end{itemize}
+	\end{onlyenv}
+\end{frame}
