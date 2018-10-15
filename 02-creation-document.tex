@@ -1,179 +1,152 @@
 % Création d'un document LaTeX
 
-\section{Création d'un document \LaTeX}
+\section{\LaTeX\ document creation}
 
-\subsection{Structure d'un document}
+\subsection{Document structure}
 
 % Un document LaTeX dans sa plus simple expression
-\begin{frame}[c,fragile]{Un document \LaTeX\ dans sa plus simple expression}
+\begin{frame}[c,fragile]{The most basic \LaTeX\ document}
 
-	Dans un éditeur de texte, ouvrez un nouveau fichier et saisissez le code suivant :
+	In a text editor, open a new file and write the following code:
 	
 \begin{codesource}	
 	\documentclass{article}
 	
 	\begin{document}		
-		Ceci est mon premier document LaTeX et j'en suis fier.
+		This is my first LaTeX document and I am proud of it.
 	\end{document}
 
 \end{codesource}
 
-	Sauvegardez votre fichier avec l'extension \texttt{.tex} et compilez-le. Observez le résultat.
+	Save your file with the \texttt{.tex} extension and compile it. Look at the results.
 	
 \end{frame}
 
 % Les parties d'un document : la déclaration de la classe de document
-\begin{frame}[c,fragile]{Les parties d'un document}
-	\framesubtitle{La déclaration de la classe de document}
+\begin{frame}[c,fragile]{The parts of a document}
+	\framesubtitle{Document class declaration}
 	\begin{itemize}
-		\item Un document commence toujours par la \textbf{commande} \cmd{documentclass}.
+		\item A document always starts with the \cmd{documentclass} \textbf{command}.
 		
 \begin{codesource}
-	\documentclass[options]{classe}
+	\documentclass[options]{class}
 \end{codesource}
 
-		\item La \lien{https://en.wikibooks.org/wiki/LaTeX/Document_Structure\#Document_classes}{classe de document}
-			détermine le type de document.		
-		\item Plusieurs options de classe peuvent être utilisées pour changer la mise en page.
+		\item The \lien{https://en.wikibooks.org/wiki/LaTeX/Document_Structure\#Document_classes}{document class}
+			determines a document's type.		
+		\item Many options can be used to change a document's layout.
 	\end{itemize}
 \end{frame}
 
 % Les parties d'un document : le corps du document
-\begin{frame}[c,fragile]{Les parties d'un document}
-	\framesubtitle{Le corps du document}
-	Le contenu du document est rédigé dans l'\textbf{environnement} \texttt{document},
-	entre les commandes \cmd{begin\{document\}} et \cmd{end\{document\}}.
+\begin{frame}[c,fragile]{The parts of a document}
+	\framesubtitle{Document body}
+	A document's content is written inside the \texttt{document} \textbf{environment},
+	between the \cmd{begin\{document\}} and \cmd{end\{document\}} commands.
 \begin{codesource}
-	\documentclass[options]{classe}
+	\documentclass[options]{class}
 	
 	\begin{document}
-		Le contenu du document est rédigé ici...
+		The document's content is written here...
 	\end{document}
 \end{codesource}
 \end{frame}
 
 % Les parties d'un document : le préambule
-\begin{frame}[c,fragile]{Les parties d'un document}
-	\framesubtitle{Le préambule}
-	Tout ce qui se trouve avant la commande \cmd{begin\{document\}} constitue le \textbf{préambule} du document.
+\begin{frame}[c,fragile]{The parts of a document}
+	\framesubtitle{The preamble}
+	Everything that is written before the \cmd{begin\{document\}} command is called
+	the document \textbf{preamble}.
 	
 \begin{codesource}
-	\documentclass[options]{classe}
+	\documentclass[options]{class}
 	
-	%% Ici se trouve le préambule du document...
+	%% Here lies the document preamble...
 	
 	\begin{document}
-		Ici se trouve le contenu du document...
+		The document's content is written here...
 	\end{document}
 \end{codesource}
 
-	Dans le préambule se trouvent:
+	In the preamble, you will find:
 	\begin{itemize}
-		\item des \emph{packages};
-		\item des commandes de configuration;
-		\item des commandes et des environnements personnalisés;
-		\item des métadonnées.
+		\item packages;
+		\item configuration commands;
+		\item custom commands and environments;
+		\item metadata.
 	\end{itemize}
 \end{frame}
 
 % Création d'un document plus complexe
-\begin{frame}[c]{Création d'un document plus complexe}
+\begin{frame}[c]{Creating a more complex document}
 	\begin{itemize}
-		\item Ouvrez le premier document \texttt{.tex} que vous avez créé.
-		\item Rendez-vous sur le \lien{http://www.hec.ca/nouvelles/index.html}{site des nouvelles de HEC Montréal}.
-		\item Copiez-collez l'intégralité du contenu d'un article dans votre document.
-		\item Sauvegardez et compilez votre document, puis observez le résultat.
+		\item Open the first \texttt{.tex} file you created.
+		\item Go to the \lien{http://www.hec.ca/en/news/index.html}{HEC Montréal news web page}.
+		\item Copy and paste a whole article in your document.
+		\item Save and compile your document, then look at the results.
 	\end{itemize}
 \end{frame}
 
-\subsection{Personnalisation de \LaTeX}
+\subsection{\LaTeX\ customization}
 
 % Préambule : les packages
-\begin{frame}[fragile,c]{Préambule}
-	\framesubtitle{Les \emph{packages}}
-	Les \emph{packages} permettent de \textbf{modifier des commandes} ou d’\textbf{ajouter des fonctionnalités} au système.
-
-	Ils sont chargés dans le préambule avec la commande \cmd{usepackage[options]\{package\}}.
+\begin{frame}[fragile,c]{Preamble}
+	\framesubtitle{Packages}
+	Packages are used to \textbf{modify commands} or \textbf{add functionalities} to the system.
+	
+	They are loaded in the preamble with the \cmd{usepackage[options]\{package\}} command.
 
 \begin{codesource}
-	\documentclass[options]{classe}
+	\documentclass[options]{class}
 	
 	\usepackage{package}
 	\usepackage[options]{package}
 	\usepackage{package1,package2,package3,...}
 \end{codesource}
-
-	La documentation de chaque package peut être consultée sur le site du
-	\lien{https://ctan.org/}{Comprehensive \TeX\ Archive Network}.
+	
+	Each package's documentation can be found on the 
+	\lien{https://ctan.org/}{Comprehensive \TeX\ Archive Network} website.
 \end{frame}
 
 % Commandes
-\begin{frame}[fragile]{Commandes}
+\begin{frame}[fragile]{Commands}
 	\begin{itemize}
-		\item Débutent toujours par un \textbackslash
-		\item Formes générales:
+		\item Always start with a \textbackslash
+		\item General syntax:
 \begin{codesource}
-	\nomcommande[args_optionnels]{args_obligatoires}
-	\nomcommande*[args_optionnels]{args_obligatoires}
+	\nomcommande[optional_args]{mandatory_args}
+	\nomcommande*[optional_args]{optional_args}
 	\nomcommande
 \end{codesource}
-		\item Arguments obligatoires entre \{\ et \}
-		\item Arguments optionnels entre [ et ]
-		\item Commande sans argument : le nom se termine par tout caractère qui n’est pas une lettre (y
-		compris l’espace)
-		\item Portée d’une commande limitée à la zone entre \{\ et \}.
+		\item Mandatory arguments are placed between \{\ and \}
+		\item Optional arguments are placed between [ et ]
+		\item Commands without arguments : their name ends with any character that isn't a letter, including
+			a white space
+		\item The scope of a command is limited in the zone between \{\ and \}.
 	\end{itemize}
 \end{frame}
 
 % Environnements
-\begin{frame}[fragile,c]{Environnements}
+\begin{frame}[fragile,c]{Environments}
 	\begin{itemize}
-		\item Délimités par
+		\item Delimited by
 \begin{codesource}
-	\begin{environnement}
+	\begin{environment}
 		...
-	\end{environnement}
+	\end{environment}
 \end{codesource}
-		\item Contenu de l’environnement traité différemment du reste du texte
-		\item Changements s’appliquent uniquement à l’intérieur de l’environnement
+		\item An environment's content is treated differently from the remainder
+			of the text
+		\item Changes only apply inside the environment
 	\end{itemize}
 \end{frame}
 
 % Commandes et environnements personnalisés
-\begin{frame}[c]{Commandes et environnements personnalisés}
+\begin{frame}[c]{Custom commands and environments}
 	\begin{itemize}
-		\item Vous pouvez \textbf{créer} de nouvelles commandes avec \cmd{newcommand}.
-		\item Vous pouvez \textbf{modifier} des commandes existantes avec \cmd{renewcommand}.
-		\item Vous pouvez \textbf{créer} de nouveaux environnements avec \cmd{newenvironment}.
-		\item Vous pouvez \textbf{modifier} des environnements existants avec \cmd{renewenvironment}.
+		\item You can \textbf{create} new commands with \cmd{newcommand}.
+		\item You can \textbf{modify} existing commands with \cmd{renewcommand}.
+		\item You can \textbf{create} new environments with \cmd{newenvironment}.
+		\item You can \textbf{modify} existing environments with \cmd{renewenvironment}.
 	\end{itemize}
-\end{frame}
-
-% LaTeX en français - préambule pour pdfLaTeX
-\begin{frame}[fragile]{\LaTeX\ en français -- préambule pour pdf\LaTeX}
-	Il faut charger un certain nombre de \emph{packages} pour franciser \LaTeX.
-
-\begin{codesource}
-	\documentclass[french]{hecthese}
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
-	\usepackage{babel}
-	\usepackage[autolanguage]{numprint}
-	\usepackage{icomma}
-\end{codesource}
-
-	\pause
-	\begin{description}[inputenc et fontenc]
-		\item[babel] traduction des mots-clés prédéfinis, typographie française, coupure de mots,
-		document multilingue
-		
-		\pause
-		\item[inputenc et fontenc] lettres accentuées dans le code source
-		
-		\pause
-		\item[icomma] virgule comme séparateur décimal
-		
-		\pause
-		\item[numprint] espace comme séparateur de milliers
-	\end{description}
 \end{frame}

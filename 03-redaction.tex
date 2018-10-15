@@ -1,31 +1,31 @@
-\section{Rédaction}
+\section{Writing}
 
-\subsection{Formatage de base}
+\subsection{Basic formatting}
 
 % Titre, auteur et date du document
-\begin{frame}[fragile]{Titre, auteur et date du document}
+\begin{frame}[fragile]{Title, author and date}
 	\begin{itemize}
-		\item Formatage automatique
+		\item Automatic formatting
 \begin{codesource}
 	\documentclass{article}
 	
-	\title{Le titre du document}
-	\author{Le nom de l'auteur}
-	\date{Une date}
+	\title{Document title}
+	\author{Author name}
+	\date{A date}
 	
 	\begin{document}
 		\maketitle
 		
-		% Le contenu du document...
+		% Document content...
 	\end{document}
 \end{codesource}
-		\item Formatage manuel
+		\item Manual formatting
 \begin{codesource}
 	\documentclass{article}
 	
 	\begin{document}
 		\begin{titlepage}
-			% Page titre construite manuellement...
+			% Title page built manually...
 		\end{titlepage}
 	\end{document}
 \end{codesource}
@@ -33,32 +33,33 @@
 \end{frame}
 
 % Paragraphes, sauts de lignes et espaces blancs
-\begin{frame}[c]{Paragraphes, sauts de lignes et espaces blancs}
+\begin{frame}[c]{Paragraphs, line breaks and white space}
 	\begin{itemize}
-		\item \LaTeX\ supprime automatiquement tous les espaces blancs superflus.
-		\item Les sauts de ligne sont créés avec \textbackslash\textbackslash.
-		\item Il faut au moins une ligne vide entre deux paragraphes pour les distinguer dans le texte.
+		\item \LaTeX\ automatically deletes all extra white spaces.
+		\item Line breaks are created with \textbackslash\textbackslash.
+		\item There needs to be at least one blank line between paragraphs in
+			the code in order to distinguish them in the text.
 	\end{itemize}
 \end{frame}
 
 % Caractères spéciaux
-\begin{frame}{Caractères spéciaux}
-	\framesubtitle{Caractères réservés par \TeX}
+\begin{frame}{Reserved characters}
+	\framesubtitle{\TeX\ reserved characters}
 	\begin{description}[\#]
-		\item[\#] Numéro d'argument dans les commandes
-		\item[\$] Délimiteur du mode mathématique
-		\item[\&] Délimiteur de colonne dans les tableaux
-		\item[\%] Annonce le début d'un commentaire
-		\item[\_] Indice (mathématiques)
-		\item[\textasciicircum] Exposant (mathématiques)
-		\item[\textasciitilde] Espace insécable
-		\item[\{] Ouvre une définition de commande ou d'environnement
-		\item[\}] Ferme une définition de commande ou d'environnement
+		\item[\#] Argument identifier in commands
+		\item[\$] Math mode delimiter
+		\item[\&] Column delimiter in tables
+		\item[\%] Start of a comment
+		\item[\_] Indice (math)
+		\item[\textasciicircum] Exponent (math)
+		\item[\textasciitilde] No-break space
+		\item[\{] Opens a command or environment definition
+		\item[\}] Closes a command or environment definition
 	\end{description}
 	\begin{picture}(0,0)
 	\thicklines\color{bleuFonceSecondaire}
 	\onslide<2>\put(90,5){\dashbox{1}(53,58){}}
-	\onslide<2>\put(97,59){\textbf{\MakeUppercase{Pour les utiliser:}}}
+	\onslide<2>\put(97,59){\textbf{\MakeUppercase{To use them:}}}
 	\onslide<2>\put(94,55){\parbox[t]{.3\textwidth}{\centering\bfseries\textbackslash \# \\[5pt] %
 			\textbackslash \$ \\[5pt] \textbackslash \& \\[5pt] \textbackslash \% \\[5pt] %
 			\textbackslash \_ \\[5pt] \textbackslash textasciicircum \\[4pt] %
@@ -68,14 +69,14 @@
 \end{frame}
 
 % Caractères spéciaux - la suite
-\begin{frame}[fragile]{Caractères spéciaux}
-	\framesubtitle{La suite\ldots}
+\begin{frame}[fragile]{Reserved characters}
+	\framesubtitle{Part deux\ldots}
 	\begin{itemize}
-		\item Guillemets
+		\item Quote marks
 			\begin{itemize}
-				\item On ouvre les guillemets anglais simples avec un accent grave (\lstinline|`|)
-					et les doubles avec deux accents graves (\lstinline|``|). On les ferme avec un 
-					(\lstinline|'|) ou deux (\lstinline|''|) apostrophes, selon la situation.
+				\item We open english single quotes with (\lstinline|`|)
+					and double quotes with (\lstinline|``|). We close them with one
+					(\lstinline|'|) or two (\lstinline|''|) apostrophes, depending on the case.
 				\item On utilise les chevrons (« et ») pour ouvrir et fermer les guillemets français.
 					Il faut cependant inscrire la commande suivante à la fin de notre préambule:
 \begin{codesource}
