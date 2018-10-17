@@ -1,0 +1,171 @@
+% Organisation d'un document
+
+\section{Document organization}
+
+\subsection{Parts of a document}
+
+% Choix d'une classe
+\begin{frame}[c]{Document class choice}
+	The first thing to do before we start writing a \LaTeX\ document is to choose
+	a document class.
+	
+	\begin{table}[c]
+		\begin{tabularx}{\textwidth}{lllll}
+			\arrayrulecolor{grisPrimaire!40}\hline\hline
+			\textbf{Class} & \textbf{Divisions} & \textbf{Layout} & \textbf{Headers} &	\textbf{Footers} \\
+			\hline
+			\texttt{article}			&	parts, sections, \ldots					&	one-sided	&	empty			&	centered page numbers\\
+			\texttt{report}				&	parts, chapters, sections, \ldots		&	one-sided	&	empty			&	centered page numbers\\
+			\texttt{book}				&	parts, chapters, sections, \ldots		&	two-sided	& 	page numbers, titles	&	empty \\
+			\texttt{hecthese}			&	chapters, sections, subsections			&	two-sided	&	empty			&	centered page numbers \\
+			\hline\hline
+		\end{tabularx}
+	\end{table}
+\end{frame}
+
+% Résumé
+\begin{frame}[fragile,c]{Abstract}
+	\begin{itemize}
+		\item \textbf{article}, \textbf{report} or \textbf{memoir} classes: the abstract is created with
+		the \lstinline|abstract| environment.
+\begin{codesource}
+	\begin{abstract}
+		...
+	\end{abstract}
+\end{codesource}
+
+		\item \textbf{hecthese} class: french and english abstracts considered as normal unnumbered
+			chapters
+	\end{itemize}
+\end{frame}
+
+% Sections
+\begin{frame}[fragile]{Sections}
+	\begin{itemize}
+		\item A document is divided in sections with the following commands:
+\begin{codesource}
+	\part[short title]{long title}
+	\chapter[short title]{long title}
+	\section[short title]{long title}
+	\subsection[short title]{long title}
+	
+	\subsubsection[short title]{long title} 	% à éviter dans un livre
+	
+	\paragraph[short title]{long title} 		% ne jamais utiliser
+	\subparagraph[short title]{long title} 	% ne jamais JAMAIS utiliser
+\end{codesource}
+
+		\item Automatic numbering
+		\item Commands followed by an * = unnumbered section
+		\item Short title is optional
+	\end{itemize}
+\end{frame}
+
+% Annexes
+\begin{frame}[fragile,c]{Appendices}
+	\begin{itemize}
+		\item Appendices are sections using an alphanumeric numbering (A,
+			A.1, \ldots).
+		\item Sections following the \cmd{appendix} command are considered appendices.
+		\item In the section title, ```Chapter'' is changed to ``Appendix''.
+	\end{itemize}
+\end{frame}
+
+% Structure logique d'un livre
+\begin{frame}[fragile]{A book's logical structure}
+	\framesubtitle{book, memoir and hecthese classes}
+
+\begin{onlyenv}<1>
+\begin{codesource}
+	\frontmatter
+\end{codesource}	
+	\begin{itemize}
+		\item preface, table of contents, etc.
+		\item roman page numbering (i, ii, \ldots)
+		\item unnumbered chapters
+	\end{itemize}
+\begin{codesource}
+	\mainmatter
+\end{codesource}	
+	\begin{itemize}
+		\item the document's main content
+		\item arabic page numbering starting at 1
+		\item numbered chapter
+	\end{itemize}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+\begin{codesource}
+	\backmatter
+\end{codesource}
+	\begin{itemize}
+		\item everything else (bibliography, index, etc.)
+		\item page numbering continues 
+		\item unnumbered chapters
+	\end{itemize}
+\end{onlyenv}
+\end{frame}
+
+\subsection{Table of contents and in-text references}
+
+% Table des matières
+\begin{frame}[fragile,c]{Table of contents}
+	
+	\begin{itemize}
+		\item The table of contents is automatically generated with \cmd{tableofcontents}.
+		\item It requires \textbf{many} compilations.
+		\item Unnumbered sections are not included.
+		\item With the \textbf{hyperref} package, \cmd{tableofcontents} also generates the .pdf file's table
+		of contents.
+		\pause
+		\item The memoir document class also provides the \cmd{tableofcontents*} command
+			which excludes the table of contents from the table of contents.
+		\pause
+		\item \cmd{listoffigures} generates the list of figures.
+		\item \cmd{listoftables} generates of the list of tables.
+	\end{itemize}
+
+\end{frame}
+
+% Étiquettes et renvois automatiques
+\begin{frame}[fragile]{Labels and cross-references}
+	\framesubtitle{Because your computer will do it better than you\ldots}
+	\begin{onlyenv}<1>
+		\begin{itemize}
+			\item \textbf{NEVER} refer to a section, an equation, a table, etc., manually.
+			\item ``Name'' an element with \cmd{label}
+			\item Refer to that element using its name with \cmd{ref}
+			\item Requires 2 or 3 compilations
+		\end{itemize}
+	
+\begin{codesource}
+	\section{Definitions}
+		\label{sec:definitions}
+	
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+		nisi ut aliquip ex ea commodo consequat.
+	
+	\section{Historique}
+		As seen in section \ref{sec:definitions}...
+\end{codesource}
+	\end{onlyenv}
+	\begin{onlyenv}<2>
+		\begin{itemize}
+			\item The \textbf{hyperref} package inserts hyperlinks with the in-text references
+				in the .pdf files.
+			\item The \cmd{autoref\{\}} command allows us to:
+				\begin{enumerate}
+					\item automatically name the reference type (section, equation, table, etc.);
+					\item convert to a hyperlink the reference's text \textbf{and} number.
+\begin{codesource}
+	As seen in \autoref{sec:definitions}...
+\end{codesource}
+				\end{enumerate}
+			\item The \cmd{pageref\{\}} command refers to a specific page.
+			\item The \textbf{amsmath} provides the \cmd{eqref\{\}} command for
+				equation referring.
+		\end{itemize}
+	\end{onlyenv}
+\end{frame}

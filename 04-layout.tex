@@ -1,82 +1,82 @@
-\section{Disposition du texte}
+\section{Text layout}
 
 % Alignement du texte
-\begin{frame}[fragile]{Alignement du texte}
+\begin{frame}[fragile]{Text alignment}
 	\begin{itemize}
-		\item Par défaut, le texte est pleinement justifié.
-		\item Pour aligner le texte à gauche, on utilise l'environnement \texttt{flushleft}.
+		\item By default, text is fully justified.
+		\item To align text to the left, you use the \texttt{flushleft} environment.
 \begin{codesource}
 \begin{flushleft}
-	Le texte sera aligné à gauche.
+	Text will be aligned to the left.
 \end{flushleft}
 \end{codesource}
-		\item On utilise l'environnement \texttt{center} pour centrer le texte.
+		\item You use the \texttt{center} environment to center text.
 \begin{codesource}
 	\begin{center}
-		Le texte sera centré.
+		Text will be centered.
 	\end{center}
 \end{codesource}
-		\item Pour aligner le texte à droite, on utilise l'environnement \texttt{flushright}.
+		\item To align text to the right, you use the \texttt{flushright} environment.
 \begin{codesource}
 	\begin{flushright}
-		Le texte sera aligné à droite.
+		Text will be aligned to the right.
 	\end{flushright}
 \end{codesource}
 	\end{itemize}
 \end{frame}
 
 % Listes
-\begin{frame}[fragile]{Listes}
-	\framesubtitle{Listes à puces et listes numérotées}
+\begin{frame}[fragile]{Lists}
+	\framesubtitle{Unnumbered and numbered lists}
 	\begin{itemize}
-		\item Les listes à puces sont construites avec l'environnement \texttt{itemize}.
+		\item Unnumbered lists are built using the \texttt{itemize} environment.
 \begin{codesource}
 	\begin{itemize}
-		\item Premier item
-		\item Deuxième item
+		\item First item
+		\item Second item
 		\item etc.
 	\end{itemize}
 \end{codesource}
-		\item Les listes numérotées sont construites avec l'environnement \texttt{enumerate}.
+		\item Numbered lists are built using the \texttt{enumerate} environment.
 \begin{codesource}
 	\begin{enumerate}
-		\item Premier item
-		\item Deuxième item
+		\item First item
+		\item Second item
 		\item etc.
 	\end{enumerate}
 \end{codesource}
-		\item La commande \cmd{item} est utilisée pour lister les items.
-		\item On peut imbriquer jusqu'à quatre niveaux de listes.
+		\item The \cmd{item} command is used to list items.
+		\item You can embed lists up to four levels.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[c, fragile]{Listes}
-	\framesubtitle{Listes de définitions}
+\begin{frame}[c, fragile]{Lists}
+	\framesubtitle{Definition lists}
 	
-	On crée une liste de définitions avec l'environnement \texttt{description}.
+	You create definition lists with the \texttt{description} environment.
 	
 \begin{codesource}
 	\begin{description}
-		\item[Premier terme] Définition du premier terme.
-		\item[Deuxième terme] Définition du deuxième terme.
+		\item[First expression] First expression's definition
+		\item[Second expression] Second expression's definition
 	\end{description}
 \end{codesource}
 
 	\begin{description}
-		\item[Premier terme] Définition du premier terme. Auctor est gravida habitasse leo lobortis mollis nec platea posuere
+		\item[First expression] First expression's definition. Auctor est gravida habitasse leo lobortis mollis nec platea posuere
 		 sollicitudin tempus.
-		\item[Deuxième terme] Définition du deuxième terme. Aenean consequat dictumst dignissim duis facilisis himenaeos id
+		\item[Second expression] Second expression's definition. Aenean consequat dictumst dignissim duis facilisis himenaeos id
 		 pharetra placerat porta posuere primis senectus tortor.
 	\end{description}
 \end{frame}
 
 % Citations
-\begin{frame}[fragile,c]{Citations}
-\framesubtitle<1>{Citations courtes}
-\framesubtitle<2>{Citations longues}
+\begin{frame}[fragile,c]{Quotations}
+\framesubtitle<1>{Short quotations}
+\framesubtitle<2>{Long quotations}
 \begin{onlyenv}<1>
-	On utilise l'environnement \texttt{quote} pour insérer une citation courte (un paragraphe)
-	dans le texte.
+	You use the \texttt{quote} environment to insert short quotations (one paragraph)
+	in the text.
 	
 	\begin{columns}
 		\begin{column}{.49\textwidth}
@@ -99,8 +99,8 @@
 \end{onlyenv}
 
 \begin{onlyenv}<2>
-	On utilise l'environnement \texttt{quotation} pour insérer une citation longue (plus
-	d'un paragraphe).
+	You use the \texttt{quotation} environment to insert long quotations (more than one paragraph)
+	in the text.
 	
 	\begin{columns}
 		\begin{column}{.49\textwidth}
@@ -134,45 +134,45 @@
 \end{frame}
 
 % Notes de bas de page
-\begin{frame}[fragile,c]{Notes de bas de page}
-\begin{itemize}
-\item Une note de bas de page est insérée avec la commande suivante:
+\begin{frame}[fragile,c]{Footnotes}
+	\begin{itemize}
+		\item You insert footnotes with the following command:
 \begin{codesource}
-	\footnote{texte de la note}
+	\footnote{footnote text}
 \end{codesource}
-\item La commande doit suivre immédiatement le texte à annoter.
-\item Méthode recommandée :
+		\item The command must follow the text that has to be annotated.
+		\item Recommended method :
 \begin{codesource}
 	... fera remarquer que Pierre Lasou\footnote{%
 		Spécialiste en ressources documentaires} %
 	fut une grande aide dans la préparation de ...
 \end{codesource}
-\item La numérotation et la disposition sont automatiques.
-\end{itemize}
+		\item Footnote numbering and layout are automatic.
+	\end{itemize}
 \end{frame}
 
 % Code source
-\begin{frame}[fragile,c]{Code source}
-\begin{onlyenv}<1>
-\begin{itemize}
-\item Pour rédiger du code source en bloc, on utilise l'environnement \texttt{verbatim}
+\begin{frame}[fragile,c]{Source code}
+	\begin{onlyenv}<1>
+		\begin{itemize}
+			\item To write source code in blocks, you use the \texttt{verbatim} environment.
 \begin{codesource}
 	\begin{verbatim}
-        Texte disposé tel qu'il est saisi
-        dans une police à largeur fixe.
+		Text laid out as is with a
+		fixed-width font.
 	\end{verbatim}
 \end{codesource}
-\item Pour rédiger du code source à même le texte, on utilise la commande \cmd{verb}, dont la
-syntaxe est \cmd{verbcsourcec} où \emph{c} est un caractère quelconque ne se trouvant pas dans \emph{source}.
+			\item To write source code inside text, you use the \cmd{verb} command. Its syntax
+			is \cmd{verbcsourcec} where \emph{c} is a character not used in \emph{source}.
 \begin{codesource}
-	Du texte avec \verb|du code|.
+	Text with \verb|some code|.
 \end{codesource}
-\item Pour un usage plus intensif, consultez la documentation du \emph{package} \textbf{listings}.
-\end{itemize}
-\end{onlyenv}
+			\item For a more intensive use, please read the \textbf{listings} package's documentation.
+		\end{itemize}
+	\end{onlyenv}
 
 \begin{onlyenv}<2>
-Un exemple\footnote{tiré du site \href{http://r4stats.com/examples/programming/}{r4stats.com}.} :
+	Example\footnote{taken from the \href{http://r4stats.com/examples/programming/}{r4stats.com} website.} :
 \begin{codesource}
 # ---Writing Your Own Functions (Macros)---
 

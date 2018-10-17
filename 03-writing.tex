@@ -77,98 +77,100 @@
 				\item We open english single quotes with (\lstinline|`|)
 					and double quotes with (\lstinline|``|). We close them with one
 					(\lstinline|'|) or two (\lstinline|''|) apostrophes, depending on the case.
-				\item On utilise les chevrons (« et ») pour ouvrir et fermer les guillemets français.
-					Il faut cependant inscrire la commande suivante à la fin de notre préambule:
+				\item We use chevrons (« and ») to open and close french quotation marks.
+					To do this, you must enter the following command in the preamble:
 \begin{codesource}
 	\frenchbsetup{og=«,fg=»}
 \end{codesource}				
 			\end{itemize}
-		\item On inscrit les traits d'union avec un tiret (\lstinline|-|), les traits demi-cadratins avec deux tirets (\lstinline|--|) et les traits cadratins avec trois tirets (\lstinline|---|).
+		\item You write hyphens with a single (\lstinline|-|) sign, n-dashes with two (\lstinline|--|) signs
+		and m-dashes with three (\lstinline|---|) signs.
 	\end{itemize}
 \end{frame}
 
 % Commentaires
-\begin{frame}[c]{Commentaires}
-\begin{itemize}
-\item Pour se retrouver dans le code (ou des documents longs), il est conseillé 
-d'y insérer des commentaires.
-\item Ceux-ci commencent toujours avec le symbole \texttt{\%}.
-\item Ils s'affichent dans le code, mais pas dans le document final.
-\end{itemize}
+\begin{frame}[c]{Comment}
+	\begin{itemize}
+		\item To clarify your code (or long documents), it is advised that
+			you insert comments in your document.
+		\item They always begin with the \texttt{\%} symbol.
+		\item Comments are visible in your code but not in the final document.
+	\end{itemize}
 \end{frame}
 
-\subsection{Apparence du texte}
+\subsection{Text appearance}
 
 % Polices de caractères
-\begin{frame}[c]{Polices de caractères}
+\begin{frame}[c]{Fonts}
 	\begin{itemize}
-		\item Par défaut, tous les documents \LaTeX\ utilisent la même police, \textrm{Computer Modern}.
-		\item Privilégier les polices de grande qualité et très complètes (lettres accentuées, grand choix de symboles)
-		\item Peu de polices sont adaptées pour les mathématiques : Palatino, Times, Lucida (\$) sont des choix sûrs
-		\item Dans la classe \textbf{hecthese}, les paquetages mathptmx et mathpazo sont chargés par défaut afin	d’offrir les polices de caractères Times et Palatino.
+		\item By default, all \LaTeX\ documents use the \textrm{Computer Modern} font.
+		\item Preferably use high-quality and complete fonts (diacritics, great choice of symbols).
+		\item Very few fonts are adapted to maths : Palatino, Times, Lucida (\$) are safe choices.
+		\item In the \textbf{hecthese} document class, the mathptmx and mathpazo packages are preloaded,
+			so you can choose between the Times and Palatino fonts.
 	\end{itemize}
 \end{frame}
 
 % Changement d'attribut de la police
-\begin{frame}{Changement d'attribut de la police}
+\begin{frame}{Font attributes}
 	\begin{tabularx}{\textwidth}{XXX}
 		\arrayrulecolor{grisPrimaire!40}\hline\hline
-		\multicolumn{3}{l}{\textbf{familles}}	\\
+		\multicolumn{3}{l}{\textbf{families}}	\\
 		\hline
-		\textrm{romain}						&	\cmd{rmfamily}		&	\cmd{textrm\{<texte>\}}\\
-		\texttt{largeur fixe}				&	\cmd{ttfamily}		&	\cmd{texttt\{<texte>\}}\\
-		sans empattements					&	\cmd{sffamily}		&	\cmd{textsf\{<texte>\}}\\
+		\textrm{roman}						&	\cmd{rmfamily}		&	\cmd{textrm\{<text>\}}\\
+		\texttt{fixed width}				&	\cmd{ttfamily}		&	\cmd{texttt\{<text>\}}\\
+		sans serif							&	\cmd{sffamily}		&	\cmd{textsf\{<text>\}}\\
 		\hline
-		\multicolumn{3}{l}{\textbf{formes}}	\\
+		\multicolumn{3}{l}{\textbf{shapes}}	\\
 		\hline
-		droit								&	\cmd{upshape}		&	\cmd{textup\{<texte>\}}\\
-		\emph{italique}						&	\cmd{itshape}		&	\cmd{textit\{<texte>\}}\\
-		\textsl{penché}						&	\cmd{slshape}		&	\cmd{textsl\{<texte>\}}\\
-		\textrm{\textsc{petites capitales}}	&	\cmd{scshape}		&	\cmd{textsc\{<texte>\}}\\
+		upright								&	\cmd{upshape}		&	\cmd{textup\{<text>\}}\\
+		\emph{italic}						&	\cmd{itshape}		&	\cmd{textit\{<text>\}}\\
+		\textsl{slanted}					&	\cmd{slshape}		&	\cmd{textsl\{<text>\}}\\
+		\textrm{\textsc{small caps}}		&	\cmd{scshape}		&	\cmd{textsc\{<text>\}}\\
 		\hline
-		\multicolumn{3}{l}{\textbf{séries}}	\\
+		\multicolumn{3}{l}{\textbf{series}}	\\
 		\hline
-		\textmd{moyen}						&	\cmd{mdseries}		&	\cmd{textmd\{<texte>\}}\\
-		\textbf{gras}						&	\cmd{bfseries}		&	\cmd{textbf\{<texte>\}}\\
+		\textmd{medium}						&	\cmd{mdseries}		&	\cmd{textmd\{<text>\}}\\
+		\textbf{bold}						&	\cmd{bfseries}		&	\cmd{textbf\{<text>\}}\\
 		\hline\hline
 	\end{tabularx}
 
 	\begin{picture}(0,0)
 		\thicklines\color{bleuFonceSecondaire}
-		\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique à tout le texte qui suit}}}}
-		\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{s'applique au texte en argument}}}}
+		\onslide<2>\put(38,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{applies to all following text}}}}
+		\onslide<3>\put(92,-7){\dashbox{1}(40,64)[b]{\parbox{.25\textwidth}{\centering\textbf{applies to the text in braces}}}}
 	\end{picture}
 \end{frame}
 
 % Taille de la police
-\begin{frame}{Taille de la police}
+\begin{frame}{Font size}
 	\begin{tabularx}{\textwidth}{l|l}
 		\arrayrulecolor{grisPrimaire!40}
-		\textbf{Commandes standards} 	& 	\textbf{Rendu}	\\
+		\textbf{Commands} 				& 	\textbf{Rendering}	\\
 		\hline
-		\cmd{tiny}						&	{\tiny vraiment petit}	\\
-		\cmd{scriptsize}				&	{\scriptsize encore plus petit}	\\
-		\cmd{footnotesize}				&	{\footnotesize plus petit}	\\
-		\cmd{small}						&	{\small petit}	\\
+		\cmd{tiny}						&	{\tiny smallest}	\\
+		\cmd{scriptsize}				&	{\scriptsize even more smaller}	\\
+		\cmd{footnotesize}				&	{\footnotesize smaller}	\\
+		\cmd{small}						&	{\small small}	\\
 		\cmd{normalsize}				&	{\normalsize normal}	\\
-		\cmd{large}						&	{\large grand}	\\
-		\cmd{Large}						&	{\Large plus grand}	\\
-		\cmd{LARGE}						&	{\LARGE encore plus grand}	\\
-		\cmd{huge}						&	{\huge énorme}	\\
-		\cmd{Huge}						&	{\Huge encore plus énorme}		
+		\cmd{large}						&	{\large large}	\\
+		\cmd{Large}						&	{\Large larger}	\\
+		\cmd{LARGE}						&	{\LARGE largest}	\\
+		\cmd{huge}						&	{\huge huge}	\\
+		\cmd{Huge}						&	{\Huge humongus}		
 	\end{tabularx}
 \end{frame}
 
 % Caractères gras, italiques et soulignés
-\begin{frame}[c]{Caractères gras, italiques et soulignés}
+\begin{frame}[c]{Bold, italics and underline}
 	\begin{itemize}
-		\item Caractères \textbf{gras} : \cmd{textbf\{\}}
-		\item Caractères \emph{italiques} :
+		\item \textbf{Bold} characters: \cmd{textbf\{\}}
+		\item Characters in \emph{italics} :
 		\begin{itemize}
 			\item \cmd{textit\{\}}
-			\item \cmd{emph\{\}} -- commande à privilégier
+			\item \cmd{emph\{\}} -- command of choice
 		\end{itemize}
-		\item Caractères \underline{soulignés} : \cmd{underline\{\}}
+		\item \underline{Underlined} characters : \cmd{underline\{\}}
 	\end{itemize}
 \end{frame}
 
